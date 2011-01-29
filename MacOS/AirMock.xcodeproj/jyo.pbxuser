@@ -1,0 +1,258 @@
+// !$*UTF8*$!
+{
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {941, 821}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 32FBA69E12F467A600F7680A /* AirMock */;
+		activeTarget = 8D1107260486CEB800E47090 /* AirMock */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* AirMock */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 32FBA6B012F467A900F7680A /* Code sense */;
+		executables = (
+			32FBA69E12F467A600F7680A /* AirMock */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					763,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					723,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 318015734;
+			PBXWorkspaceStateSaveDate = 318015734;
+		};
+		perUserProjectItems = {
+			32D26C0212F4891300B528BB /* PBXTextBookmark */ = 32D26C0212F4891300B528BB /* PBXTextBookmark */;
+			32FBA73512F46DD800F7680A /* PBXTextBookmark */ = 32FBA73512F46DD800F7680A /* PBXTextBookmark */;
+			32FBA76712F472E000F7680A /* PBXTextBookmark */ = 32FBA76712F472E000F7680A /* PBXTextBookmark */;
+			32FBA77012F4740A00F7680A /* PBXTextBookmark */ = 32FBA77012F4740A00F7680A /* PBXTextBookmark */;
+			32FBA77B12F476D200F7680A /* PlistBookmark */ = 32FBA77B12F476D200F7680A /* PlistBookmark */;
+			32FBA79E12F47C8200F7680A /* PBXTextBookmark */ = 32FBA79E12F47C8200F7680A /* PBXTextBookmark */;
+			32FBA7E112F4805B00F7680A /* PBXBookmark */ = 32FBA7E112F4805B00F7680A /* PBXBookmark */;
+			32FBA7E212F4805B00F7680A /* PBXTextBookmark */ = 32FBA7E212F4805B00F7680A /* PBXTextBookmark */;
+			32FBA7F612F4824100F7680A /* PBXTextBookmark */ = 32FBA7F612F4824100F7680A /* PBXTextBookmark */;
+		};
+		sourceControlManager = 32FBA6AF12F467A900F7680A /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32D26C0212F4891300B528BB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA70012F46A5300F7680A /* DropView.m */;
+		name = "DropView.m: 78";
+		rLen = 6;
+		rLoc = 2000;
+		rType = 0;
+		vrLen = 1819;
+		vrLoc = 732;
+	};
+	32FBA69E12F467A600F7680A /* AirMock */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = AirMock;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	32FBA6AF12F467A900F7680A /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	32FBA6B012F467A900F7680A /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {941, 844}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 365}";
+		};
+	};
+	32FBA6FF12F46A5300F7680A /* DropView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {941, 821}}";
+			sepNavSelRange = "{190, 2}";
+			sepNavVisRange = "{0, 301}";
+		};
+	};
+	32FBA70012F46A5300F7680A /* DropView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {941, 1600}}";
+			sepNavSelRange = "{2000, 6}";
+			sepNavVisRange = "{732, 1819}";
+		};
+	};
+	32FBA72E12F46D2F00F7680A /* NSPasteboard.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSPasteboard.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSPasteboard.h;
+		sourceTree = "<absolute>";
+	};
+	32FBA73512F46DD800F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA73612F46DD800F7680A /* NSDragging.h */;
+		name = "NSDragging.h: 37";
+		rLen = 48;
+		rLoc = 1015;
+		rType = 0;
+		vrLen = 2036;
+		vrLoc = 0;
+	};
+	32FBA73612F46DD800F7680A /* NSDragging.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSDragging.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSDragging.h;
+		sourceTree = "<absolute>";
+	};
+	32FBA76712F472E000F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA72E12F46D2F00F7680A /* NSPasteboard.h */;
+		name = "NSPasteboard.h: 296";
+		rLen = 110;
+		rLoc = 18899;
+		rType = 0;
+		vrLen = 2902;
+		vrLoc = 18484;
+	};
+	32FBA77012F4740A00F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 45;
+		vrLoc = 0;
+	};
+	32FBA77B12F476D200F7680A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* AirMock-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/jyo/projects/airproto/MacOS/AirMock-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	32FBA79E12F47C8200F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA6FF12F46A5300F7680A /* DropView.h */;
+		name = "DropView.h: 13";
+		rLen = 2;
+		rLoc = 190;
+		rType = 0;
+		vrLen = 301;
+		vrLoc = 0;
+	};
+	32FBA7E112F4805B00F7680A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 32FBA75712F471E100F7680A /* drop_on.png */;
+	};
+	32FBA7E212F4805B00F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 365;
+		vrLoc = 0;
+	};
+	32FBA7F612F4824100F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA70012F46A5300F7680A /* DropView.m */;
+		name = "DropView.m: 88";
+		rLen = 0;
+		rLoc = 2310;
+		rType = 0;
+		vrLen = 1808;
+		vrLoc = 738;
+	};
+	8D1107260486CEB800E47090 /* AirMock */ = {
+		activeExec = 0;
+		executables = (
+			32FBA69E12F467A600F7680A /* AirMock */,
+		);
+	};
+}

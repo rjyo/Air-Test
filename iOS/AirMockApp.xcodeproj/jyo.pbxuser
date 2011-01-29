@@ -1,0 +1,158 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* AirMockApp */ = {
+		activeExec = 0;
+		executables = (
+			32FBA68412F4678300F7680A /* AirMockApp */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 32FBA68412F4678300F7680A /* AirMockApp */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* AirMockApp */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* AirMockApp */,
+		);
+		codeSenseManager = 32FBA69A12F4678B00F7680A /* Code sense */;
+		executables = (
+			32FBA68412F4678300F7680A /* AirMockApp */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					667,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					661,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 318007306;
+			PBXWorkspaceStateSaveDate = 318007306;
+		};
+		perUserProjectItems = {
+			32FBA6D612F4685700F7680A /* PBXTextBookmark */ = 32FBA6D612F4685700F7680A /* PBXTextBookmark */;
+			32FBA6D712F4685700F7680A /* PlistBookmark */ = 32FBA6D712F4685700F7680A /* PlistBookmark */;
+			32FBA71A12F46BDA00F7680A /* PlistBookmark */ = 32FBA71A12F46BDA00F7680A /* PlistBookmark */;
+		};
+		sourceControlManager = 32FBA69912F4678B00F7680A /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32FBA68412F4678300F7680A /* AirMockApp */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = AirMockApp;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	32FBA69912F4678B00F7680A /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	32FBA69A12F4678B00F7680A /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	32FBA6C912F4682A00F7680A /* AirMockApp_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 509}}";
+			sepNavSelRange = "{183, 0}";
+			sepNavVisRange = "{0, 183}";
+		};
+	};
+	32FBA6D612F4685700F7680A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32FBA6C912F4682A00F7680A /* AirMockApp_Prefix.pch */;
+		name = "AirMockApp_Prefix.pch: 9";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 183;
+		vrLoc = 0;
+	};
+	32FBA6D712F4685700F7680A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32FBA6C312F4681600F7680A /* AirMockApp-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/jyo/projects/airproto/iOS/AirMockApp-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	32FBA71A12F46BDA00F7680A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32FBA6C312F4681600F7680A /* AirMockApp-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/jyo/projects/airproto/iOS/AirMockApp-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+}
