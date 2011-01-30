@@ -1,7 +1,7 @@
 .DS_Store
 build/
 *.pyc
-*.xcodeproj/*.mode1v3
-*.xcodeproj/*.pbxuser
-*.xcodeproj/xcuserdata/
-*.xcodeproj/project.xcworkspace/
+**/*.xcodeproj/*.mode1v3
+**/*.xcodeproj/*.pbxuser
+**/*.xcodeproj/xcuserdata/
+**/*.xcodeproj/project.xcworkspace/

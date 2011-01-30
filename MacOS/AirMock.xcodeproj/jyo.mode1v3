@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -252,7 +254,7 @@
 						<dict>
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
-								<real>186</real>
+								<real>285</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -265,23 +267,31 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>32A7958E12F613E500E7C0AB</string>
+								<string>32A7959C12F613F600E7C0AB</string>
+								<string>32A7959912F613F600E7C0AB</string>
+								<string>32A7959212F613F600E7C0AB</string>
+								<string>32A7958F12F613F600E7C0AB</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>32FBA75512F471E100F7680A</string>
 								<string>1DDD58140DA1D0A300B32029</string>
+								<string>29B97323FDCFA39411CA2CEA</string>
+								<string>1058C7A0FEA54F0111CA2CBB</string>
+								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>27</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 863}}</string>
+							<string>{{0, 102}, {285, 901}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -293,32 +303,30 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 881}}</string>
+						<string>{{0, 0}, {302, 919}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
-							<real>186</real>
+							<real>285</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>900 217 1210 922 0 0 2560 1418 </string>
+						<string>902 179 1279 960 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>203pt</string>
+					<string>302pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DropView.m</string>
+								<string>AirMockAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DropView.m</string>
+										<string>AirMockAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>32D26C0212F4891300B528BB</string>
+										<string>32A795F212F616DA00E7C0AB</string>
 										<key>history</key>
 										<array>
 											<string>32FBA73512F46DD800F7680A</string>
@@ -339,8 +347,11 @@
 											<string>32FBA77B12F476D200F7680A</string>
 											<string>32FBA79E12F47C8200F7680A</string>
 											<string>32FBA7E112F4805B00F7680A</string>
-											<string>32FBA7E212F4805B00F7680A</string>
-											<string>32FBA7F612F4824100F7680A</string>
+											<string>32A7958812F613D500E7C0AB</string>
+											<string>32A795D212F6152500E7C0AB</string>
+											<string>32A795EF12F616DA00E7C0AB</string>
+											<string>32A795F012F616DA00E7C0AB</string>
+											<string>32A795F112F616DA00E7C0AB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,14 +363,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1002, 876}}</string>
+								<string>{{0, 0}, {972, 914}}</string>
 								<key>RubberWindowFrame</key>
-								<string>900 217 1210 922 0 0 2560 1418 </string>
+								<string>902 179 1279 960 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>876pt</string>
+							<string>914pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -372,9 +383,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 881}, {1002, 0}}</string>
+								<string>{{0, 919}, {972, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>900 217 1210 922 0 0 2560 1418 </string>
+								<string>902 179 1279 960 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -383,7 +394,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1002pt</string>
+					<string>972pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -398,9 +409,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>32D26BF512F4890A00B528BB</string>
+				<string>32A7958B12F613D500E7C0AB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>32D26BF612F4890A00B528BB</string>
+				<string>32A7958C12F613D500E7C0AB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -538,15 +549,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>32D26C0012F4890A00B528BB</string>
-		<string>32D26C0112F4890A00B528BB</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>32FBA6AD12F467A900F7680A</string>
 		<string>/Users/jyo/projects/airmock/MacOS/AirMock.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>900 217 1210 922 0 0 2560 1418 </string>
+	<string>902 179 1279 960 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -567,7 +574,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>SSCrypto.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -584,6 +591,8 @@
 							<string>412pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -623,7 +632,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>32FBA6AD12F467A900F7680A</string>
-				<string>32D26BF712F4890A00B528BB</string>
+				<string>32A7958D12F613D500E7C0AB</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -636,7 +645,7 @@
 			<key>WindowToolGUID</key>
 			<string>32FBA6AD12F467A900F7680A</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
