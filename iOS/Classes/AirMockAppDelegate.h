@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMBonjourBrowser.h"
 
 @class AirMockViewController;
 
-@interface AirMockAppDelegate : NSObject <UIApplicationDelegate> {
+@interface AirMockAppDelegate : NSObject <UIApplicationDelegate, BonjourBrowserDelegate> {
     UIWindow *window;
-    AirMockViewController *viewController;
+    AMBonjourBrowser *browser;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet AirMockViewController *viewController;
+@property (nonatomic, retain) AMBonjourBrowser *browser;
 
 @end
 

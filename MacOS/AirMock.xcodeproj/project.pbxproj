@@ -19,6 +19,8 @@
 		32A795B012F613F600E7C0AB /* HTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A795A412F613F600E7C0AB /* HTTPResponse.m */; };
 		32A795B112F613F600E7C0AB /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A795A712F613F600E7C0AB /* HTTPAsyncFileResponse.m */; };
 		32A795C412F6146A00E7C0AB /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A795C312F6146A00E7C0AB /* libcrypto.dylib */; };
+		32A7966F12F618C100E7C0AB /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A7966E12F618C100E7C0AB /* todo.txt */; };
+		32A7969712F61D1E00E7C0AB /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7969612F61D1E00E7C0AB /* MyHTTPConnection.m */; };
 		32FBA70112F46A5300F7680A /* AirMockAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */; };
 		32FBA70212F46A5300F7680A /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA70012F46A5300F7680A /* DropView.m */; };
 		32FBA75812F471E100F7680A /* drop_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FBA75612F471E100F7680A /* drop_none.png */; };
@@ -58,6 +60,9 @@
 		32A795A612F613F600E7C0AB /* HTTPAsyncFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAsyncFileResponse.h; sourceTree = "<group>"; };
 		32A795A712F613F600E7C0AB /* HTTPAsyncFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAsyncFileResponse.m; sourceTree = "<group>"; };
 		32A795C312F6146A00E7C0AB /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		32A7966E12F618C100E7C0AB /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		32A7969512F61D1E00E7C0AB /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHTTPConnection.h; sourceTree = "<group>"; };
+		32A7969612F61D1E00E7C0AB /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
 		32FBA6FD12F46A5300F7680A /* AirMockAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirMockAppDelegate.h; sourceTree = "<group>"; };
 		32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirMockAppDelegate.m; sourceTree = "<group>"; };
 		32FBA6FF12F46A5300F7680A /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
@@ -85,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				32A7958E12F613E500E7C0AB /* SimpleHTTPServer */,
+				32A7969512F61D1E00E7C0AB /* MyHTTPConnection.h */,
+				32A7969612F61D1E00E7C0AB /* MyHTTPConnection.m */,
 				32FBA6FD12F46A5300F7680A /* AirMockAppDelegate.h */,
 				32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */,
 				32FBA6FF12F46A5300F7680A /* DropView.h */,
@@ -148,6 +155,7 @@
 				8D1107310486CEB800E47090 /* AirMock-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				32A7966E12F618C100E7C0AB /* todo.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				32FBA75812F471E100F7680A /* drop_none.png in Resources */,
 				32FBA75912F471E100F7680A /* drop_on.png in Resources */,
+				32A7966F12F618C100E7C0AB /* todo.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +323,7 @@
 				32A795AF12F613F600E7C0AB /* HTTPConnection.m in Sources */,
 				32A795B012F613F600E7C0AB /* HTTPResponse.m in Sources */,
 				32A795B112F613F600E7C0AB /* HTTPAsyncFileResponse.m in Sources */,
+				32A7969712F61D1E00E7C0AB /* MyHTTPConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

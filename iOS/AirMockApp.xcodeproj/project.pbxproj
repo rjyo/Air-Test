@@ -15,6 +15,10 @@
 		2899E5220DE3E06400AC0155 /* AirMockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* AirMockViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* AirMockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* AirMockViewController.m */; };
+		32A796C412F61E3000E7C0AB /* AMBonjourBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */; };
+		32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */; };
+		32A796C612F61E3000E7C0AB /* DomainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796C112F61E3000E7C0AB /* DomainViewController.m */; };
+		32A796C712F61E3000E7C0AB /* SimpleEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,14 @@
 		28D7ACF60DDB3853001CB0EB /* AirMockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirMockViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* AirMockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirMockViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32A796BC12F61E3000E7C0AB /* AMBonjourBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBonjourBrowser.h; sourceTree = "<group>"; };
+		32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBonjourBrowser.m; sourceTree = "<group>"; };
+		32A796BE12F61E3000E7C0AB /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		32A796BF12F61E3000E7C0AB /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
+		32A796C012F61E3000E7C0AB /* DomainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainViewController.h; sourceTree = "<group>"; };
+		32A796C112F61E3000E7C0AB /* DomainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainViewController.m; sourceTree = "<group>"; };
+		32A796C212F61E3000E7C0AB /* SimpleEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleEditViewController.h; sourceTree = "<group>"; };
+		32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleEditViewController.m; sourceTree = "<group>"; };
 		32FBA6C312F4681600F7680A /* AirMockApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirMockApp-Info.plist"; sourceTree = "<group>"; };
 		32FBA6C912F4682A00F7680A /* AirMockApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirMockApp_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +62,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				32A796BB12F61E3000E7C0AB /* Bonjour */,
 				1D3623240D0F684500981E51 /* AirMockAppDelegate.h */,
 				1D3623250D0F684500981E51 /* AirMockAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* AirMockViewController.h */,
@@ -105,6 +118,21 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32A796BB12F61E3000E7C0AB /* Bonjour */ = {
+			isa = PBXGroup;
+			children = (
+				32A796BC12F61E3000E7C0AB /* AMBonjourBrowser.h */,
+				32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */,
+				32A796BE12F61E3000E7C0AB /* BrowserViewController.h */,
+				32A796BF12F61E3000E7C0AB /* BrowserViewController.m */,
+				32A796C012F61E3000E7C0AB /* DomainViewController.h */,
+				32A796C112F61E3000E7C0AB /* DomainViewController.m */,
+				32A796C212F61E3000E7C0AB /* SimpleEditViewController.h */,
+				32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */,
+			);
+			name = Bonjour;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +199,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AirMockAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* AirMockViewController.m in Sources */,
+				32A796C412F61E3000E7C0AB /* AMBonjourBrowser.m in Sources */,
+				32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */,
+				32A796C612F61E3000E7C0AB /* DomainViewController.m in Sources */,
+				32A796C712F61E3000E7C0AB /* SimpleEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

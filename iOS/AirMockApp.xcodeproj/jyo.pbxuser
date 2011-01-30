@@ -1,10 +1,38 @@
 // !$*UTF8*$!
 {
+	1D3623240D0F684500981E51 /* AirMockAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {817, 950}}";
+			sepNavSelRange = "{313, 0}";
+			sepNavVisRange = "{0, 490}";
+		};
+	};
+	1D3623250D0F684500981E51 /* AirMockAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2342}}";
+			sepNavSelRange = "{1583, 0}";
+			sepNavVisRange = "{289, 2671}";
+		};
+	};
 	1D6058900D05DD3D006BFB54 /* AirMockApp */ = {
 		activeExec = 0;
 		executables = (
 			32FBA68412F4678300F7680A /* AirMockApp */,
 		);
+	};
+	28D7ACF60DDB3853001CB0EB /* AirMockViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {817, 973}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 235}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* AirMockViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {817, 973}}";
+			sepNavSelRange = "{417, 0}";
+			sepNavVisRange = "{0, 1470}";
+		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
@@ -23,7 +51,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					667,
+					701,
 					20,
 					48,
 					43,
@@ -62,16 +90,58 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 318007306;
-			PBXWorkspaceStateSaveDate = 318007306;
+			PBXPerProjectTemplateStateSaveDate = 318119456;
+			PBXWorkspaceStateSaveDate = 318119456;
 		};
 		perUserProjectItems = {
-			32FBA6D612F4685700F7680A /* PBXTextBookmark */ = 32FBA6D612F4685700F7680A /* PBXTextBookmark */;
-			32FBA6D712F4685700F7680A /* PlistBookmark */ = 32FBA6D712F4685700F7680A /* PlistBookmark */;
-			32FBA71A12F46BDA00F7680A /* PlistBookmark */ = 32FBA71A12F46BDA00F7680A /* PlistBookmark */;
+			32FBA6D612F4685700F7680A = 32FBA6D612F4685700F7680A /* PBXTextBookmark */;
+			32FBA6D712F4685700F7680A = 32FBA6D712F4685700F7680A /* PlistBookmark */;
+			32FBA71A12F46BDA00F7680A = 32FBA71A12F46BDA00F7680A /* PlistBookmark */;
 		};
 		sourceControlManager = 32FBA69912F4678B00F7680A /* Source Control */;
 		userBuildSettings = {
+		};
+	};
+	32A796BC12F61E3000E7C0AB /* AMBonjourBrowser.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 1302}}";
+			sepNavSelRange = "{860, 150}";
+			sepNavVisRange = "{1457, 3339}";
+		};
+	};
+	32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1622, 2884}}";
+			sepNavSelRange = "{5266, 0}";
+			sepNavVisRange = "{5827, 2049}";
+		};
+	};
+	32A796BE12F61E3000E7C0AB /* BrowserViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {950, 1330}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1055, 3248}";
+		};
+	};
+	32A796C012F61E3000E7C0AB /* DomainViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1727, 1302}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1026, 3282}";
+		};
+	};
+	32A796C112F61E3000E7C0AB /* DomainViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {817, 4746}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 3330}";
+		};
+	};
+	32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {985, 1610}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 3143}";
 		};
 	};
 	32FBA68412F4678300F7680A /* AirMockApp */ = {
@@ -142,7 +212,7 @@
 		);
 		name = "/Users/jyo/projects/airproto/iOS/AirMockApp-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	32FBA71A12F46BDA00F7680A /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -153,6 +223,6 @@
 		);
 		name = "/Users/jyo/projects/airproto/iOS/AirMockApp-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 }
