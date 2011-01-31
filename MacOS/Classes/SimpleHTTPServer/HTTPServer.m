@@ -297,6 +297,7 @@
 
 -(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket
 {
+    NSLog(@"Accept request.");
 	id newConnection = [[connectionClass alloc] initWithAsyncSocket:newSocket forServer:self];
 	
 	@synchronized(connections)

@@ -7,7 +7,6 @@
 //
 
 #import "AirMockAppDelegate.h"
-#import "HTTPServer.h"
 #import "AMHTTPConnection.h"
 
 @implementation AirMockAppDelegate
@@ -16,14 +15,14 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
-    HTTPServer *httpServer = [[HTTPServer alloc] init];
+    httpServer = [[HTTPServer alloc] init];
     
 	// Set the bonjour type of the http server.
 	// This allows the server to broadcast itself via bonjour.
 	// You can automatically discover the service in Safari's bonjour bookmarks section.
-	[httpServer setType:@"_airmockhttp._tcp."];
+	[httpServer setType:@"_airmock._tcp."];
     [httpServer setConnectionClass:[AMHTTPConnection class]];
-//    [httpServer setPort:8080];
+    [httpServer setPort:19801];
 	
 	// Serve files from the standard Sites folder
 //	[httpServer setDocumentRoot:[NSURL fileURLWithPath:[@"~/Sites" stringByExpandingTildeInPath]]];
@@ -45,5 +44,17 @@
 //	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
     
 }
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    NSLog(@"exiting");
+    [httpServer stop];
+    [httpServer release];
+    exit(3);
+}
+
 
 @end

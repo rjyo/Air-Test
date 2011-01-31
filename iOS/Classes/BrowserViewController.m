@@ -61,6 +61,10 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 #import "BrowserViewController.h"
 #import "AppListViewController.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
 
 #define kProgressIndicatorSize 20.0
 
@@ -77,13 +81,13 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 
 @interface BrowserViewController()
-@property (nonatomic, assign, readwrite) BOOL showDisclosureIndicators;
-@property (nonatomic, retain, readwrite) NSMutableArray* services;
-@property (nonatomic, retain, readwrite) NSNetServiceBrowser* netServiceBrowser;
-@property (nonatomic, retain, readwrite) NSNetService* currentResolve;
-@property (nonatomic, retain, readwrite) NSTimer* timer;
-@property (nonatomic, assign, readwrite) BOOL needsActivityIndicator;
-@property (nonatomic, assign, readwrite) BOOL initialWaitOver;
+@property (nonatomic, assign) BOOL showDisclosureIndicators;
+@property (nonatomic, retain) NSMutableArray* services;
+@property (nonatomic, retain) NSNetServiceBrowser* netServiceBrowser;
+@property (nonatomic, retain) NSNetService* currentResolve;
+@property (nonatomic, retain) NSTimer* timer;
+@property (nonatomic, assign) BOOL needsActivityIndicator;
+@property (nonatomic, assign) BOOL initialWaitOver;
 
 - (void)stopCurrentResolve;
 - (void)initialWaitOver:(NSTimer*)timer;
@@ -359,32 +363,58 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
 	assert(service == self.currentResolve);
 	
-	[service retain];
-	[self stopCurrentResolve];
-	
-//	[self.delegate browserViewController:self didResolveInstance:service];
+    struct sockaddr *addr;
+    int port;
+    char *charaddr;
+    NSArray *addrs = [service addresses];
+    for (NSData *a in addrs) {
+        addr = (struct sockaddr *)[a bytes];
+        
+        if(addr->sa_family == AF_INET)
+        {
+            port = ntohs(((struct sockaddr_in *)addr)->sin_port);
+            struct in_addr *server_addr = &((struct sockaddr_in *)addr)->sin_addr;
+            charaddr = addr2ascii(AF_INET, server_addr, sizeof(struct in_addr), 0);
+        }
+        else if(addr->sa_family == AF_INET6)
+        {
+            port = ntohs(((struct sockaddr_in6 *)addr)->sin6_port);
+        }
+        else
+        {
+            NSLog(@"The family is neither IPv4 nor IPv6. Can't handle.");
+        }
+    }
+
+//    NSLog(@"%s, port is %d", charaddr, port);
+//    NSString *host = [NSString stringWithCString:charaddr encoding:NSASCIIStringEncoding];
+//
+//	NSString *host = [service hostName];
+//	NSString *portStr = @"";
+//	
+//	// Note that [NSNetService port:] returns an NSInteger in host byte order
+//	NSInteger port = [service port];
+//	if (port != 0 && port != 80)
+//        portStr = [[NSString alloc] initWithFormat:@":%d",port];
     
-	NSString *host = [service hostName];
-	
-	NSString* portStr = @"";
-	
-	// Note that [NSNetService port:] returns an NSInteger in host byte order
-	NSInteger port = [service port];
-	if (port != 0 && port != 80)
-        portStr = [[NSString alloc] initWithFormat:@":%d",port];
-    
-//    NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
+#if TARGET_IPHONE_SIMULATOR
     NSString *udid = @"3cac05dd2f8bed64c4d11c6077742bce974c128a";
-	
-	NSString* listURL = [[NSString alloc] initWithFormat:@"http://%@%@/list/%@", host, portStr, udid];
+#else
+    UIDevice *device = [UIDevice currentDevice];
+    NSString *udid = [device.uniqueIdentifier stringByReplacingOccurrencesOfString:@"-" withString:@""];
+#endif
+    
+//	NSString* listURL = [[NSString alloc] initWithFormat:@"http://%@%@/list/%@", host, portStr, udid];
+    NSString *listURL = [[NSString alloc] initWithFormat:@"http://%s:%d/list/%@", charaddr, port, udid];
+    NSLog(@"app list url: %@", listURL);
+    
+	[self stopCurrentResolve];
     
     // Navigation logic may go here. Create and push another view controller.
     AppListViewController *appVc = [[AppListViewController alloc] init];
     appVc.listURL = listURL;
     [self.navigationController pushViewController:appVc animated:YES];
     [appVc release];
-    
-	[service release];
 }
 
 

@@ -53,40 +53,27 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 #import "BrowserViewController.h"
-#import "DomainViewController.h"
 
-@class AMBonjourBrowser;
+@class BonjourBrowserController;
 
 @protocol BonjourBrowserDelegate <UINavigationControllerDelegate>
 @required
 // This method will be invoked when the user selects one of the service instances from the list.
 // The ref parameter will be the selected (already resolved) instance or nil if the user taps the 'Cancel' button (if shown).
-- (void) bonjourBrowser:(AMBonjourBrowser*)browser didResolveInstance:(NSNetService*)ref;
+- (void) bonjourBrowser:(BonjourBrowserController*)browser didResolveInstance:(NSNetService*)ref;
 @end
 
-@interface AMBonjourBrowser : UINavigationController <BrowserViewControllerDelegate, DomainViewControllerDelegate> {
+@interface BonjourBrowserController : UINavigationController <BrowserViewControllerDelegate> {
 	id<BonjourBrowserDelegate> __delegate; // because UINavigationContoller also has a _delegate
-	DomainViewController* _dvc;
 	BrowserViewController* _bvc;
 	NSString* _type;
 	NSString* _domain;
-	BOOL _showDisclosureIndicators;
-	NSString* _searchingForServicesString;
-	BOOL _showCancelButton;
-	BOOL _showTitleInNavigationBar;
 }
 
 @property(nonatomic, assign) id<BonjourBrowserDelegate> delegate;
-@property(nonatomic, copy, readwrite) NSString* searchingForServicesString; // The string to show when there are no services currently found (but updates are still ongoing)
-@property(nonatomic, assign, readwrite) BOOL showTitleInNavigationBar; // If YES, the title of this object will be shown in the navigation bar
 
 
-- (id) initForType:(NSString*)type                                // The Bonjour service type to browse for, e.g. @"_http._tcp"
-	   inDomain:(NSString*)domain                                 // The initial domain to browse in (pass nil to start in domains list)
-	   customDomains:(NSMutableArray*)customDomains               // An array of domains specified by the user
-	   showDisclosureIndicators:(BOOL)showDisclosureIndicators    // Whether to show discolsure indicators on service instance table cells
-																  // e.g. if you want to push a view controller onto this navigation controller
-	   showCancelButton:(BOOL)showCancelButton;                   // Whether to show a cancel button as the right navigation item
-																  // Pass YES if you are modally showing this BonjourBrowser
+- (id)initForType:(NSString *)type inDomain:(NSString *)domain;
+
 @end
 

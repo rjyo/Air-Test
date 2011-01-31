@@ -87,39 +87,39 @@ static NSString *hostName = nil;
  * Returns whether or not the server will accept POSTs.
  * That is, whether the server will accept uploaded data for the given URI.
 **/
-- (BOOL)supportsPOST:(NSString *)path withSize:(UInt64)contentLength
-{
-//	NSLog(@"POST:%@", path);
-	
-	dataStartIndex = 0;
-	multipartData = [[NSMutableArray alloc] init];
-	postHeaderOK = FALSE;
-	
-	return YES;
-}
+//- (BOOL)supportsPOST:(NSString *)path withSize:(UInt64)contentLength
+//{
+////	NSLog(@"POST:%@", path);
+//	
+//	dataStartIndex = 0;
+//	multipartData = [[NSMutableArray alloc] init];
+//	postHeaderOK = FALSE;
+//	
+//	return YES;
+//}
 
 
 - (NSString *)hostName {
-//    if (nil == hostName){
-//        NSHost *h = [NSHost currentHost];
-////        hostName = [h name];
-//        NSArray *addresses = [h addresses];
-//        NSString *addr;
-//        
-//        for (NSString *a in addresses) {
-//            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
-//                hostName = a;
-//                break;
-//            } else {
-//                addr = @"IPv4 address not available" ;
-//            }
-//        }
-//    }
-//        
-////    
+    if (nil == hostName){
+        NSHost *h = [NSHost currentHost];
+//        hostName = [[h name] retain];
+        NSArray *addresses = [h addresses];
+        NSString *addr;
+        
+        for (NSString *a in addresses) {
+            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
+                hostName = [a retain];
+                break;
+            } else {
+                addr = @"IPv4 address not available" ;
+            }
+        }
+    }
+        
 //    
-//    return hostName;
-    return @"192.168.88.102";
+    NSLog(@"Find host name: %@", hostName);
+    return hostName;
+//    return @"192.168.88.102";
 } 
 /**
  * This method is called to get a response for a request.
@@ -130,6 +130,8 @@ static NSString *hostName = nil;
 **/
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
 {
+    NSDate *then = [NSDate date];
+
 	NSLog(@"httpResponseForURI: method:%@ path:%@", method, path);
     
     NSArray *args = [[path substringFromIndex:1] pathComponents];
@@ -155,6 +157,10 @@ static NSString *hostName = nil;
             [data addObject:dict];
         }
         
+        NSDate *now = [NSDate date];
+        NSTimeInterval time = [now timeIntervalSinceDate:then];
+        NSLog(@"Get app list: %@ (%.2f)", data, time);
+        
         SBJsonWriter *writer = [[SBJsonWriter alloc] init];
         return [[[HTTPDataResponse alloc] initWithData:[writer dataWithObject:data]] autorelease];
     } else if ([cmd isEqualToString:@"conf"]) {
@@ -178,12 +184,19 @@ static NSString *hostName = nil;
         [s replaceOccurrencesOfString:@"%APP_BUNDLE_ID%" withString:appBundleId options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%APP_VERSION%" withString:appVersion options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%APP_NAME%" withString:appName options:NSLiteralSearch range:NSMakeRange(0, [s length])];
-        
+
+        NSDate *now = [NSDate date];
+        NSTimeInterval time = [now timeIntervalSinceDate:then];
+        NSLog(@"Get app config: %@ (%.2f)", s, time);
+
         return [[[HTTPDataResponse alloc] initWithData:[s dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
     } else if ([cmd isEqualToString:@"app"]) {
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
         if (nil == app) return nil;
         
+        NSDate *now = [NSDate date];
+        NSTimeInterval time = [now timeIntervalSinceDate:then];
+        NSLog(@"Get app binary: %@ (%.2f)", arg2, time);
         return [[[HTTPFileResponse alloc] initWithFilePath:app.ipaPath] autorelease];
     } else if ([cmd isEqualToString:@"icon"]) {
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
@@ -191,6 +204,10 @@ static NSString *hostName = nil;
 
         NSString *iconName = [app.appInfo valueForKey:@"CFBundleIconFile"];
         NSString *iconPath = [app.appPath stringByAppendingPathComponent:iconName];
+
+        NSDate *now = [NSDate date];
+        NSTimeInterval time = [now timeIntervalSinceDate:then];
+        NSLog(@"Get icon binary: %@ (%.2f)", arg2, time);
         return [[[HTTPFileResponse alloc] initWithFilePath:iconPath] autorelease];
     }
 

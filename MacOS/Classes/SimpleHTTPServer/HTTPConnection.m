@@ -1447,6 +1447,8 @@ static NSMutableArray *recentNonces;
 	
 	NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
 	[df setFormatterBehavior:NSDateFormatterBehavior10_4];
+    NSLocale *usLocale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en-US"] autorelease];
+    [df setLocale:usLocale];
 	[df setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
 	[df setDateFormat:@"EEE, dd MMM y HH:mm:ss 'GMT'"];
 	

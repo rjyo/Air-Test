@@ -122,14 +122,9 @@
 			children = (
 				32C62C9812F695CB00D4708A /* JSON */,
 				32A7958E12F613E500E7C0AB /* SimpleHTTPServer */,
-				32A7969512F61D1E00E7C0AB /* AMHTTPConnection.h */,
-				32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */,
+				32A79A0D12F71E6700E7C0AB /* Utils */,
 				32FBA6FF12F46A5300F7680A /* DropView.h */,
 				32FBA70012F46A5300F7680A /* DropView.m */,
-				32E4DD5312F65BE60054B867 /* AMiOSApp.h */,
-				32E4DD5412F65BE60054B867 /* AMiOSApp.m */,
-				32C62C3412F6895300D4708A /* AMDataHelper.h */,
-				32C62C3512F6895300D4708A /* AMDataHelper.m */,
 				32FBA6FD12F46A5300F7680A /* AirMockAppDelegate.h */,
 				32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */,
 			);
@@ -272,6 +267,19 @@
 				32A795A712F613F600E7C0AB /* HTTPAsyncFileResponse.m */,
 			);
 			name = Advanced;
+			sourceTree = "<group>";
+		};
+		32A79A0D12F71E6700E7C0AB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				32A7969512F61D1E00E7C0AB /* AMHTTPConnection.h */,
+				32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */,
+				32E4DD5312F65BE60054B867 /* AMiOSApp.h */,
+				32E4DD5412F65BE60054B867 /* AMiOSApp.m */,
+				32C62C3412F6895300D4708A /* AMDataHelper.h */,
+				32C62C3512F6895300D4708A /* AMDataHelper.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		32C62C9812F695CB00D4708A /* JSON */ = {

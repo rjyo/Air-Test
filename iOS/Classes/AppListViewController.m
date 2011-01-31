@@ -9,6 +9,13 @@
 #import "AppListViewController.h"
 #import "JSON.h"
 
+@interface AppListViewController()
+
+- (void)clearQueue;
+- (NSOperationQueue *)queue;
+
+@end
+
 
 @implementation AppListViewController
 @synthesize listURL;
@@ -42,19 +49,60 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSString *appListStr = [NSString stringWithContentsOfURL:[NSURL URLWithString:listURL] encoding:NSUTF8StringEncoding error:nil];
-    if (apps) {
-        [apps release];
-        apps = nil;
+    self.title = NSLocalizedString(@"App List", nil);
+    
+    indicator = (LoadingIndicatorView *)[self.navigationController.view viewWithTag:kLoadingIndicatorTag];
+    if (!indicator) {
+        indicator = [[LoadingIndicatorView alloc] initWithFrame:self.view.frame];
+        [self.navigationController.view addSubview:indicator];
+        indicator.tag = kLoadingIndicatorTag;
     }
-    apps = [[appListStr JSONValue] copy];
+    float y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    CGRect rect = self.tableView.frame;
+    rect.origin.y = y;
+    indicator.frame = rect;
 }
 
-/*
+- (NSOperationQueue *)queue {
+    if (!queue) {
+        queue = [[NSOperationQueue alloc] init];
+        queue.maxConcurrentOperationCount = 1;
+    }
+    return queue;
+}
+
+- (void)clearQueue {
+    [queue cancelAllOperations];
+    [queue release];
+    queue = nil;    
+}
+
+- (void)stringLoaded:(NSString *)s {
+    [self performSelectorOnMainThread:@selector(loadRemoteAppList:) withObject:s waitUntilDone:YES];
+}
+
+- (void)loadRemoteAppList:(NSString *)s {
+    [indicator stopAnimating];
+
+    apps = [[s JSONValue] retain];
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [self clearQueue];
+    
+    StringLoadingOperation *op = [[StringLoadingOperation alloc] init];
+    op.urlString = self.listURL;
+    op.delegate = self;
+    [[self queue] addOperation:op];
+    [op release];
+    
+    [indicator startAnimating];
+    
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -85,6 +133,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
+    if (nil == apps) return 1;
     return [apps count];
 }
 
@@ -99,11 +148,15 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSDictionary *appInfo = [apps objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", 
-                           [appInfo valueForKey:@"CFBundleDisplayName"], 
-                           [appInfo valueForKey:@"CFBundleVersion"]];
-    cell.detailTextLabel.text = [appInfo valueForKey:@"CFBundleIdentifier"];
+    if (nil == apps) {
+        cell.textLabel.text = @"Loading apps";
+    } else {
+        NSDictionary *appInfo = [apps objectAtIndex:indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", 
+                               [appInfo valueForKey:@"CFBundleDisplayName"], 
+                               [appInfo valueForKey:@"CFBundleVersion"]];
+        cell.detailTextLabel.text = [appInfo valueForKey:@"CFBundleIdentifier"];
+    }
     
     return cell;
 }
@@ -153,6 +206,8 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (nil == apps) return;
+    
     NSDictionary *appInfo = [apps objectAtIndex:indexPath.row];
     NSString *installUrl = [appInfo valueForKey:@"itms-services"];
 #if TARGET_IPHONE_SIMULATOR

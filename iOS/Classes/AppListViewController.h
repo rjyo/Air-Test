@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StringLoadingOperation.h"
+#import "LoadingIndicatorView.h"
 
-
-@interface AppListViewController : UITableViewController {
+@interface AppListViewController : UITableViewController <StringLoadingOperationDelegate>{
     NSString *listURL;
     NSArray *apps;
+    NSOperationQueue *queue;
+    LoadingIndicatorView *indicator;
 }
 
 @property(nonatomic, copy) NSString *listURL;

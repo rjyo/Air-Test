@@ -21,14 +21,14 @@ static AMDataHelper *localHelper;
 #pragma mark data access methods
 
 - (void)saveApp:(AMiOSApp *)app {
-    [appMapper setObject:app forKey:[app.appInfo valueForKey:@"CFBundleIdentifier"]];
+    NSString *appBundleId = [app.appInfo valueForKey:@"CFBundleIdentifier"];
+    [appMapper setObject:app forKey:appBundleId];
     for (NSString *udid in app.devices) {
-        NSMutableArray *a = [deviceMapper valueForKey:udid];
-        if (a && ![a containsObject:app]) {
-            [a addObject:app];
+        NSMutableDictionary *a = [deviceMapper valueForKey:udid];
+        if (a && ![a valueForKey:appBundleId]) {
+            [a setObject:app forKey:appBundleId];
         } else if (nil == a){
-            a = [NSMutableArray array];
-            [a addObject:app];
+            a = [NSMutableDictionary dictionaryWithObjectsAndKeys:app, appBundleId, nil];
             [deviceMapper setObject:a forKey:udid];
         }
     }
@@ -39,7 +39,8 @@ static AMDataHelper *localHelper;
 }
 
 - (NSArray *)appsForDevice:(NSString *)udid {
-    return [deviceMapper valueForKey:udid];
+    NSDictionary *dict = [deviceMapper valueForKey:udid];
+    return  [dict allValues];
 }
 
 #pragma mark -

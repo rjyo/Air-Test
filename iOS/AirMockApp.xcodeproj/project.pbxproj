@@ -14,10 +14,10 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* AirMockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* AirMockViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		32A796C412F61E3000E7C0AB /* AMBonjourBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */; };
+		32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */; };
 		32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */; };
-		32A796C612F61E3000E7C0AB /* DomainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796C112F61E3000E7C0AB /* DomainViewController.m */; };
-		32A796C712F61E3000E7C0AB /* SimpleEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */; };
+		32A7998A12F717E000E7C0AB /* StringLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7998912F717E000E7C0AB /* StringLoadingOperation.m */; };
+		32A7998D12F717F700E7C0AB /* LoadingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7998C12F717F700E7C0AB /* LoadingIndicatorView.m */; };
 		32C62E4C12F6AD7F00D4708A /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */; };
 		32C62E5E12F6ADCB00D4708A /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62E5212F6ADCB00D4708A /* NSObject+SBJSON.m */; };
 		32C62E5F12F6ADCB00D4708A /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62E5412F6ADCB00D4708A /* NSString+SBJSON.m */; };
@@ -37,14 +37,14 @@
 		2899E5210DE3E06400AC0155 /* AirMockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirMockViewController.xib; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32A796BC12F61E3000E7C0AB /* AMBonjourBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBonjourBrowser.h; sourceTree = "<group>"; };
-		32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBonjourBrowser.m; sourceTree = "<group>"; };
+		32A796BC12F61E3000E7C0AB /* BonjourBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourBrowserController.h; sourceTree = "<group>"; };
+		32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourBrowserController.m; sourceTree = "<group>"; };
 		32A796BE12F61E3000E7C0AB /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
 		32A796BF12F61E3000E7C0AB /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
-		32A796C012F61E3000E7C0AB /* DomainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainViewController.h; sourceTree = "<group>"; };
-		32A796C112F61E3000E7C0AB /* DomainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainViewController.m; sourceTree = "<group>"; };
-		32A796C212F61E3000E7C0AB /* SimpleEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleEditViewController.h; sourceTree = "<group>"; };
-		32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleEditViewController.m; sourceTree = "<group>"; };
+		32A7998812F717E000E7C0AB /* StringLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringLoadingOperation.h; sourceTree = "<group>"; };
+		32A7998912F717E000E7C0AB /* StringLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringLoadingOperation.m; sourceTree = "<group>"; };
+		32A7998B12F717F700E7C0AB /* LoadingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingIndicatorView.h; sourceTree = "<group>"; };
+		32A7998C12F717F700E7C0AB /* LoadingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingIndicatorView.m; sourceTree = "<group>"; };
 		32C62E4A12F6AD7F00D4708A /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
 		32C62E4B12F6AD7F00D4708A /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
 		32C62E5012F6ADCB00D4708A /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -83,11 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				32C62E4F12F6ADCB00D4708A /* JSON */,
-				32A796BB12F61E3000E7C0AB /* Bonjour */,
+				32A799B812F719DF00E7C0AB /* Utils */,
+				32A799B912F719EA00E7C0AB /* Controllers */,
 				1D3623240D0F684500981E51 /* AirMockAppDelegate.h */,
 				1D3623250D0F684500981E51 /* AirMockAppDelegate.m */,
-				32C62E4A12F6AD7F00D4708A /* AppListViewController.h */,
-				32C62E4B12F6AD7F00D4708A /* AppListViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -141,19 +140,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		32A796BB12F61E3000E7C0AB /* Bonjour */ = {
+		32A799B812F719DF00E7C0AB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				32A796BC12F61E3000E7C0AB /* AMBonjourBrowser.h */,
-				32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */,
+				32A7998812F717E000E7C0AB /* StringLoadingOperation.h */,
+				32A7998912F717E000E7C0AB /* StringLoadingOperation.m */,
+				32A7998B12F717F700E7C0AB /* LoadingIndicatorView.h */,
+				32A7998C12F717F700E7C0AB /* LoadingIndicatorView.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		32A799B912F719EA00E7C0AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32A796BC12F61E3000E7C0AB /* BonjourBrowserController.h */,
+				32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */,
 				32A796BE12F61E3000E7C0AB /* BrowserViewController.h */,
 				32A796BF12F61E3000E7C0AB /* BrowserViewController.m */,
-				32A796C012F61E3000E7C0AB /* DomainViewController.h */,
-				32A796C112F61E3000E7C0AB /* DomainViewController.m */,
-				32A796C212F61E3000E7C0AB /* SimpleEditViewController.h */,
-				32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */,
+				32C62E4A12F6AD7F00D4708A /* AppListViewController.h */,
+				32C62E4B12F6AD7F00D4708A /* AppListViewController.m */,
 			);
-			name = Bonjour;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		32C62E4F12F6ADCB00D4708A /* JSON */ = {
@@ -240,10 +248,8 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AirMockAppDelegate.m in Sources */,
-				32A796C412F61E3000E7C0AB /* AMBonjourBrowser.m in Sources */,
+				32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */,
 				32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */,
-				32A796C612F61E3000E7C0AB /* DomainViewController.m in Sources */,
-				32A796C712F61E3000E7C0AB /* SimpleEditViewController.m in Sources */,
 				32C62E4C12F6AD7F00D4708A /* AppListViewController.m in Sources */,
 				32C62E5E12F6ADCB00D4708A /* NSObject+SBJSON.m in Sources */,
 				32C62E5F12F6ADCB00D4708A /* NSString+SBJSON.m in Sources */,
@@ -251,6 +257,8 @@
 				32C62E6112F6ADCB00D4708A /* SBJsonParser.m in Sources */,
 				32C62E6212F6ADCB00D4708A /* SBJsonStreamWriter.m in Sources */,
 				32C62E6312F6ADCB00D4708A /* SBJsonWriter.m in Sources */,
+				32A7998A12F717E000E7C0AB /* StringLoadingOperation.m in Sources */,
+				32A7998D12F717F700E7C0AB /* LoadingIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

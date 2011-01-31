@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HTTPServer.h"
 
 @interface AirMockAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+    HTTPServer *httpServer;
 }
 
 @property (assign) IBOutlet NSWindow *window;

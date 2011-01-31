@@ -1,18 +1,10 @@
 /*
-
-    File: DomainViewController.h 
-Abstract:  View controller for the domain list.
- This object manages a NSNetServiceBrowser configured to look for Bonjour
-domains.
- It has two arrays of NSString objects that are displayed in two sections of a
-table view.
- When the service browser reports that it has discovered a domain, that domain
-is added to the first array.
- When a domain goes away it is removed from the first array.
- It allows the user to add/remove their own domains from the second array, which
-is displayed in the second section of the table.
- When an item in the table view is selected, the delegate is called with the
-corresponding domain.
+ 
+    File: BonjourBrowser.m 
+Abstract:  A subclass of UINavigationController that handles the UI needed for a user to
+browse for Bonjour services.
+It contains list view controllers for domains and service instances.
+It allows the user to add their own domains.
  
  Version: 2.9 
  
@@ -56,37 +48,66 @@ POSSIBILITY OF SUCH DAMAGE.
  
 Copyright (C) 2010 Apple Inc. All Rights Reserved. 
  
-
+ 
 */
 
-#import <UIKit/UIKit.h>
-#import <Foundation/NSNetServices.h>
-#import "SimpleEditViewController.h"
+#import "BonjourBrowserController.h"
+#import "BrowserViewController.h"
 
-@class DomainViewController;
 
-@protocol DomainViewControllerDelegate <NSObject>
-@required
-// This method will be invoked when the user selects one of the domains from the list.
-// The domain parameter will be the selected domain or nil if the user taps the 'Cancel' button (if shown)
-- (void) domainViewController:(DomainViewController*)dvc didSelectDomain:(NSString*)domain;
+@interface BonjourBrowserController ()
+@property(nonatomic, retain) BrowserViewController* bvc;
+@property(nonatomic, retain) NSString* type;
+@property(nonatomic, retain) NSString* domain;
 @end
 
-@interface DomainViewController : UITableViewController <SimpleEditViewControllerDelegate, NSNetServiceBrowserDelegate> {
-	id<DomainViewControllerDelegate> _delegate;
-	BOOL _showDisclosureIndicators;
-	NSMutableArray* _domains;
-	NSMutableArray* _customs;
-	NSString* _customTitle;
-	NSString* _addDomainTitle;
-	NSNetServiceBrowser* _netServiceBrowser;
-	BOOL _showCancelButton;
+
+@implementation BonjourBrowserController
+
+
+@synthesize bvc = _bvc;
+@synthesize type = _type;
+@synthesize domain = _domain;
+
+- (id)initForType:(NSString *)type inDomain:(NSString *)domain {	
+    self.type = type;
+    self.domain = domain;
+
+	self.bvc = [[[BrowserViewController alloc] initWithTitle:self.domain showDisclosureIndicators:NO showCancelButton:NO] autorelease];
+	self.bvc.delegate = self;
+    // Calls -[NSNetServiceBrowser searchForServicesOfType:inDomain:].
+	[self.bvc searchForServicesOfType:self.type inDomain:self.domain];
+
+	if (self = [super initWithRootViewController:self.bvc]) {
+        self.bvc.title = NSLocalizedString(@"Servers", nil);
+	}
+	
+	return self;
 }
 
-@property(nonatomic, assign) id<DomainViewControllerDelegate> delegate;
 
-- (id)initWithTitle:(NSString *)title showDisclosureIndicators:(BOOL)showDisclosureIndicators customsTitle:(NSString*)customsTitle customs:(NSMutableArray*)customs addDomainTitle:(NSString*)addDomainTitle showCancelButton:(BOOL)showCancelButton;
-- (BOOL)searchForBrowsableDomains;
-- (BOOL)searchForRegistrationDomains;
+- (void)setDelegate:(id<BonjourBrowserDelegate>)delegate {
+	__delegate = delegate;
+	super.delegate = delegate;
+}
+
+
+- (id<BonjourBrowserDelegate>) delegate {
+	assert(__delegate == super.delegate);
+	return __delegate;
+}
+
+- (void)browserViewController:(BrowserViewController*)bvc didResolveInstance:(NSNetService*)service {
+	assert(bvc == self.bvc);
+	[self.delegate bonjourBrowser:self didResolveInstance:service];
+}
+
+
+- (void)dealloc {
+	[_bvc release];
+	[_type release];
+	[_domain release];
+	[super dealloc];
+}
 
 @end

@@ -8,7 +8,7 @@
 
 #import "AirMockAppDelegate.h"
 
-#define kWebServiceType @"_airmockhttp._tcp."
+#define kWebServiceType @"_airmock._tcp."
 #define kInitialDomain  @"local"
 
 @implementation AirMockAppDelegate
@@ -25,19 +25,12 @@
     // Override point for customization after application launch.
 
 	// Create the Bonjour Browser for Web services
-	AMBonjourBrowser *aBrowser = [[AMBonjourBrowser alloc] initForType:kWebServiceType
-														  inDomain:kInitialDomain
-                                                     customDomains:nil // we won't save any additional domains added by the user
-                                          showDisclosureIndicators:NO
-                                                  showCancelButton:NO];
+	BonjourBrowserController *aBrowser = [[BonjourBrowserController alloc] initForType:kWebServiceType
+														  inDomain:kInitialDomain];
 	self.browser = aBrowser;
 	[aBrowser release];
     
 	self.browser.delegate = self;
-    
-    // We want to let the user know that the services list is dynamic and always updating, even when there are no
-    // services currently found.
-    self.browser.searchingForServicesString = NSLocalizedString(@"Searching for web services", @"Searching for web services string");
     
 	// Add the controller's view as a subview of the window
 	[self.window addSubview:[self.browser view]];
@@ -59,7 +52,7 @@
 }
 
 
-- (void)bonjourBrowser:(AMBonjourBrowser*)browser didResolveInstance:(NSNetService*)service {
+- (void)bonjourBrowser:(BonjourBrowserController*)browser didResolveInstance:(NSNetService*)service {
 	// Construct the URL including the port number
 	// Also use the path, username and password fields that can be in the TXT record
 	NSDictionary* dict = [[NSNetService dictionaryFromTXTRecordData:[service TXTRecordData]] retain];
