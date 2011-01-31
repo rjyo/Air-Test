@@ -14,10 +14,15 @@
 - (void)main {
     NSDate *then = [NSDate date];
 //    NSString *result = (NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, NULL, CFSTR(":/?#[]@!$&’()*+,;="), kCFStringEncodingUTF8);
-    NSString *result = (NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, NULL, CFSTR("?#[]@!$&’()*+,;=\""), kCFStringEncodingUTF8);
-    NSURL *url = [NSURL URLWithString:result];
-    loadedString = [[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil] copy];
-    [result release];
+//    NSString *result = (NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, NULL, CFSTR("?#[]@!$&’()*+,;=\""), kCFStringEncodingUTF8);
+    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    
+    NSLog(@"%@", data);
+//    loadedString = [[NSString stringWithCharacters:[data bytes] length:[data length]] copy];
+//    loadedString = [[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil] copy];
+//    [result release];
+    loadedString = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
     if (delegate) {
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];

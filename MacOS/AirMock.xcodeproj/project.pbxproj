@@ -21,6 +21,8 @@
 		32A795C412F6146A00E7C0AB /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A795C312F6146A00E7C0AB /* libcrypto.dylib */; };
 		32A7966F12F618C100E7C0AB /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A7966E12F618C100E7C0AB /* todo.txt */; };
 		32A7969712F61D1E00E7C0AB /* AMHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */; };
+		32A79B1012F72EA400E7C0AB /* ThreadPoolServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A79B0D12F72EA400E7C0AB /* ThreadPoolServer.m */; };
+		32A79B1112F72EA400E7C0AB /* ThreadPerConnectionServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A79B0F12F72EA400E7C0AB /* ThreadPerConnectionServer.m */; };
 		32C62C3612F6895300D4708A /* AMDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62C3512F6895300D4708A /* AMDataHelper.m */; };
 		32C62C8C12F6947400D4708A /* template.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32C62C8B12F6947400D4708A /* template.plist */; };
 		32C62CA712F695CB00D4708A /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62C9B12F695CB00D4708A /* NSObject+SBJSON.m */; };
@@ -73,6 +75,10 @@
 		32A7966E12F618C100E7C0AB /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 		32A7969512F61D1E00E7C0AB /* AMHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMHTTPConnection.h; sourceTree = "<group>"; };
 		32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMHTTPConnection.m; sourceTree = "<group>"; };
+		32A79B0C12F72EA400E7C0AB /* ThreadPoolServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadPoolServer.h; sourceTree = "<group>"; };
+		32A79B0D12F72EA400E7C0AB /* ThreadPoolServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadPoolServer.m; sourceTree = "<group>"; };
+		32A79B0E12F72EA400E7C0AB /* ThreadPerConnectionServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadPerConnectionServer.h; sourceTree = "<group>"; };
+		32A79B0F12F72EA400E7C0AB /* ThreadPerConnectionServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadPerConnectionServer.m; sourceTree = "<group>"; };
 		32C62C3412F6895300D4708A /* AMDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMDataHelper.h; sourceTree = "<group>"; };
 		32C62C3512F6895300D4708A /* AMDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMDataHelper.m; sourceTree = "<group>"; };
 		32C62C8B12F6947400D4708A /* template.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = template.plist; sourceTree = "<group>"; };
@@ -278,6 +284,10 @@
 				32E4DD5412F65BE60054B867 /* AMiOSApp.m */,
 				32C62C3412F6895300D4708A /* AMDataHelper.h */,
 				32C62C3512F6895300D4708A /* AMDataHelper.m */,
+				32A79B0C12F72EA400E7C0AB /* ThreadPoolServer.h */,
+				32A79B0D12F72EA400E7C0AB /* ThreadPoolServer.m */,
+				32A79B0E12F72EA400E7C0AB /* ThreadPerConnectionServer.h */,
+				32A79B0F12F72EA400E7C0AB /* ThreadPerConnectionServer.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -400,6 +410,8 @@
 				32C62CAA12F695CB00D4708A /* SBJsonParser.m in Sources */,
 				32C62CAB12F695CB00D4708A /* SBJsonStreamWriter.m in Sources */,
 				32C62CAC12F695CB00D4708A /* SBJsonWriter.m in Sources */,
+				32A79B1012F72EA400E7C0AB /* ThreadPoolServer.m in Sources */,
+				32A79B1112F72EA400E7C0AB /* ThreadPerConnectionServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

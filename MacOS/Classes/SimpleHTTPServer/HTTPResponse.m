@@ -117,4 +117,9 @@
 	return (offset == [data length]);
 }
 
+- (NSDictionary *)httpHeaders {
+    return [NSDictionary dictionaryWithObjectsAndKeys:@"application/json", @"Content-Type", nil];
+}
+
+
 @end

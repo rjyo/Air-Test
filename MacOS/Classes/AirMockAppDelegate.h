@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "HTTPServer.h"
+//#import "HTTPServer.h"
+#import "ThreadPoolServer.h"
 
 @interface AirMockAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;

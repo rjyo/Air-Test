@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -303,7 +305,7 @@
 							<real>248</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>835 202 1148 1051 0 0 2560 1418 </string>
+						<string>760 127 1148 1051 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -314,8 +316,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -333,21 +333,22 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>32A79A4C12F7228A00E7C0AB</string>
+										<string>32A79BDA12F73A2F00E7C0AB</string>
 										<key>history</key>
 										<array>
 											<string>32FBA6D612F4685700F7680A</string>
 											<string>32A7993D12F715B300E7C0AB</string>
-											<string>32A799A512F7199B00E7C0AB</string>
 											<string>32A799C012F71A3500E7C0AB</string>
 											<string>32A799C112F71A3500E7C0AB</string>
 											<string>32A799C212F71A3500E7C0AB</string>
-											<string>32A799C312F71A3500E7C0AB</string>
 											<string>32A799DF12F71BA400E7C0AB</string>
 											<string>32A79A4812F7228A00E7C0AB</string>
 											<string>32A79A4912F7228A00E7C0AB</string>
-											<string>32A79A4A12F7228A00E7C0AB</string>
-											<string>32A79A4B12F7228A00E7C0AB</string>
+											<string>32A79BB212F738F400E7C0AB</string>
+											<string>32A79BBC12F7395200E7C0AB</string>
+											<string>32A79BBD12F7395200E7C0AB</string>
+											<string>32A79BBE12F7395200E7C0AB</string>
+											<string>32A79BD512F73A1100E7C0AB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -359,14 +360,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {878, 1005}}</string>
+								<string>{{0, 0}, {878, 1006}}</string>
 								<key>RubberWindowFrame</key>
-								<string>835 202 1148 1051 0 0 2560 1418 </string>
+								<string>760 127 1148 1051 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>1005pt</string>
+							<string>1006pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -379,9 +380,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 1010}, {878, 0}}</string>
+								<string>{{0, 1011}, {878, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>835 202 1148 1051 0 0 2560 1418 </string>
+								<string>760 127 1148 1051 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -545,18 +546,18 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>32A79A4D12F7228A00E7C0AB</string>
+		<string>32A79BDB12F73A2F00E7C0AB</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>32A7971012F6FABB00E7C0AB</string>
 		<string>32A797A612F7066000E7C0AB</string>
 		<string>32A7975D12F7039700E7C0AB</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>32FBA69712F4678B00F7680A</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/jyo/projects/airmock/iOS/AirMockApp.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>835 202 1148 1051 0 0 2560 1418 </string>
+	<string>760 127 1148 1051 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -572,14 +573,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AirMockAppDelegate.m</string>
+								<string>BrowserViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -596,6 +595,8 @@
 							<string>405pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -772,7 +773,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -896,7 +897,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {694, 313}}</string>
 								<key>RubberWindowFrame</key>
-								<string>308 881 694 354 0 0 2560 1418 </string>
+								<string>667 157 694 354 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -925,11 +926,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>308 881 694 354 0 0 2560 1418 </string>
+			<string>667 157 694 354 0 0 2560 1418 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

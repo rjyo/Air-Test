@@ -15,14 +15,14 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
-    httpServer = [[HTTPServer alloc] init];
+	httpServer = [[ThreadPoolServer alloc] init];
+//    httpServer = [[HTTPServer alloc] init];
     
 	// Set the bonjour type of the http server.
 	// This allows the server to broadcast itself via bonjour.
 	// You can automatically discover the service in Safari's bonjour bookmarks section.
 	[httpServer setType:@"_airmock._tcp."];
     [httpServer setConnectionClass:[AMHTTPConnection class]];
-    [httpServer setPort:19801];
 	
 	// Serve files from the standard Sites folder
 //	[httpServer setDocumentRoot:[NSURL fileURLWithPath:[@"~/Sites" stringByExpandingTildeInPath]]];
