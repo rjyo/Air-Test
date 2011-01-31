@@ -7,6 +7,8 @@
 //
 
 #import "DropView.h"
+#import "AMiOSApp.h"
+#import "AMDataHelper.h"
 
 @interface DropView()
 
@@ -84,8 +86,9 @@ static NSImage *dropNoneImage = nil;
 //            NSLog(@"2");
 //        }
         
-        for (NSObject *obj in files) {
-            NSLog(@"%@", obj);
+        for (NSString *path in files) {
+            AMiOSApp *app = [[AMiOSApp alloc] initWithApp:path];
+            [[AMDataHelper localHelper] saveApp:app];
         }
     }
 

@@ -7,7 +7,6 @@
 //
 
 #import "AirMockAppDelegate.h"
-#import "AirMockViewController.h"
 
 #define kWebServiceType @"_airmockhttp._tcp."
 #define kInitialDomain  @"local"

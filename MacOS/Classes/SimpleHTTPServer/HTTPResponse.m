@@ -16,7 +16,7 @@
 			return nil;
 		}
 		
-		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:NO];
+		NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
 		NSNumber *fileSize = [fileAttributes objectForKey:NSFileSize];
 		fileLength = (UInt64)[fileSize unsignedLongLongValue];
 	}

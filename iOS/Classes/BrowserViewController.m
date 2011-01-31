@@ -60,6 +60,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 */
 
 #import "BrowserViewController.h"
+#import "AppListViewController.h"
 
 #define kProgressIndicatorSize 20.0
 
@@ -361,7 +362,28 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	[service retain];
 	[self stopCurrentResolve];
 	
-	[self.delegate browserViewController:self didResolveInstance:service];
+//	[self.delegate browserViewController:self didResolveInstance:service];
+    
+	NSString *host = [service hostName];
+	
+	NSString* portStr = @"";
+	
+	// Note that [NSNetService port:] returns an NSInteger in host byte order
+	NSInteger port = [service port];
+	if (port != 0 && port != 80)
+        portStr = [[NSString alloc] initWithFormat:@":%d",port];
+    
+//    NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
+    NSString *udid = @"3cac05dd2f8bed64c4d11c6077742bce974c128a";
+	
+	NSString* listURL = [[NSString alloc] initWithFormat:@"http://%@%@/list/%@", host, portStr, udid];
+    
+    // Navigation logic may go here. Create and push another view controller.
+    AppListViewController *appVc = [[AppListViewController alloc] init];
+    appVc.listURL = listURL;
+    [self.navigationController pushViewController:appVc animated:YES];
+    [appVc release];
+    
 	[service release];
 }
 

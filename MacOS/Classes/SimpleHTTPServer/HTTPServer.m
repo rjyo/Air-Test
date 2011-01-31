@@ -26,7 +26,7 @@
 		port = 0;
 		
 		// Bonjour domain. Use the local domain by default
-		domain = @"local.";
+		domain = @"local";
 		
 		// If using an empty string ("") for the service name when registering,
 		// the system will automatically use the "Computer Name".

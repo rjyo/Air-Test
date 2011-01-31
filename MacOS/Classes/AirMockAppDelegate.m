@@ -8,6 +8,7 @@
 
 #import "AirMockAppDelegate.h"
 #import "HTTPServer.h"
+#import "AMHTTPConnection.h"
 
 @implementation AirMockAppDelegate
 
@@ -21,9 +22,11 @@
 	// This allows the server to broadcast itself via bonjour.
 	// You can automatically discover the service in Safari's bonjour bookmarks section.
 	[httpServer setType:@"_airmockhttp._tcp."];
+    [httpServer setConnectionClass:[AMHTTPConnection class]];
+//    [httpServer setPort:8080];
 	
 	// Serve files from the standard Sites folder
-	[httpServer setDocumentRoot:[NSURL fileURLWithPath:[@"~/Sites" stringByExpandingTildeInPath]]];
+//	[httpServer setDocumentRoot:[NSURL fileURLWithPath:[@"~/Sites" stringByExpandingTildeInPath]]];
 	
 	NSError *error;
 	BOOL success = [httpServer start:&error];
@@ -38,7 +41,7 @@
 //	
 //	httpServer = [HTTPServer new];
 //	[httpServer setType:@"_http._tcp."];
-//	[httpServer setConnectionClass:[MyHTTPConnection class]];
+//	
 //	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
     
 }

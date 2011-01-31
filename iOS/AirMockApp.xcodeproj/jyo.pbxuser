@@ -2,16 +2,17 @@
 {
 	1D3623240D0F684500981E51 /* AirMockAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 950}}";
-			sepNavSelRange = "{313, 0}";
-			sepNavVisRange = "{0, 490}";
+			sepNavIntBoundsRect = "{{0, 0}, {879, 973}}";
+			sepNavSelRange = "{166, 0}";
+			sepNavVisRange = "{0, 496}";
 		};
 	};
 	1D3623250D0F684500981E51 /* AirMockAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 2342}}";
-			sepNavSelRange = "{1583, 0}";
-			sepNavVisRange = "{289, 2671}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2149}}";
+			sepNavSelRange = "{247, 5}";
+			sepNavVisRange = "{139, 2605}";
+			sepNavWindowFrame = "{{65, 610}, {1160, 761}}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* AirMockApp */ = {
@@ -20,26 +21,15 @@
 			32FBA68412F4678300F7680A /* AirMockApp */,
 		);
 	};
-	28D7ACF60DDB3853001CB0EB /* AirMockViewController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 973}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 235}";
-		};
-	};
-	28D7ACF70DDB3853001CB0EB /* AirMockViewController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 973}}";
-			sepNavSelRange = "{417, 0}";
-			sepNavVisRange = "{0, 1470}";
-		};
-	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 32FBA68412F4678300F7680A /* AirMockApp */;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* AirMockApp */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* AirMockApp */,
+		);
+		breakpoints = (
 		);
 		codeSenseManager = 32FBA69A12F4678B00F7680A /* Code sense */;
 		executables = (
@@ -90,10 +80,60 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 318119456;
-			PBXWorkspaceStateSaveDate = 318119456;
+			PBXPerProjectTemplateStateSaveDate = 318153173;
+			PBXWorkspaceStateSaveDate = 318153173;
 		};
 		perUserProjectItems = {
+			32C62E7D12F6B08300D4708A /* XCBuildMessageTextBookmark */ = 32C62E7D12F6B08300D4708A /* XCBuildMessageTextBookmark */;
+			32C62E7E12F6B08300D4708A /* PBXTextBookmark */ = 32C62E7E12F6B08300D4708A /* PBXTextBookmark */;
+			32C62E8612F6B08300D4708A /* PBXTextBookmark */ = 32C62E8612F6B08300D4708A /* PBXTextBookmark */;
+			32C62E8712F6B08300D4708A /* PBXTextBookmark */ = 32C62E8712F6B08300D4708A /* PBXTextBookmark */;
+			32C62E8B12F6B08800D4708A /* PBXBookmark */ = 32C62E8B12F6B08800D4708A /* PBXBookmark */;
+			32C62E9412F6B1BD00D4708A /* PBXTextBookmark */ = 32C62E9412F6B1BD00D4708A /* PBXTextBookmark */;
+			32C62E9512F6B1BD00D4708A /* PBXTextBookmark */ = 32C62E9512F6B1BD00D4708A /* PBXTextBookmark */;
+			32C62EA412F6B1D400D4708A /* PlistBookmark */ = 32C62EA412F6B1D400D4708A /* PlistBookmark */;
+			32C62EA512F6B1D400D4708A /* PBXTextBookmark */ = 32C62EA512F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EA612F6B1D400D4708A /* PBXTextBookmark */ = 32C62EA612F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EA712F6B1D400D4708A /* PBXTextBookmark */ = 32C62EA712F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EA812F6B1D400D4708A /* PBXTextBookmark */ = 32C62EA812F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EA912F6B1D400D4708A /* PBXTextBookmark */ = 32C62EA912F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EAA12F6B1D400D4708A /* PBXTextBookmark */ = 32C62EAA12F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EAB12F6B1D400D4708A /* PBXTextBookmark */ = 32C62EAB12F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EAC12F6B1D400D4708A /* PBXTextBookmark */ = 32C62EAC12F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EAD12F6B1D400D4708A /* PBXTextBookmark */ = 32C62EAD12F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EAE12F6B1D400D4708A /* PBXTextBookmark */ = 32C62EAE12F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EB312F6B1D400D4708A /* PBXTextBookmark */ = 32C62EB312F6B1D400D4708A /* PBXTextBookmark */;
+			32C62EBA12F6B1FB00D4708A /* PBXTextBookmark */ = 32C62EBA12F6B1FB00D4708A /* PBXTextBookmark */;
+			32C62EBB12F6B1FB00D4708A /* PBXTextBookmark */ = 32C62EBB12F6B1FB00D4708A /* PBXTextBookmark */;
+			32C62EC112F6B23200D4708A /* PBXTextBookmark */ = 32C62EC112F6B23200D4708A /* PBXTextBookmark */;
+			32C62EC312F6B25800D4708A /* PBXTextBookmark */ = 32C62EC312F6B25800D4708A /* PBXTextBookmark */;
+			32C62EE212F6B4B900D4708A /* PBXTextBookmark */ = 32C62EE212F6B4B900D4708A /* PBXTextBookmark */;
+			32C62EE312F6B4B900D4708A /* PBXTextBookmark */ = 32C62EE312F6B4B900D4708A /* PBXTextBookmark */;
+			32C62EE412F6B4B900D4708A /* PBXTextBookmark */ = 32C62EE412F6B4B900D4708A /* PBXTextBookmark */;
+			32C62EE912F6B4C600D4708A /* PBXTextBookmark */ = 32C62EE912F6B4C600D4708A /* PBXTextBookmark */;
+			32C62EEA12F6B4C600D4708A /* PBXTextBookmark */ = 32C62EEA12F6B4C600D4708A /* PBXTextBookmark */;
+			32C62EED12F6B4D900D4708A /* PBXTextBookmark */ = 32C62EED12F6B4D900D4708A /* PBXTextBookmark */;
+			32C62EEF12F6B4DC00D4708A /* PBXTextBookmark */ = 32C62EEF12F6B4DC00D4708A /* PBXTextBookmark */;
+			32C62EF812F6B4F700D4708A /* PBXTextBookmark */ = 32C62EF812F6B4F700D4708A /* PBXTextBookmark */;
+			32C62EF912F6B4F700D4708A /* PBXTextBookmark */ = 32C62EF912F6B4F700D4708A /* PBXTextBookmark */;
+			32C62EFA12F6B4F800D4708A /* PBXTextBookmark */ = 32C62EFA12F6B4F800D4708A /* PBXTextBookmark */;
+			32C62F0512F6B55B00D4708A /* PBXTextBookmark */ = 32C62F0512F6B55B00D4708A /* PBXTextBookmark */;
+			32C62F0612F6B55B00D4708A /* XCBuildMessageTextBookmark */ = 32C62F0612F6B55B00D4708A /* XCBuildMessageTextBookmark */;
+			32C62F0712F6B55B00D4708A /* PBXTextBookmark */ = 32C62F0712F6B55B00D4708A /* PBXTextBookmark */;
+			32C62F2612F6B77E00D4708A /* PBXTextBookmark */ = 32C62F2612F6B77E00D4708A /* PBXTextBookmark */;
+			32C62F2712F6B77E00D4708A /* PBXTextBookmark */ = 32C62F2712F6B77E00D4708A /* PBXTextBookmark */;
+			32C62F2812F6B77E00D4708A /* PBXTextBookmark */ = 32C62F2812F6B77E00D4708A /* PBXTextBookmark */;
+			32C62F3412F6B7B600D4708A /* PBXTextBookmark */ = 32C62F3412F6B7B600D4708A /* PBXTextBookmark */;
+			32C62F3512F6B7B600D4708A /* PBXTextBookmark */ = 32C62F3512F6B7B600D4708A /* PBXTextBookmark */;
+			32C62F3612F6B7B600D4708A /* PBXTextBookmark */ = 32C62F3612F6B7B600D4708A /* PBXTextBookmark */;
+			32C62F4412F6B87100D4708A /* PBXTextBookmark */ = 32C62F4412F6B87100D4708A /* PBXTextBookmark */;
+			32C62F8A12F6BEA300D4708A /* PBXTextBookmark */ = 32C62F8A12F6BEA300D4708A /* PBXTextBookmark */;
+			32C62F8B12F6BEA300D4708A /* XCBuildMessageTextBookmark */ = 32C62F8B12F6BEA300D4708A /* XCBuildMessageTextBookmark */;
+			32C62F8C12F6BEA300D4708A /* PBXTextBookmark */ = 32C62F8C12F6BEA300D4708A /* PBXTextBookmark */;
+			32C62F8D12F6BEA300D4708A /* PBXTextBookmark */ = 32C62F8D12F6BEA300D4708A /* PBXTextBookmark */;
+			32C62FB412F6C25500D4708A /* PBXTextBookmark */ = 32C62FB412F6C25500D4708A /* PBXTextBookmark */;
+			32C62FB512F6C25500D4708A /* PBXTextBookmark */ = 32C62FB512F6C25500D4708A /* PBXTextBookmark */;
+			32C62FB612F6C25500D4708A /* PBXTextBookmark */ = 32C62FB612F6C25500D4708A /* PBXTextBookmark */;
 			32FBA6D612F4685700F7680A = 32FBA6D612F4685700F7680A /* PBXTextBookmark */;
 			32FBA6D712F4685700F7680A = 32FBA6D712F4685700F7680A /* PlistBookmark */;
 			32FBA71A12F46BDA00F7680A = 32FBA71A12F46BDA00F7680A /* PlistBookmark */;
@@ -111,30 +151,37 @@
 	};
 	32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1622, 2884}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1622, 2678}}";
 			sepNavSelRange = "{5266, 0}";
-			sepNavVisRange = "{5827, 2049}";
+			sepNavVisRange = "{5717, 2165}";
 		};
 	};
 	32A796BE12F61E3000E7C0AB /* BrowserViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {950, 1330}}";
+			sepNavIntBoundsRect = "{{0, 0}, {950, 1235}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1055, 3248}";
+			sepNavVisRange = "{810, 3493}";
+		};
+	};
+	32A796BF12F61E3000E7C0AB /* BrowserViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 5473}}";
+			sepNavSelRange = "{15369, 0}";
+			sepNavVisRange = "{13408, 2383}";
 		};
 	};
 	32A796C012F61E3000E7C0AB /* DomainViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1727, 1302}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1026, 3282}";
+			sepNavIntBoundsRect = "{{0, 0}, {1727, 1209}}";
+			sepNavSelRange = "{3532, 1}";
+			sepNavVisRange = "{818, 3490}";
 		};
 	};
 	32A796C112F61E3000E7C0AB /* DomainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 4746}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1587, 4394}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 3330}";
+			sepNavVisRange = "{3646, 2793}";
 		};
 	};
 	32A796C312F61E3000E7C0AB /* SimpleEditViewController.m */ = {
@@ -144,6 +191,507 @@
 			sepNavVisRange = "{0, 3143}";
 		};
 	};
+	32C62E4A12F6AD7F00D4708A /* AppListViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {879, 925}}";
+			sepNavSelRange = "{248, 0}";
+			sepNavVisRange = "{0, 331}";
+		};
+	};
+	32C62E4B12F6AD7F00D4708A /* AppListViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 2747}}";
+			sepNavSelRange = "{669, 0}";
+			sepNavVisRange = "{240, 1865}";
+			sepNavWindowFrame = "{{88, 589}, {1160, 761}}";
+		};
+	};
+	32C62E7D12F6B08300D4708A /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'stringWithContentsOfURL:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)";
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 48;
+		rType = 1;
+	};
+	32C62E7E12F6B08300D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 45";
+		rLen = 0;
+		rLoc = 252;
+		rType = 0;
+		vrLen = 510;
+		vrLoc = 721;
+	};
+	32C62E8612F6B08300D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		rLen = 5;
+		rLoc = 3414;
+		rType = 0;
+	};
+	32C62E8712F6B08300D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 63";
+		rLen = 14;
+		rLoc = 1900;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 1799;
+	};
+	32C62E8B12F6B08800D4708A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+	};
+	32C62E9412F6B1BD00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 184";
+		rLen = 0;
+		rLoc = 5517;
+		rType = 0;
+		vrLen = 459;
+		vrLoc = 918;
+	};
+	32C62E9512F6B1BD00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 63";
+		rLen = 14;
+		rLoc = 1900;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 1799;
+	};
+	32C62EA412F6B1D400D4708A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32FBA6C312F4681600F7680A /* AirMockApp-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/jyo/projects/airmock/iOS/AirMockApp-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	32C62EA512F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* AirMockAppDelegate.h */;
+		name = "AirMockAppDelegate.h: 9";
+		rLen = 0;
+		rLoc = 166;
+		rType = 0;
+		vrLen = 496;
+		vrLoc = 0;
+	};
+	32C62EA612F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BD12F61E3000E7C0AB /* AMBonjourBrowser.m */;
+		name = "AMBonjourBrowser.m: 117";
+		rLen = 0;
+		rLoc = 5266;
+		rType = 0;
+		vrLen = 2165;
+		vrLoc = 5717;
+	};
+	32C62EA712F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4A12F6AD7F00D4708A /* AppListViewController.h */;
+		name = "AppListViewController.h: 14";
+		rLen = 0;
+		rLoc = 248;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 0;
+	};
+	32C62EA812F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BE12F61E3000E7C0AB /* BrowserViewController.h */;
+		name = "BrowserViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 3493;
+		vrLoc = 810;
+	};
+	32C62EA912F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 99";
+		rLen = 0;
+		rLoc = 3427;
+		rType = 0;
+		vrLen = 2919;
+		vrLoc = 2150;
+	};
+	32C62EAA12F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796C012F61E3000E7C0AB /* DomainViewController.h */;
+		name = "DomainViewController.h: 74";
+		rLen = 1;
+		rLoc = 3532;
+		rType = 0;
+		vrLen = 3490;
+		vrLoc = 818;
+	};
+	32C62EAB12F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796C112F61E3000E7C0AB /* DomainViewController.m */;
+		name = "DomainViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2793;
+		vrLoc = 3646;
+	};
+	32C62EAC12F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 13";
+		rLen = 38;
+		rLoc = 202;
+		rType = 0;
+		vrLen = 1784;
+		vrLoc = 0;
+	};
+	32C62EAD12F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 383";
+		rLen = 0;
+		rLoc = 15457;
+		rType = 0;
+		vrLen = 2655;
+		vrLoc = 13038;
+	};
+	32C62EAE12F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 383";
+		rLen = 0;
+		rLoc = 15459;
+		rType = 0;
+		vrLen = 2586;
+		vrLoc = 13039;
+	};
+	32C62EB312F6B1D400D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 66";
+		rLen = 1207;
+		rLoc = 2116;
+		rType = 0;
+		vrLen = 1823;
+		vrLoc = 1589;
+	};
+	32C62EBA12F6B1FB00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 383";
+		rLen = 0;
+		rLoc = 15459;
+		rType = 0;
+		vrLen = 2446;
+		vrLoc = 13255;
+	};
+	32C62EBB12F6B1FB00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 383";
+		rLen = 0;
+		rLoc = 15459;
+		rType = 0;
+		vrLen = 2446;
+		vrLoc = 13255;
+	};
+	32C62EC112F6B23200D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 377";
+		rLen = 0;
+		rLoc = 15171;
+		rType = 0;
+		vrLen = 2383;
+		vrLoc = 13408;
+	};
+	32C62EC312F6B25800D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 382";
+		rLen = 0;
+		rLoc = 15369;
+		rType = 0;
+		vrLen = 2383;
+		vrLoc = 13408;
+	};
+	32C62EE212F6B4B900D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */;
+		name = "BrowserViewController.m: 382";
+		rLen = 0;
+		rLoc = 15369;
+		rType = 0;
+		vrLen = 2383;
+		vrLoc = 13408;
+	};
+	32C62EE312F6B4B900D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 13";
+		rLen = 38;
+		rLoc = 202;
+		rType = 0;
+		vrLen = 1753;
+		vrLoc = 31;
+	};
+	32C62EE412F6B4B900D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 163";
+		rLen = 0;
+		rLoc = 4911;
+		rType = 0;
+		vrLen = 2498;
+		vrLoc = 2458;
+	};
+	32C62EE912F6B4C600D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 163";
+		rLen = 0;
+		rLoc = 4911;
+		rType = 0;
+		vrLen = 2498;
+		vrLoc = 2458;
+	};
+	32C62EEA12F6B4C600D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 163";
+		rLen = 0;
+		rLoc = 4911;
+		rType = 0;
+		vrLen = 2521;
+		vrLoc = 2435;
+	};
+	32C62EED12F6B4D900D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 162";
+		rLen = 0;
+		rLoc = 4810;
+		rType = 0;
+		vrLen = 2402;
+		vrLoc = 2588;
+	};
+	32C62EEF12F6B4DC00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 162";
+		rLen = 0;
+		rLoc = 4810;
+		rType = 0;
+		vrLen = 2402;
+		vrLoc = 2588;
+	};
+	32C62EF812F6B4F700D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 193";
+		rLen = 0;
+		rLoc = 5517;
+		rType = 0;
+		vrLen = 405;
+		vrLoc = 903;
+	};
+	32C62EF912F6B4F700D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 63";
+		rLen = 14;
+		rLoc = 1900;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 1799;
+	};
+	32C62EFA12F6B4F800D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 162";
+		rLen = 0;
+		rLoc = 4810;
+		rType = 0;
+		vrLen = 2485;
+		vrLoc = 2599;
+	};
+	32C62F0512F6B55B00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 113";
+		rLen = 0;
+		rLoc = 3017;
+		rType = 0;
+		vrLen = 2568;
+		vrLoc = 2599;
+	};
+	32C62F0612F6B55B00D4708A /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "AirMockViewController.h: No such file or directory";
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 9;
+		rType = 1;
+	};
+	32C62F0712F6B55B00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 10";
+		rLen = 0;
+		rLoc = 174;
+		rType = 0;
+		vrLen = 2485;
+		vrLoc = 3;
+	};
+	32C62F2612F6B77E00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 163";
+		rLen = 0;
+		rLoc = 4989;
+		rType = 0;
+		vrLen = 2196;
+		vrLoc = 3218;
+	};
+	32C62F2712F6B77E00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 2607;
+		vrLoc = 1493;
+	};
+	32C62F2812F6B77E00D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 2607;
+		vrLoc = 1493;
+	};
+	32C62F3412F6B7B600D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 2607;
+		vrLoc = 1493;
+	};
+	32C62F3512F6B7B600D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4A12F6AD7F00D4708A /* AppListViewController.h */;
+		name = "AppListViewController.h: 13";
+		rLen = 0;
+		rLoc = 248;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 0;
+	};
+	32C62F3612F6B7B600D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 163";
+		rLen = 0;
+		rLoc = 4989;
+		rType = 0;
+		vrLen = 2271;
+		vrLoc = 3223;
+	};
+	32C62F4412F6B87100D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 164";
+		rLen = 0;
+		rLoc = 4989;
+		rType = 0;
+		vrLen = 2291;
+		vrLoc = 3225;
+	};
+	32C62F8A12F6BEA300D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 193";
+		rLen = 0;
+		rLoc = 5517;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 903;
+	};
+	32C62F8B12F6BEA300D4708A /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "AirMockViewController.h: No such file or directory";
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 9;
+		rType = 1;
+	};
+	32C62F8C12F6BEA300D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 10";
+		rLen = 0;
+		rLoc = 174;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 3;
+	};
+	32C62F8D12F6BEA300D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 62";
+		rLen = 14;
+		rLoc = 1900;
+		rType = 0;
+		vrLen = 1481;
+		vrLoc = 1778;
+	};
+	32C62FB412F6C25500D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */;
+		name = "AppListViewController.m: 32";
+		rLen = 0;
+		rLoc = 669;
+		rType = 0;
+		vrLen = 1865;
+		vrLoc = 240;
+	};
+	32C62FB512F6C25500D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		rLen = 1;
+		rLoc = 11;
+		rType = 1;
+	};
+	32C62FB612F6C25500D4708A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* AirMockAppDelegate.m */;
+		name = "AirMockAppDelegate.m: 12";
+		rLen = 5;
+		rLoc = 247;
+		rType = 0;
+		vrLen = 2605;
+		vrLoc = 139;
+	};
 	32FBA68412F4678300F7680A /* AirMockApp */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -151,7 +699,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -168,9 +716,13 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = AirMockApp;
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	32FBA69912F4678B00F7680A /* Source Control */ = {
 		isa = PBXSourceControlManager;

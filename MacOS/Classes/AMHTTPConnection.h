@@ -7,16 +7,16 @@
 #import "HTTPConnection.h"
 
 
-@interface MyHTTPConnection : HTTPConnection
+@interface AMHTTPConnection : HTTPConnection
 {
 	int dataStartIndex;
 	NSMutableArray* multipartData;
 	BOOL postHeaderOK;
 }
 
-- (BOOL)isBrowseable:(NSString *)path;
-- (NSString *)createBrowseableIndex:(NSString *)path;
+//- (BOOL)isBrowseable:(NSString *)path;
+//- (NSString *)createBrowseableIndex:(NSString *)path;
 
-- (BOOL)supportsPOST:(NSString *)path withSize:(UInt64)contentLength;
+//- (BOOL)supportsPOST:(NSString *)path withSize:(UInt64)contentLength;
 
 @end

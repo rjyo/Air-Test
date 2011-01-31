@@ -1,6 +1,18 @@
 1. How to grab info from IPA (zip)
 http://code.google.com/p/ziparchive/wiki/PageName
+
 2. How to read info from .app (plist) (need to get information about the icon)
+
 * 3. How to use the compressed png files
-4. Create a JSON file to pass the infomation to iPhone clients
-5. How to add a handler to respond a certain request
+http://libpng.darwinports.com/
+http://modmyi.com/wiki/index.php/Iphone_PNG_images
+
+4. Create a JSON file to pass the information to iPhone clients
+from iPhone - device ID
+from MacOS - name, link, icon
+
+5. How to add a handler to respond a certain request - use MyHttpConnection
+
+6. Read the device ids from provisioning file, show only installable apps on iPhone side - start from 0x3e, length 2 bytes from 0x3c
+
+7. Create IPA by code
