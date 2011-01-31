@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -279,8 +277,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>8</integer>
+									<integer>5</integer>
+									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -305,7 +303,7 @@
 							<real>248</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>760 127 1148 1051 0 0 2560 1418 </string>
+						<string>371 141 1148 1051 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,12 +314,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BrowserViewController.m</string>
+								<string>StringLoadingOperation.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BrowserViewController.m</string>
+										<string>StringLoadingOperation.m</string>
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>32A79BDA12F73A2F00E7C0AB</string>
+										<string>32A79C0012F73C5000E7C0AB</string>
 										<key>history</key>
 										<array>
 											<string>32FBA6D612F4685700F7680A</string>
@@ -345,10 +345,10 @@
 											<string>32A79A4812F7228A00E7C0AB</string>
 											<string>32A79A4912F7228A00E7C0AB</string>
 											<string>32A79BB212F738F400E7C0AB</string>
-											<string>32A79BBC12F7395200E7C0AB</string>
 											<string>32A79BBD12F7395200E7C0AB</string>
 											<string>32A79BBE12F7395200E7C0AB</string>
-											<string>32A79BD512F73A1100E7C0AB</string>
+											<string>32A79BFE12F73C5000E7C0AB</string>
+											<string>32A79BFF12F73C5000E7C0AB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -362,7 +362,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {878, 1006}}</string>
 								<key>RubberWindowFrame</key>
-								<string>760 127 1148 1051 0 0 2560 1418 </string>
+								<string>371 141 1148 1051 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -382,7 +382,7 @@
 								<key>Frame</key>
 								<string>{{0, 1011}, {878, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>760 127 1148 1051 0 0 2560 1418 </string>
+								<string>371 141 1148 1051 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -546,18 +546,17 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>32A79BDB12F73A2F00E7C0AB</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>32A7971012F6FABB00E7C0AB</string>
 		<string>32A797A612F7066000E7C0AB</string>
 		<string>32A7975D12F7039700E7C0AB</string>
-		<string>32FBA69712F4678B00F7680A</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>32FBA69712F4678B00F7680A</string>
 		<string>/Users/jyo/projects/airmock/iOS/AirMockApp.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>760 127 1148 1051 0 0 2560 1418 </string>
+	<string>371 141 1148 1051 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -773,7 +772,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -930,7 +929,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

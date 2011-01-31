@@ -7,7 +7,6 @@
 #import "AMDataHelper.h"
 #import "HTTPServer.h"
 #import "HTTPResponse.h"
-#import "HTTPAsyncFileResponse.h"
 #import "AsyncSocket.h"
 #import "JSON.h"
 
@@ -113,7 +112,7 @@ static NSString *hostName = nil;
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         NSLog(@"Get app binary: %@ (%.2f)", arg2, time);
-        return [[[HTTPAsyncFileResponse alloc] initWithFilePath:app.ipaPath] autorelease];
+        return [[[HTTPFileResponse alloc] initWithFilePath:app.ipaPath] autorelease];
     } else if ([cmd isEqualToString:@"icon"]) {
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
         if (nil == app) return nil;
@@ -124,7 +123,7 @@ static NSString *hostName = nil;
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         NSLog(@"Get icon binary: %@ (%.2f)", arg2, time);
-        return [[[HTTPAsyncFileResponse alloc] initWithFilePath:iconPath] autorelease];
+        return [[[HTTPFileResponse alloc] initWithFilePath:iconPath] autorelease];
     }
 
 	

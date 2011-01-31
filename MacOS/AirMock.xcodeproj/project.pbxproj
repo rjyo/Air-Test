@@ -32,7 +32,6 @@
 		32C62CAB12F695CB00D4708A /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62CA312F695CB00D4708A /* SBJsonStreamWriter.m */; };
 		32C62CAC12F695CB00D4708A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62CA512F695CB00D4708A /* SBJsonWriter.m */; };
 		32E4DD5512F65BE60054B867 /* AMiOSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E4DD5412F65BE60054B867 /* AMiOSApp.m */; };
-		32E4DE1312F66ADB0054B867 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E4DE1212F66ADB0054B867 /* libz.dylib */; };
 		32FBA70112F46A5300F7680A /* AirMockAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */; };
 		32FBA70212F46A5300F7680A /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA70012F46A5300F7680A /* DropView.m */; };
 		32FBA75812F471E100F7680A /* drop_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FBA75612F471E100F7680A /* drop_none.png */; };
@@ -98,7 +97,6 @@
 		32C62CA612F695CB00D4708A /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
 		32E4DD5312F65BE60054B867 /* AMiOSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMiOSApp.h; sourceTree = "<group>"; };
 		32E4DD5412F65BE60054B867 /* AMiOSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMiOSApp.m; sourceTree = "<group>"; };
-		32E4DE1212F66ADB0054B867 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		32FBA6FD12F46A5300F7680A /* AirMockAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirMockAppDelegate.h; sourceTree = "<group>"; };
 		32FBA6FE12F46A5300F7680A /* AirMockAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirMockAppDelegate.m; sourceTree = "<group>"; };
 		32FBA6FF12F46A5300F7680A /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				32A795C412F6146A00E7C0AB /* libcrypto.dylib in Frameworks */,
-				32E4DE1312F66ADB0054B867 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +169,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				32E4DE1212F66ADB0054B867 /* libz.dylib */,
 			);
 			name = AirMock;
 			sourceTree = "<group>";

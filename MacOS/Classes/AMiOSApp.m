@@ -84,6 +84,7 @@
 
 - (void)listDevicesInApp {
     NSString *f = [appPath stringByAppendingPathComponent:@"embedded.mobileprovision"];
+    // todo: check if no provision
     NSFileHandle *fh = [NSFileHandle fileHandleForReadingAtPath:f];
     [fh seekToFileOffset:0x3c];
     NSData *lengthData = [fh readDataOfLength:2];

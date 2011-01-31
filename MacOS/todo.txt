@@ -16,3 +16,8 @@ done 5. How to add a handler to respond a certain request - use MyHttpConnection
 done 6. Read the device ids from provisioning file, show only installable apps on iPhone side - start from 0x3e, length 2 bytes from 0x3c
 
 done 7. Create IPA by code
+
+bug.
+1. bonjour sometimes disappears
+2. download apps list takes forever
+3. finding host name takes a long time
