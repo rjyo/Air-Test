@@ -8,6 +8,7 @@
 
 #import "AppBallAppDelegate.h"
 #import "AMHTTPConnection.h"
+#import "AMDataHelper.h"
 
 @implementation AppBallAppDelegate
 
@@ -50,9 +51,10 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-    NSLog(@"exiting");
-    [httpServer stop];
-    [httpServer release];
+    NSLog(@"exiting AppBall");
+    
+    [[AMDataHelper localHelper] deleteCache];
+    
     exit(3);
 }
 

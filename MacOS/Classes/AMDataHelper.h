@@ -18,6 +18,7 @@
 - (AMiOSApp *)appForBundleId:(NSString *)bundleId;
 - (NSString *)hostName;
 - (NSArray *)allApps;
+- (void)deleteCache;
 
 + (AMDataHelper *)localHelper;
 

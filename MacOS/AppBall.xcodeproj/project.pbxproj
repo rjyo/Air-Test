@@ -25,6 +25,7 @@
 		32C62CAA12F695CB00D4708A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62CA112F695CB00D4708A /* SBJsonParser.m */; };
 		32C62CAB12F695CB00D4708A /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62CA312F695CB00D4708A /* SBJsonStreamWriter.m */; };
 		32C62CAC12F695CB00D4708A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62CA512F695CB00D4708A /* SBJsonWriter.m */; };
+		32C6C88E12F83AC500B26843 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C88D12F83AC500B26843 /* WebSocket.m */; };
 		32E4DD5512F65BE60054B867 /* AMiOSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E4DD5412F65BE60054B867 /* AMiOSApp.m */; };
 		32FBA70112F46A5300F7680A /* AppBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */; };
 		32FBA70212F46A5300F7680A /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA70012F46A5300F7680A /* DropView.m */; };
@@ -48,7 +49,6 @@
 		32FBD60012F7FB8D00255254 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD5E812F7FB8D00255254 /* DDFileLogger.m */; };
 		32FBD60112F7FB8D00255254 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD5EA12F7FB8D00255254 /* DDLog.m */; };
 		32FBD60212F7FB8D00255254 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD5EC12F7FB8D00255254 /* DDTTYLogger.m */; };
-		32FBD60312F7FB8D00255254 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD5EE12F7FB8D00255254 /* WebSocket.m */; };
 		32FBD67012F8009E00255254 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FBD66F12F8009E00255254 /* Security.framework */; };
 		32FBD6B512F800BD00255254 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FBD6B412F800BD00255254 /* libz.dylib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -95,6 +95,8 @@
 		32C62CA412F695CB00D4708A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		32C62CA512F695CB00D4708A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		32C62CA612F695CB00D4708A /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
+		32C6C88C12F83AC500B26843 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		32C6C88D12F83AC500B26843 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
 		32E4DD5312F65BE60054B867 /* AMiOSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMiOSApp.h; sourceTree = "<group>"; };
 		32E4DD5412F65BE60054B867 /* AMiOSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMiOSApp.m; sourceTree = "<group>"; };
 		32FBA6FD12F46A5300F7680A /* AppBallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBallAppDelegate.h; sourceTree = "<group>"; };
@@ -142,8 +144,6 @@
 		32FBD5EA12F7FB8D00255254 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
 		32FBD5EB12F7FB8D00255254 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
 		32FBD5EC12F7FB8D00255254 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		32FBD5ED12F7FB8D00255254 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
-		32FBD5EE12F7FB8D00255254 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
 		32FBD66F12F8009E00255254 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		32FBD6B412F800BD00255254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* AppBall-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppBall-Info.plist"; sourceTree = "<group>"; };
@@ -298,9 +298,9 @@
 				32FBD5DA12F7FB8D00255254 /* HTTPResponse.h */,
 				32FBD5DB12F7FB8D00255254 /* HTTPServer.h */,
 				32FBD5DC12F7FB8D00255254 /* HTTPServer.m */,
+				32C6C88C12F83AC500B26843 /* WebSocket.h */,
+				32C6C88D12F83AC500B26843 /* WebSocket.m */,
 				32FBD5DD12F7FB8D00255254 /* LICENSE.txt */,
-				32FBD5ED12F7FB8D00255254 /* WebSocket.h */,
-				32FBD5EE12F7FB8D00255254 /* WebSocket.m */,
 			);
 			path = SimpleHTTPServer;
 			sourceTree = "<group>";
@@ -485,7 +485,7 @@
 				32FBD60012F7FB8D00255254 /* DDFileLogger.m in Sources */,
 				32FBD60112F7FB8D00255254 /* DDLog.m in Sources */,
 				32FBD60212F7FB8D00255254 /* DDTTYLogger.m in Sources */,
-				32FBD60312F7FB8D00255254 /* WebSocket.m in Sources */,
+				32C6C88E12F83AC500B26843 /* WebSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,10 +535,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AirMock_Prefix.pch;
+				GCC_PREFIX_HEADER = AppBall_Prefix.pch;
 				INFOPLIST_FILE = "AppBall-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = AirMock;
+				PRODUCT_NAME = AppBall;
 			};
 			name = Release;
 		};

@@ -368,39 +368,38 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
 	assert(service == self.currentResolve);
 	
-    struct sockaddr *addr;
-    int port;
-    char *charaddr;
-    NSArray *addrs = [service addresses];
-    for (NSData *a in addrs) {
-        addr = (struct sockaddr *)[a bytes];
-        
-        if(addr->sa_family == AF_INET)
-        {
-            port = ntohs(((struct sockaddr_in *)addr)->sin_port);
-            struct in_addr *server_addr = &((struct sockaddr_in *)addr)->sin_addr;
-            charaddr = addr2ascii(AF_INET, server_addr, sizeof(struct in_addr), 0);
-        }
-        else if(addr->sa_family == AF_INET6)
-        {
-            port = ntohs(((struct sockaddr_in6 *)addr)->sin6_port);
-        }
-        else
-        {
-            NSLog(@"The family is neither IPv4 nor IPv6. Can't handle.");
-        }
-    }
+//    struct sockaddr *addr;
+//    int port;
+//    char *charaddr;
+//    NSArray *addrs = [service addresses];
+//    for (NSData *a in addrs) {
+//        addr = (struct sockaddr *)[a bytes];
+//        
+//        if(addr->sa_family == AF_INET)
+//        {
+//            port = ntohs(((struct sockaddr_in *)addr)->sin_port);
+//            struct in_addr *server_addr = &((struct sockaddr_in *)addr)->sin_addr;
+//            charaddr = addr2ascii(AF_INET, server_addr, sizeof(struct in_addr), 0);
+//        }
+//        else if(addr->sa_family == AF_INET6)
+//        {
+//            port = ntohs(((struct sockaddr_in6 *)addr)->sin6_port);
+//        }
+//        else
+//        {
+//            NSLog(@"The family is neither IPv4 nor IPv6. Can't handle.");
+//        }
+//    }
 
 //    NSLog(@"%s, port is %d", charaddr, port);
 //    NSString *host = [NSString stringWithCString:charaddr encoding:NSASCIIStringEncoding];
 //
-//	NSString *host = [service hostName];
-//	NSString *portStr = @"";
-//	
-//	// Note that [NSNetService port:] returns an NSInteger in host byte order
-//	NSInteger port = [service port];
-//	if (port != 0 && port != 80)
-//        portStr = [[NSString alloc] initWithFormat:@":%d",port];
+	NSString *host = [service hostName];
+	NSString *portStr = @"";
+	
+	NSInteger port = [service port];
+	if (port != 0 && port != 80)
+        portStr = [[NSString alloc] initWithFormat:@":%d",port];
     
 #if TARGET_IPHONE_SIMULATOR
     NSString *udid = @"3cac05dd2f8bed64c4d11c6077742bce974c128a";
@@ -409,14 +408,14 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     NSString *udid = [device.uniqueIdentifier stringByReplacingOccurrencesOfString:@"-" withString:@""];
 #endif
     
-//	NSString* listURL = [[NSString alloc] initWithFormat:@"http://%@%@/list/%@", host, portStr, udid];
-    NSString *listURL = [[NSString alloc] initWithFormat:@"http://%s:%d/list/%@", charaddr, port, udid];
+	NSString* listURL = [[NSString alloc] initWithFormat:@"http://%@%@/list/%@", host, portStr, udid];
+//    NSString *listURL = [[NSString alloc] initWithFormat:@"http://%s:%d/list/%@", charaddr, port, udid];
     NSLog(@"app list url: %@", listURL);
     
 	[self stopCurrentResolve];
     
     // Navigation logic may go here. Create and push another view controller.
-    AppListViewController *appVc = [[AppListViewController alloc] init];
+    AppListViewController *appVc = [[AppListViewController alloc] initWithStyle:UITableViewStylePlain];
     appVc.listURL = listURL;
     [self.navigationController pushViewController:appVc animated:YES];
     [appVc release];

@@ -11,6 +11,7 @@
 
 @interface AppListViewController()
 
+- (void)loadData;
 - (void)clearQueue;
 - (NSOperationQueue *)queue;
 
@@ -23,17 +24,18 @@
 #pragma mark -
 #pragma mark Initialization
 
-/*
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization.
+        UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)];
+        self.navigationItem.rightBarButtonItem = refreshButton;
+        [refreshButton release];
     }
     return self;
 }
-*/
-
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -91,8 +93,12 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self loadData];
+}
+
+- (void)loadData {
     [self clearQueue];
-    
+
     StringLoadingOperation *op = [[StringLoadingOperation alloc] init];
     op.urlString = self.listURL;
     op.delegate = self;
@@ -100,7 +106,6 @@
     [op release];
     
     [indicator startAnimating];
-    
 }
 
 /*
@@ -218,6 +223,8 @@
     //@"itms-services://?action=download-manifest&url=http://www.rakutec.com/adhoc/test.plist"
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:installUrl]];
 #endif
+
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 

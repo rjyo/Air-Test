@@ -18,6 +18,7 @@
 	BOOL isStarted;
 	BOOL isOpen;
 	BOOL isVersion76;
+    id delegate;
 }
 
 + (BOOL)isWebSocketRequest:(HTTPMessage *)request;

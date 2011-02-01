@@ -72,6 +72,16 @@ static AMDataHelper *localHelper;
     return hostName;
 }
 
+- (void)deleteCache {
+    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES) objectAtIndex:0];
+    cache = [cache stringByAppendingPathComponent:@"com.rakutec.airmock"];
+
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    if ([fileMgr isDeletableFileAtPath:cache]) {
+        [fileMgr removeItemAtPath:cache error:nil];
+    }
+}
+
 #pragma mark -
 #pragma mark methods for singleton
 
