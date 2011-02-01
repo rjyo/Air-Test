@@ -1,0 +1,28 @@
+require "rubygems"
+require "rake"
+
+require "choctop"
+
+module ChocTop
+  class Configuration
+    def info_plist_name
+      @info_plist_name ||= "#{name}-Info.plist"
+    end
+  end
+end
+
+ChocTop::Configuration.new do |s|
+  # Remote upload target (set host if not same as Info.plist['SUFeedURL'])
+  s.host     = 'www.rakutec.com'
+  s.remote_dir = 'server/adhoc/app'
+  s.base_url = 'http://www.rakutec.com/adhoc/app'
+  s.name = 'AppBall'
+  
+
+  # Custom DMG
+  # s.background_file = "background.jpg"
+  # s.app_icon_position = [100, 90]
+  # s.applications_icon_position =  [400, 90]
+  # s.volume_icon = "dmg.icns"
+  # s.applications_icon = "appicon.icns" # or "appicon.png"
+end

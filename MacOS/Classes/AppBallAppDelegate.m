@@ -25,9 +25,6 @@
 	[httpServer setType:@"_airmock._tcp."];
     [httpServer setConnectionClass:[AMHTTPConnection class]];
 	
-	// Serve files from the standard Sites folder
-//	[httpServer setDocumentRoot:[NSURL fileURLWithPath:[@"~/Sites" stringByExpandingTildeInPath]]];
-	
 	NSError *error;
 	BOOL success = [httpServer start:&error];
 	

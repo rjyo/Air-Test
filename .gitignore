@@ -5,3 +5,4 @@ build/
 **/*.xcodeproj/*.pbxuser
 **/*.xcodeproj/xcuserdata/
 **/*.xcodeproj/project.xcworkspace/
+dsa_priv.pem
