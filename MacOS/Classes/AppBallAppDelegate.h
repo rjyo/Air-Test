@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ThreadPoolServer.h"
+#import "HTTPServer.h"
 #import "DropView.h"
 
-@interface AirMockAppDelegate : NSObject <NSApplicationDelegate> {
+@interface AppBallAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
     HTTPServer *httpServer;
     DropView *dropView;

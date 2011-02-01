@@ -102,22 +102,21 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 @synthesize services = _services;
 @synthesize needsActivityIndicator = _needsActivityIndicator;
 @dynamic timer;
+@synthesize domain = _domain;
+@synthesize type = _type;
 @synthesize initialWaitOver = _initialWaitOver;
 
-- (id)initWithTitle:(NSString*)title showDisclosureIndicators:(BOOL)show showCancelButton:(BOOL)showCancelButton {
+- (id)initWithTitle:(NSString*)title showDisclosureIndicators:(BOOL)show {
 	
 	if ((self = [super initWithStyle:UITableViewStylePlain])) {
 		self.title = title;
 		_services = [[NSMutableArray alloc] init];
 		self.showDisclosureIndicators = show;
 
-		if (showCancelButton) {
-			// add Cancel button as the nav bar's custom right view
-			UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-										  initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction)];
-			self.navigationItem.rightBarButtonItem = addButton;
-			[addButton release];
-		}
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshAction)];
+        self.navigationItem.rightBarButtonItem = addButton;
+        [addButton release];
 
 		// Make sure we have a chance to discover devices before showing the user that nothing was found (yet)
 		[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(initialWaitOver:) userInfo:nil repeats:NO];
@@ -146,7 +145,9 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 // Creates an NSNetServiceBrowser that searches for services of a particular type in a particular domain.
 // If a service is currently being resolved, stop resolving it and stop the service browser from
 // discovering other services.
-- (BOOL)searchForServicesOfType:(NSString *)type inDomain:(NSString *)domain {
+- (BOOL)searchForServicesOfType:(NSString *)t inDomain:(NSString *)d {
+    self.type = t;
+    self.domain = d;
 	
 	[self stopCurrentResolve];
 	[self.netServiceBrowser stop];
@@ -161,7 +162,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	aNetServiceBrowser.delegate = self;
 	self.netServiceBrowser = aNetServiceBrowser;
 	[aNetServiceBrowser release];
-	[self.netServiceBrowser searchForServicesOfType:type inDomain:domain];
+	[self.netServiceBrowser searchForServicesOfType:t inDomain:d];
 
 	[self.tableView reloadData];
 	return YES;
@@ -180,6 +181,8 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	_timer = newTimer;
 }
 
+#pragma mark -
+#pragma mark TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;
@@ -324,6 +327,8 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	[self.tableView reloadData];
 }
 
+#pragma mark -
+#pragma mark NSNetServiceDelegate
 
 - (void)netServiceBrowser:(NSNetServiceBrowser*)netServiceBrowser didRemoveService:(NSNetService*)service moreComing:(BOOL)moreComing {
 	// If a service went away, stop resolving it if it's currently being resolved,
@@ -418,8 +423,8 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 }
 
 
-- (void)cancelAction {
-	[self.delegate browserViewController:self didResolveInstance:nil];
+- (void)refreshAction {
+    [self searchForServicesOfType:self.type inDomain:self.domain];
 }
 
 
@@ -430,6 +435,8 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	[self.netServiceBrowser stop];
 	self.netServiceBrowser = nil;
 	[_searchingForServicesString release];
+    [_type release];
+    [_domain release];
 	
 	[super dealloc];
 }

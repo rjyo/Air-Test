@@ -73,7 +73,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     self.type = type;
     self.domain = domain;
 
-	self.bvc = [[[BrowserViewController alloc] initWithTitle:self.domain showDisclosureIndicators:YES showCancelButton:NO] autorelease];
+	self.bvc = [[[BrowserViewController alloc] initWithTitle:self.domain showDisclosureIndicators:YES] autorelease];
 	self.bvc.delegate = self;
     // Calls -[NSNetServiceBrowser searchForServicesOfType:inDomain:].
 	[self.bvc searchForServicesOfType:self.type inDomain:self.domain];

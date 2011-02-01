@@ -81,14 +81,18 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	NSNetServiceBrowser* _netServiceBrowser;
 	NSNetService* _currentResolve;
 	NSTimer* _timer;
+    NSString *_type;
+    NSString *_domain;
 	BOOL _needsActivityIndicator;
 	BOOL _initialWaitOver;
 }
 
 @property (nonatomic, assign) id<BrowserViewControllerDelegate> delegate;
 @property (nonatomic, copy) NSString* searchingForServicesString;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *domain;
 
-- (id)initWithTitle:(NSString *)title showDisclosureIndicators:(BOOL)showDisclosureIndicators showCancelButton:(BOOL)showCancelButton;
+- (id)initWithTitle:(NSString *)title showDisclosureIndicators:(BOOL)showDisclosureIndicators;
 - (BOOL)searchForServicesOfType:(NSString *)type inDomain:(NSString *)domain;
 
 @end

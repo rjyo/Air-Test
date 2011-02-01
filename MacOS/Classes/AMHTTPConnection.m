@@ -5,10 +5,16 @@
 
 #import "AMHTTPConnection.h"
 #import "AMDataHelper.h"
-#import "HTTPServer.h"
-#import "HTTPResponse.h"
-#import "AsyncSocket.h"
 #import "JSON.h"
+
+#import "HTTPServer.h"
+#import "HTTPDataResponse.h"
+#import "HTTPFileResponse.h"
+#import "HTTPLogging.h"
+#import "HTTPMessage.h"
+#import "DDNumber.h"
+
+static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE;
 
 @implementation AMHTTPConnection
 
@@ -20,8 +26,35 @@
  * HTTPFileResponse is a wrapper for an NSFileHandle object, and is the preferred way to send a file response.
  * HTTPDataResopnse is a wrapper for an NSData object, and may be used to send a custom response.
 **/
-- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
+- (BOOL)expectsRequestBodyFromMethod:(NSString *)method atPath:(NSString *)path {
+    HTTPLogTrace();
+
+    return NO;
+}
+
+- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
 {
+	HTTPLogTrace();
+	
+	// Add support for POST
+	
+	if ([method isEqualToString:@"POST"])
+	{
+		if ([path isEqualToString:@"/post.html"])
+		{
+			// Let's be extra cautious, and make sure the upload isn't 5 gigs
+			
+			return requestContentLength < 50;
+		}
+	}
+	
+	return [super supportsMethod:method atPath:path];
+}
+
+
+- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
+    HTTPLogTrace();
+
     NSDate *then = [NSDate date];
 
 	NSLog(@"httpResponseForURI: method:%@ path:%@", method, path);
@@ -32,6 +65,10 @@
     
     NSString *cmd = [args objectAtIndex:0];
     NSString *arg2 = [args objectAtIndex:1];
+    
+    HTTPServer *server = config.server;
+    UInt16 port = [server listeningPort];
+    
     if ([cmd isEqualToString:@"list"]) {
         NSArray *apps = [[AMDataHelper localHelper] appsForDevice:arg2];
         NSMutableArray *data = [NSMutableArray arrayWithCapacity:[apps count]];
@@ -42,8 +79,7 @@
             [dict setObject:[app.appInfo valueForKey:@"CFBundleDisplayName"] forKey:@"CFBundleDisplayName"];
             NSString *serviceUrl = @"itms-services://?action=download-manifest&url=http://%@:%d/conf/%@";
             serviceUrl = [NSString stringWithFormat:serviceUrl, 
-                          [[AMDataHelper localHelper] hostName],
-                          [server port],
+                          [[AMDataHelper localHelper] hostName], port,
                           [app.appInfo valueForKey:@"CFBundleIdentifier"]];
             [dict setObject:serviceUrl forKey:@"itms-services"];
             [data addObject:dict];
@@ -67,8 +103,8 @@
         NSString *appBundleId = [app.appInfo valueForKey:@"CFBundleIdentifier"];
         NSString *appName = [app.appInfo valueForKey:@"CFBundleDisplayName"];
         NSString *appVersion = [app.appInfo valueForKey:@"CFBundleVersion"];
-        NSString *appURL = [NSString stringWithFormat:@"http://%@:%d/app/%@/app.ipa", hostName, [server port], appBundleId]; 
-        NSString *iconURL = [NSString stringWithFormat:@"http://%@:%d/icon/%@/icon.png", hostName, [server port], appBundleId]; 
+        NSString *appURL = [NSString stringWithFormat:@"http://%@:%d/app/%@/app.ipa", hostName, port, appBundleId]; 
+        NSString *iconURL = [NSString stringWithFormat:@"http://%@:%d/icon/%@/icon.png", hostName, port, appBundleId]; 
         
         NSMutableString *s = [content mutableCopy];
         [s replaceOccurrencesOfString:@"%APP_URL%" withString:appURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
@@ -89,7 +125,7 @@
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         NSLog(@"Get app binary: %@ (%.2f)", arg2, time);
-        return [[[HTTPFileResponse alloc] initWithFilePath:app.ipaPath] autorelease];
+        return [[[HTTPFileResponse alloc] initWithFilePath:app.ipaPath forConnection:self] autorelease];
     } else if ([cmd isEqualToString:@"icon"]) {
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
         if (nil == app) return nil;
@@ -97,65 +133,9 @@
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         NSLog(@"Get icon binary: %@ (%.2f)", arg2, time);
-        return [[[HTTPFileResponse alloc] initWithFilePath:app.iconPath] autorelease];
+        return [[[HTTPFileResponse alloc] initWithFilePath:app.iconPath forConnection:self] autorelease];
     }
 
-	
-//	NSData *requestData = [(NSData *)CFHTTPMessageCopySerializedMessage(request) autorelease];
-//	
-//	NSString *requestStr = [[[NSString alloc] initWithData:requestData encoding:NSASCIIStringEncoding] autorelease];
-//	NSLog(@"\n=== Request ====================\n%@\n================================", requestStr);
-//	
-//	if (requestContentLength > 0)  // Process POST data
-//	{
-//		NSLog(@"processing post data: %i", requestContentLength);
-//		
-//		if ([multipartData count] < 2) return nil;
-//		
-//		NSString* postInfo = [[NSString alloc] initWithBytes:[[multipartData objectAtIndex:1] bytes]
-//													  length:[[multipartData objectAtIndex:1] length]
-//													encoding:NSUTF8StringEncoding];
-//		
-//		NSArray* postInfoComponents = [postInfo componentsSeparatedByString:@"; filename="];
-//		postInfoComponents = [[postInfoComponents lastObject] componentsSeparatedByString:@"\""];
-//		postInfoComponents = [[postInfoComponents objectAtIndex:1] componentsSeparatedByString:@"\\"];
-//		NSString* filename = [postInfoComponents lastObject];
-//		
-//		if (![filename isEqualToString:@""]) //this makes sure we did not submitted upload form without selecting file
-//		{
-//			UInt16 separatorBytes = 0x0A0D;
-//			NSMutableData* separatorData = [NSMutableData dataWithBytes:&separatorBytes length:2];
-//			[separatorData appendData:[multipartData objectAtIndex:0]];
-//			int l = [separatorData length];
-//			int count = 2;	//number of times the separator shows up at the end of file data
-//			
-//			NSFileHandle* dataToTrim = [multipartData lastObject];
-//			NSLog(@"data: %@", dataToTrim);
-//			
-//			for (unsigned long long i = [dataToTrim offsetInFile] - l; i > 0; i--)
-//			{
-//				[dataToTrim seekToFileOffset:i];
-//				if ([[dataToTrim readDataOfLength:l] isEqualToData:separatorData])
-//				{
-//					[dataToTrim truncateFileAtOffset:i];
-//					i -= l;
-//					if (--count == 0) break;
-//				}
-//			}
-//			
-//			NSLog(@"NewFileUploaded");
-//			[[NSNotificationCenter defaultCenter] postNotificationName:@"NewFileUploaded" object:nil];
-//		}
-//		
-//		for (int n = 1; n < [multipartData count] - 1; n++)
-//			NSLog(@"%@", [[NSString alloc] initWithBytes:[[multipartData objectAtIndex:n] bytes] length:[[multipartData objectAtIndex:n] length] encoding:NSUTF8StringEncoding]);
-//		
-//		[postInfo release];
-//		[multipartData release];
-//		requestContentLength = 0;
-//		
-//	}
-	
 	return nil;
 }
 

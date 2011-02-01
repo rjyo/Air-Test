@@ -11,7 +11,7 @@
 
 @class AirMockViewController;
 
-@interface AirMockAppDelegate : NSObject <UIApplicationDelegate, BonjourBrowserDelegate> {
+@interface AppBallAppDelegate : NSObject <UIApplicationDelegate, BonjourBrowserDelegate> {
     UIWindow *window;
     BonjourBrowserController *browser;
 }

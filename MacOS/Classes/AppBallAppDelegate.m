@@ -6,17 +6,17 @@
 //  Copyright 2011 RakuRaku Technologies. All rights reserved.
 //
 
-#import "AirMockAppDelegate.h"
+#import "AppBallAppDelegate.h"
 #import "AMHTTPConnection.h"
 
-@implementation AirMockAppDelegate
+@implementation AppBallAppDelegate
 
 @synthesize window, dropView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
-	httpServer = [[ThreadPoolServer alloc] init];
-//    httpServer = [[HTTPServer alloc] init];
+//	httpServer = [[ThreadPoolServer alloc] init];
+    httpServer = [[HTTPServer alloc] init];
     
 	// Set the bonjour type of the http server.
 	// This allows the server to broadcast itself via bonjour.
