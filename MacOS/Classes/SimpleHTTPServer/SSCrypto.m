@@ -74,8 +74,10 @@
     
     // Create a new string from the data in the memory buffer
     char * base64Pointer;
-    long base64Length = BIO_get_mem_data(mem, &base64Pointer);
-    NSString * base64String = [NSString stringWithCString:base64Pointer length:base64Length];
+//    long base64Length = BIO_get_mem_data(mem, &base64Pointer);
+//    NSString * base64String = [NSString stringWithCString:base64Pointer length:base64Length];
+    BIO_get_mem_data(mem, &base64Pointer);
+    NSString * base64String = [[[NSString alloc] initWithCString:base64Pointer encoding:NSUTF8StringEncoding] autorelease];
     
     // Clean up and go home
     BIO_free_all(mem);

@@ -1,5 +1,6 @@
 1. How to grab info from IPA (zip)
 http://code.google.com/p/ziparchive/wiki/PageName
+using command line is better
 
 done 2. How to read info from .app (plist) (need to get information about the icon)
 
@@ -9,7 +10,7 @@ http://modmyi.com/wiki/index.php/Iphone_PNG_images
 
 done 4. Create a JSON file to pass the information to iPhone clients
 from iPhone - device ID
-from MacOS - name, link, icon
+from MacOS - name, link, icon, install link
 
 done 5. How to add a handler to respond a certain request - use MyHttpConnection
 

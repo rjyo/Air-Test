@@ -9,11 +9,12 @@
 #import "DropView.h"
 #import "AMiOSApp.h"
 #import "AMDataHelper.h"
+#import "PNGNormalizer.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface DropView()
 
 BOOL isDropOn;
-
 
 - (void)highlightDropView:(BOOL)yn;
 
@@ -23,6 +24,7 @@ static NSImage *dropOnImage = nil;
 static NSImage *dropNoneImage = nil;
 
 @implementation DropView
+@synthesize dropButton, box;
 
 + (void)initialize {
     dropOnImage = [NSImage imageNamed:@"drop_on.png"];
@@ -37,7 +39,7 @@ static NSImage *dropNoneImage = nil;
 - (void)highlightDropView:(BOOL)yn {
     if (isDropOn != yn) {
         isDropOn = yn;
-        [self setNeedsDisplay:YES];
+        [dropButton setImage:yn ? dropOnImage : dropNoneImage];
     }
 }
 
@@ -60,7 +62,6 @@ static NSImage *dropNoneImage = nil;
                 [self highlightDropView:YES];
                 return NSDragOperationGeneric;
             }
-            break; // only support one file currently
         }
     }
     
@@ -77,18 +78,11 @@ static NSImage *dropNoneImage = nil;
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
         
-        // Depending on the dragging source and modifier keys,
-        // the file data may be copied or linked
-//        if (sourceDragMask & NSDragOperationLink) {
-//            [self addLinkToFiles:files];
-//            NSLog(@"1");
-//        } else {
-//            NSLog(@"2");
-//        }
-        
-        for (NSString *path in files) {
-            AMiOSApp *app = [[AMiOSApp alloc] initWithApp:path];
-            [[AMDataHelper localHelper] saveApp:app];
+        for (NSString *fileName in files) {
+            if ([fileName hasSuffix:@".app"] || [fileName hasSuffix:@".ipa"]) {
+                [self openFile:fileName];
+                break;
+            }
         }
     }
 
@@ -96,21 +90,83 @@ static NSImage *dropNoneImage = nil;
     return YES;
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
-    NSPoint point;
-    point.x = floorf((dirtyRect.size.width - [dropOnImage size].width) / 2.0);
-    point.y = 50.0;
+#define ICON_HEIGHT 85.0
+#define ICON_WIDTH 85.0
+#define ICON_SPACING 5.0
+
+
+- (void)openFile:(NSString *)file {
+    int appCountThen = [[[AMDataHelper localHelper] allApps] count];
+    AMiOSApp *app = [[AMiOSApp alloc] initWithApp:file];
+    [[AMDataHelper localHelper] saveApp:app];
+    int appCountNow = [[[AMDataHelper localHelper] allApps] count];
     
-    if (isDropOn) {
-        [dropOnImage drawAtPoint:point fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
-    } else {
-        [dropNoneImage drawAtPoint:point fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
+    if (appCountThen % 4 == 0 && appCountNow % 4 == 1) {
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setDuration:0.3];
+        
+        // Resize the window
+        NSRect f = [self.window frame];
+        f.size.height += ICON_HEIGHT + ICON_SPACING 
+            + (appCountThen == 0 ? 20.0 : 0.0); // special for first time
+        [[self.window animator] setFrame:f display:YES animate:YES];
+
+        for (NSButton *btn in [[self.box contentView] subviews]) {
+            NSRect r = [btn frame];
+            r.origin.y += ICON_HEIGHT + ICON_SPACING;
+            [[btn animator] setFrame:r];
+        }
+        
+        [NSAnimationContext endGrouping];
+    }
+    
+    if (appCountNow > appCountThen) {
+        [self performSelector:@selector(showAppIcon:) withObject:app afterDelay:0.3];
     }
 }
 
-- (void)dealloc {
-    [super dealloc];
-//    [dropSpotView release];
+- (void)showAppIcon:(AMiOSApp *)app {
+    int appCount = [[[AMDataHelper localHelper] allApps] count];
+    int col = (appCount - 1) % 4;
+
+    NSButton *appBtn = [[[NSButton alloc] initWithFrame:NSMakeRect(16.0 + col * ICON_WIDTH, ICON_SPACING, 
+                                                                   ICON_WIDTH, ICON_HEIGHT)] autorelease];
+    [appBtn setBordered:NO];
+    [appBtn setImagePosition:NSImageAbove];
+    
+    NSImage *img = [PNGNormalizer imageWithContentsOfPNGFile:app.iconPath];
+    [appBtn setImage:img];
+    [appBtn setTitle:[app.appInfo valueForKey:@"CFBundleDisplayName"]];
+    [appBtn setAlphaValue:0.0];
+    [[appBtn cell] setLineBreakMode:NSLineBreakByTruncatingMiddle];
+    [[appBtn cell] setImageScaling:NSImageScaleNone];
+    [[self.box contentView] addSubview:appBtn];
+
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:0.3];
+    [[appBtn animator] setAlphaValue:1.0];
+    
+    [NSAnimationContext endGrouping];
+}
+
+- (IBAction)chooseApp:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    
+    [panel setPrompt: NSLocalizedString(@"Select your app", "Preferences -> Open panel prompt")];
+    [panel setAllowsMultipleSelection: NO];
+    [panel setCanChooseFiles: YES];
+    [panel setCanChooseDirectories: NO];
+    [panel setCanCreateDirectories: NO];
+    [panel setResolvesAliases:YES];
+    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"app", @"ipa", nil]];
+    
+    void (^appOpenPanelHandler)(NSInteger) = ^( NSInteger resultCode ) {
+        if(resultCode == NSFileHandlingPanelOKButton) {
+            [self openFile:[[panel URL] path]];
+        }
+    };
+    
+    [panel beginSheetModalForWindow:[self window] completionHandler:appOpenPanelHandler];
 }
 
 @end

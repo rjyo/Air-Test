@@ -1,0 +1,8 @@
+A Cocoa class to read iPhone-encoded (CgBI) PNG files into NSImage.
+
+Could easily be ported to Cocoa-touch (replace NSImage with UIImage) but iPhone libpng can read
+iPhone-encoded PNG files just fine.
+
+If the original PNG isn't CgBI encoded then it will be returned unmolested.
+
+Requires that you link with zlib.

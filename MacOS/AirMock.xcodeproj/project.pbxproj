@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		3261075B12F7990F00239271 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3261075A12F7990F00239271 /* Icon.icns */; };
+		326108A412F7A86600239271 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3261086F12F7A86600239271 /* crc32.c */; };
+		326108A512F7A86600239271 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 3261087112F7A86600239271 /* deflate.c */; };
+		326108A612F7A86600239271 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3261087312F7A86600239271 /* LICENSE */; };
+		326108A712F7A86600239271 /* PNGNormalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3261087512F7A86600239271 /* PNGNormalizer.m */; };
+		326108A812F7A86600239271 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 3261087612F7A86600239271 /* README */; };
+		326108AE12F7A89700239271 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 326108AD12F7A89700239271 /* libz.dylib */; };
+		326109AE12F7B6F100239271 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326109AD12F7B6F100239271 /* QuartzCore.framework */; };
 		32A795A812F613F600E7C0AB /* SSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7959112F613F600E7C0AB /* SSCrypto.m */; };
 		32A795A912F613F600E7C0AB /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7959412F613F600E7C0AB /* DDNumber.m */; };
 		32A795AA12F613F600E7C0AB /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7959612F613F600E7C0AB /* DDRange.m */; };
@@ -22,7 +30,6 @@
 		32A7966F12F618C100E7C0AB /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A7966E12F618C100E7C0AB /* todo.txt */; };
 		32A7969712F61D1E00E7C0AB /* AMHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */; };
 		32A79B1012F72EA400E7C0AB /* ThreadPoolServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A79B0D12F72EA400E7C0AB /* ThreadPoolServer.m */; };
-		32A79B1112F72EA400E7C0AB /* ThreadPerConnectionServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A79B0F12F72EA400E7C0AB /* ThreadPerConnectionServer.m */; };
 		32C62C3612F6895300D4708A /* AMDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62C3512F6895300D4708A /* AMDataHelper.m */; };
 		32C62C8C12F6947400D4708A /* template.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32C62C8B12F6947400D4708A /* template.plist */; };
 		32C62CA712F695CB00D4708A /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62C9B12F695CB00D4708A /* NSObject+SBJSON.m */; };
@@ -50,6 +57,17 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3261075A12F7990F00239271 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		3261086F12F7A86600239271 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		3261087012F7A86600239271 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		3261087112F7A86600239271 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		3261087212F7A86600239271 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		3261087312F7A86600239271 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3261087412F7A86600239271 /* PNGNormalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGNormalizer.h; sourceTree = "<group>"; };
+		3261087512F7A86600239271 /* PNGNormalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGNormalizer.m; sourceTree = "<group>"; };
+		3261087612F7A86600239271 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		326108AD12F7A89700239271 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		326109AD12F7B6F100239271 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32A7959012F613F600E7C0AB /* SSCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCrypto.h; sourceTree = "<group>"; };
 		32A7959112F613F600E7C0AB /* SSCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrypto.m; sourceTree = "<group>"; };
 		32A7959312F613F600E7C0AB /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
@@ -76,8 +94,6 @@
 		32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMHTTPConnection.m; sourceTree = "<group>"; };
 		32A79B0C12F72EA400E7C0AB /* ThreadPoolServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadPoolServer.h; sourceTree = "<group>"; };
 		32A79B0D12F72EA400E7C0AB /* ThreadPoolServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadPoolServer.m; sourceTree = "<group>"; };
-		32A79B0E12F72EA400E7C0AB /* ThreadPerConnectionServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadPerConnectionServer.h; sourceTree = "<group>"; };
-		32A79B0F12F72EA400E7C0AB /* ThreadPerConnectionServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadPerConnectionServer.m; sourceTree = "<group>"; };
 		32C62C3412F6895300D4708A /* AMDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMDataHelper.h; sourceTree = "<group>"; };
 		32C62C3512F6895300D4708A /* AMDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMDataHelper.m; sourceTree = "<group>"; };
 		32C62C8B12F6947400D4708A /* template.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = template.plist; sourceTree = "<group>"; };
@@ -114,6 +130,8 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				32A795C412F6146A00E7C0AB /* libcrypto.dylib in Frameworks */,
+				326108AE12F7A89700239271 /* libz.dylib in Frameworks */,
+				326109AE12F7B6F100239271 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +143,7 @@
 			children = (
 				32C62C9812F695CB00D4708A /* JSON */,
 				32A7958E12F613E500E7C0AB /* SimpleHTTPServer */,
+				3261081D12F7A86600239271 /* PNGNormalizer */,
 				32A79A0D12F71E6700E7C0AB /* Utils */,
 				32FBA6FF12F46A5300F7680A /* DropView.h */,
 				32FBA70012F46A5300F7680A /* DropView.m */,
@@ -137,6 +156,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				326109AD12F7B6F100239271 /* QuartzCore.framework */,
+				326108AD12F7A89700239271 /* libz.dylib */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				32A795C312F6146A00E7C0AB /* libcrypto.dylib */,
 			);
@@ -185,6 +206,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3261075A12F7990F00239271 /* Icon.icns */,
 				32FBA75512F471E100F7680A /* Images */,
 				32C62C8B12F6947400D4708A /* template.plist */,
 				8D1107310486CEB800E47090 /* AirMock-Info.plist */,
@@ -202,6 +224,21 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3261081D12F7A86600239271 /* PNGNormalizer */ = {
+			isa = PBXGroup;
+			children = (
+				3261086F12F7A86600239271 /* crc32.c */,
+				3261087012F7A86600239271 /* crc32.h */,
+				3261087112F7A86600239271 /* deflate.c */,
+				3261087212F7A86600239271 /* deflate.h */,
+				3261087312F7A86600239271 /* LICENSE */,
+				3261087412F7A86600239271 /* PNGNormalizer.h */,
+				3261087512F7A86600239271 /* PNGNormalizer.m */,
+				3261087612F7A86600239271 /* README */,
+			);
+			path = PNGNormalizer;
 			sourceTree = "<group>";
 		};
 		32A7958E12F613E500E7C0AB /* SimpleHTTPServer */ = {
@@ -282,8 +319,6 @@
 				32C62C3512F6895300D4708A /* AMDataHelper.m */,
 				32A79B0C12F72EA400E7C0AB /* ThreadPoolServer.h */,
 				32A79B0D12F72EA400E7C0AB /* ThreadPoolServer.m */,
-				32A79B0E12F72EA400E7C0AB /* ThreadPerConnectionServer.h */,
-				32A79B0F12F72EA400E7C0AB /* ThreadPerConnectionServer.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -374,6 +409,9 @@
 				32FBA75912F471E100F7680A /* drop_on.png in Resources */,
 				32A7966F12F618C100E7C0AB /* todo.txt in Resources */,
 				32C62C8C12F6947400D4708A /* template.plist in Resources */,
+				3261075B12F7990F00239271 /* Icon.icns in Resources */,
+				326108A612F7A86600239271 /* LICENSE in Resources */,
+				326108A812F7A86600239271 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +445,9 @@
 				32C62CAB12F695CB00D4708A /* SBJsonStreamWriter.m in Sources */,
 				32C62CAC12F695CB00D4708A /* SBJsonWriter.m in Sources */,
 				32A79B1012F72EA400E7C0AB /* ThreadPoolServer.m in Sources */,
-				32A79B1112F72EA400E7C0AB /* ThreadPerConnectionServer.m in Sources */,
+				326108A412F7A86600239271 /* crc32.c in Sources */,
+				326108A512F7A86600239271 /* deflate.c in Sources */,
+				326108A712F7A86600239271 /* PNGNormalizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

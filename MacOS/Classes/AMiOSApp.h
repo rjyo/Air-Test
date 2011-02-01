@@ -12,16 +12,17 @@
 @interface AMiOSApp : NSObject {
     NSString *ipaPath;
     NSString *appPath;
+    NSString *iconPath;
     NSDictionary *appInfo;
     NSArray *devices;
 }
 
+@property (nonatomic, copy, readonly) NSString *iconPath;
 @property (nonatomic, copy, readonly) NSString *ipaPath; 
 @property (nonatomic, copy, readonly) NSString *appPath; 
 @property (nonatomic, copy, readonly) NSDictionary *appInfo; 
 @property (nonatomic, copy, readonly) NSArray *devices; 
 
-- (AMiOSApp *)initWithIPA:(NSString *)path;
 - (AMiOSApp *)initWithApp:(NSString *)path;
 
 //

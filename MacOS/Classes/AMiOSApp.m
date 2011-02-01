@@ -13,12 +13,12 @@
 - (void)createIPAFromApp;
 - (NSDictionary *)infoFromApp:(NSString *)path;
 - (void)listDevicesInApp;
+- (AMiOSApp *)initWithIPA:(NSString *)path;
 
 @end
 
 @implementation AMiOSApp
-@synthesize appInfo, appPath, ipaPath, devices;
-
+@synthesize appInfo, appPath, ipaPath, devices, iconPath;
 
 
 // extract the IPA
@@ -32,17 +32,21 @@
 
 // check app info, if iOS app, create IPA
 - (AMiOSApp *)initWithApp:(NSString *)path {
-    self = [super init];
-	if (self != nil) {
-        appPath = [path copy];
-        appInfo = [[self infoFromApp:appPath] copy];
-        
-        if (nil != appInfo) {
-            [self listDevicesInApp];
-            [self createIPAFromApp];
+    if ([path hasSuffix:@".ipa"]) {
+        return [self initWithIPA:path];
+    } else {
+        self = [super init];
+        if (self != nil) {
+            appPath = [path copy];
+            appInfo = [[self infoFromApp:appPath] copy];
+            
+            if (nil != appInfo) {
+                [self listDevicesInApp];
+                [self createIPAFromApp];
+            }
         }
-	}
-	return self;
+        return self;
+    }
 }
 
 - (void)createIPAFromApp {
@@ -112,7 +116,24 @@
     
 }
 
+- (NSString *)iconPath {
+    if (nil == iconPath) {
+        NSString *iconName = [appInfo valueForKey:@"CFBundleIconFile"];
+        if (nil == iconName) {
+            NSArray *icons = [appInfo valueForKey:@"CFBundleIconFiles"];
+            if ([icons count] != 0) {
+                iconName = [icons objectAtIndex:0];
+            } else {
+                iconName = @"Icon.png";
+            }
+        }
+        iconPath = [[appPath stringByAppendingPathComponent:iconName] copy];
+    }
+    return iconPath;
+}
+
 - (void)dealloc {
+    [iconPath release];
     [ipaPath release];
     [appPath release];
     [appInfo release];

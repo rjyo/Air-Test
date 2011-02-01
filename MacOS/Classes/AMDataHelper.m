@@ -34,6 +34,10 @@ static AMDataHelper *localHelper;
     }
 }
 
+- (NSArray *)allApps {
+    return [appMapper allValues];
+}
+
 - (AMiOSApp *)appForBundleId:(NSString *)bundleId {
     return [appMapper valueForKey:bundleId];
 }
@@ -41,6 +45,33 @@ static AMDataHelper *localHelper;
 - (NSArray *)appsForDevice:(NSString *)udid {
     NSDictionary *dict = [deviceMapper valueForKey:udid];
     return  [dict allValues];
+}
+
+- (NSString *)hostName {
+    if (nil == hostName){
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+        NSHost *h = [NSHost currentHost];
+        hostName = [[h name] retain];
+        
+        [pool release];
+//        NSArray *addresses = [h addresses];
+//        NSString *addr;
+//        
+//        for (NSString *a in addresses) {
+//            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
+//                hostName = [a retain];
+//                break;
+//            } else {
+//                addr = @"IPv4 address not available" ;
+//            }
+//        }
+    }
+    
+    //    
+    NSLog(@"Find host name: %@", hostName);
+    return hostName;
+    //    return @"192.168.88.102";
 }
 
 #pragma mark -
@@ -71,6 +102,8 @@ static AMDataHelper *localHelper;
 	if (self != nil) {
         appMapper = [[NSMutableDictionary alloc] init];
         deviceMapper = [[NSMutableDictionary alloc] init];
+
+        [self performSelectorInBackground:@selector(hostName) withObject:nil];
 	}
 	return self;
 }

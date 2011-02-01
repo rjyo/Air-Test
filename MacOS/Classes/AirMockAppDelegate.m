@@ -11,7 +11,7 @@
 
 @implementation AirMockAppDelegate
 
-@synthesize window;
+@synthesize window, dropView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
@@ -56,5 +56,13 @@
     exit(3);
 }
 
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
+    for (NSString *fileName in filenames) {
+        if ([fileName hasSuffix:@".app"] || [fileName hasSuffix:@".ipa"]) {
+            [dropView openFile:fileName];
+            break;
+        }
+    }
+}
 
 @end

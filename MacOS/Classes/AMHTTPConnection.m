@@ -10,32 +10,9 @@
 #import "AsyncSocket.h"
 #import "JSON.h"
 
-static NSString *hostName = nil;
-
 @implementation AMHTTPConnection
 
-- (NSString *)hostName {
-    if (nil == hostName){
-        NSHost *h = [NSHost currentHost];
-//        hostName = [[h name] retain];
-        NSArray *addresses = [h addresses];
-        NSString *addr;
-        
-        for (NSString *a in addresses) {
-            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
-                hostName = [a retain];
-                break;
-            } else {
-                addr = @"IPv4 address not available" ;
-            }
-        }
-    }
-        
-//    
-    NSLog(@"Find host name: %@", hostName);
-    return hostName;
-//    return @"192.168.88.102";
-} 
+ 
 /**
  * This method is called to get a response for a request.
  * You may return any object that adopts the HTTPResponse protocol.
@@ -65,7 +42,7 @@ static NSString *hostName = nil;
             [dict setObject:[app.appInfo valueForKey:@"CFBundleDisplayName"] forKey:@"CFBundleDisplayName"];
             NSString *serviceUrl = @"itms-services://?action=download-manifest&url=http://%@:%d/conf/%@";
             serviceUrl = [NSString stringWithFormat:serviceUrl, 
-                          [self hostName],
+                          [[AMDataHelper localHelper] hostName],
                           [server port],
                           [app.appInfo valueForKey:@"CFBundleIdentifier"]];
             [dict setObject:serviceUrl forKey:@"itms-services"];
@@ -82,7 +59,7 @@ static NSString *hostName = nil;
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
         if (nil == app) return nil;
         
-        NSString *hostName = [self hostName];
+        NSString *hostName = [[AMDataHelper localHelper] hostName];
 
         NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"plist"];
         NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
@@ -117,13 +94,10 @@ static NSString *hostName = nil;
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
         if (nil == app) return nil;
 
-        NSString *iconName = [app.appInfo valueForKey:@"CFBundleIconFile"];
-        NSString *iconPath = [app.appPath stringByAppendingPathComponent:iconName];
-
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         NSLog(@"Get icon binary: %@ (%.2f)", arg2, time);
-        return [[[HTTPFileResponse alloc] initWithFilePath:iconPath] autorelease];
+        return [[[HTTPFileResponse alloc] initWithFilePath:app.iconPath] autorelease];
     }
 
 	

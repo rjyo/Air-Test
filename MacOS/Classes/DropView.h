@@ -10,10 +10,14 @@
 
 
 @interface DropView : NSView {
-//    NSImageView *dropSpotView;
+    NSButton *dropButton;
+    NSBox *box;
 }
 
+@property (assign) IBOutlet NSButton *dropButton;
+@property (assign) IBOutlet NSBox *box;
 
-//@property (nonatomic, retain) IBOutlet NSImageView *dropSpotView;
+- (IBAction)chooseApp:(id)sender;
+- (void)openFile:(NSString *)file;
 
 @end
