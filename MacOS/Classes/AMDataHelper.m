@@ -52,26 +52,24 @@ static AMDataHelper *localHelper;
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
         NSHost *h = [NSHost currentHost];
-        hostName = [[h name] retain];
+//        hostName = [[h name] retain];
+        NSArray *addresses = [h addresses];
+        NSString *addr;
+        
+        for (NSString *a in addresses) {
+            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
+                hostName = [a retain];
+                break;
+            } else {
+                addr = @"IPv4 address not available" ;
+            }
+        }
         
         [pool release];
-//        NSArray *addresses = [h addresses];
-//        NSString *addr;
-//        
-//        for (NSString *a in addresses) {
-//            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
-//                hostName = [a retain];
-//                break;
-//            } else {
-//                addr = @"IPv4 address not available" ;
-//            }
-//        }
     }
     
-    //    
     NSLog(@"Find host name: %@", hostName);
     return hostName;
-    //    return @"192.168.88.102";
 }
 
 #pragma mark -
