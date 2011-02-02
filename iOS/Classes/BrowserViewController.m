@@ -419,6 +419,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     // Navigation logic may go here. Create and push another view controller.
     AppListViewController *appVc = [[AppListViewController alloc] initWithStyle:UITableViewStylePlain];
     appVc.listURL = listURL;
+    appVc.title = [NSString stringWithFormat:@"Apps on %@", [service name]];
     [self.navigationController pushViewController:appVc animated:YES];
     [appVc release];
 }

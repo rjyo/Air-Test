@@ -1,0 +1,1 @@
+1. should have a waiting message when clicked on a file and waiting for install

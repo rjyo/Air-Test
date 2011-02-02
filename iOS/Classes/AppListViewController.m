@@ -51,7 +51,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.title = NSLocalizedString(@"App List", nil);
     
     indicator = (LoadingIndicatorView *)[self.navigationController.view viewWithTag:kLoadingIndicatorTag];
     if (!indicator) {
@@ -224,7 +223,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:installUrl]];
 #endif
 
-    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
