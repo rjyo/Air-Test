@@ -1,11 +1,11 @@
-h1. <span>2011-02-03</span> Release 0.2.0
+h1. <span>2011-02-02</span> Release 0.5.0
 
-h2. 2nd release
+h2. New Features
 
-Yay! Second release.
+- A list of features
 
-h1. <span>2011-02-02</span> Release 0.1.0
+h2. Bugs Fixed
 
-h2. Initial release
+- A list of bugs
 
-Yay! First release.
+
