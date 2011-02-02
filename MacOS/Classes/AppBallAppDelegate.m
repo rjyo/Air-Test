@@ -9,14 +9,16 @@
 #import "AppBallAppDelegate.h"
 #import "AMHTTPConnection.h"
 #import "AMDataHelper.h"
+#import "DDTTYLogger.h"
 
 @implementation AppBallAppDelegate
 
 @synthesize window, dropView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
 	// Insert code here to initialize your application 
-//	httpServer = [[ThreadPoolServer alloc] init];
     httpServer = [[HTTPServer alloc] init];
     
 	// Set the bonjour type of the http server.
@@ -30,14 +32,11 @@
 	
 	if(!success)
 	{
-		NSLog(@"Error starting HTTP Server: %@", error);
+		DDLogError(@"Error starting HTTP Server: %@", error);
 	}
     
 //    NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
 //    NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
-//	
-//	httpServer = [HTTPServer new];
-//	[httpServer setType:@"_http._tcp."];
 //	
 //	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
     
@@ -48,7 +47,7 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-    NSLog(@"exiting AppBall");
+    DDLogCVerbose(@"exiting AppBall");
     
     [[AMDataHelper localHelper] deleteCache];
     

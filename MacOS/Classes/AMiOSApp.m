@@ -7,6 +7,7 @@
 //
 
 #import "AMiOSApp.h"
+#import "DDTTYLogger.h"
 
 @interface AMiOSApp()
 
@@ -68,7 +69,7 @@
     [fileMgr copyItemAtPath:appPath toPath:dest error:&error];
     
     if (error) {
-        NSLog(@"%@", error);
+        DDLogError(@"failed to copy items from %@ to %@, %@", appPath, dest, error);
         return;
     }
     

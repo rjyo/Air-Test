@@ -13,8 +13,15 @@
 #import "HTTPLogging.h"
 #import "HTTPMessage.h"
 #import "DDNumber.h"
+#import "DDTTYLogger.h"
 
+
+#ifdef CONFIGURATION_DEBUG
 static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE;
+#else
+static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
+#endif
+
 
 @implementation AMHTTPConnection
 

@@ -4,9 +4,8 @@ using command line is better
 
 done 2. How to read info from .app (plist) (need to get information about the icon)
 
-* 3. How to use the compressed png files
-http://libpng.darwinports.com/
-http://modmyi.com/wiki/index.php/Iphone_PNG_images
+done 3. How to use the compressed png files
+using PNGNormalizer
 
 done 4. Create a JSON file to pass the information to iPhone clients
 from iPhone - device ID
@@ -18,7 +17,12 @@ done 6. Read the device ids from provisioning file, show only installable apps o
 
 done 7. Create IPA by code
 
+8. Check plist to reject app build for MacOS
+
+9. Send server IP back to server from iPhone
+
+
 bug.
-1. bonjour sometimes disappears
-2. download apps list takes forever
-3. finding host name takes a long time
+done 1. bonjour sometimes disappears
+done 2. download apps list takes forever
+done 3. finding host name takes a long time

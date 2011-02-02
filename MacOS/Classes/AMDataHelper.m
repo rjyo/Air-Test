@@ -7,6 +7,7 @@
 //
 
 #import "AMDataHelper.h"
+#import "DDTTYLogger.h"
 
 @interface AMDataHelper (PrivateMethods)
 
@@ -68,7 +69,7 @@ static AMDataHelper *localHelper;
         [pool release];
     }
     
-    NSLog(@"Find host name: %@", hostName);
+    DDLogInfo(@"Find host name: %@", hostName);
     return hostName;
 }
 
