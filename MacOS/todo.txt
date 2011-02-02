@@ -19,7 +19,8 @@ done 7. Create IPA by code
 
 8. Check plist to reject app build for MacOS
 
-9. Send server IP back to server from iPhone
+done 9. Send server IP back to server from iPhone
+using "Host" in http header
 
 
 bug.

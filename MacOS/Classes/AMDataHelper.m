@@ -47,31 +47,31 @@ static AMDataHelper *localHelper;
     NSDictionary *dict = [deviceMapper valueForKey:udid];
     return  [dict allValues];
 }
-
-- (NSString *)hostName {
-    if (nil == hostName){
-        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-        NSHost *h = [NSHost currentHost];
-//        hostName = [[h name] retain];
-        NSArray *addresses = [h addresses];
-        NSString *addr;
-        
-        for (NSString *a in addresses) {
-            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
-                hostName = [a retain];
-                break;
-            } else {
-                addr = @"IPv4 address not available" ;
-            }
-        }
-        
-        [pool release];
-    }
-    
-    DDLogInfo(@"Find host name: %@", hostName);
-    return hostName;
-}
+//
+//- (NSString *)hostName {
+//    if (nil == hostName){
+//        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//
+//        NSHost *h = [NSHost currentHost];
+////        hostName = [[h name] retain];
+//        NSArray *addresses = [h addresses];
+//        NSString *addr;
+//        
+//        for (NSString *a in addresses) {
+//            if (![a hasPrefix:@"127"] && [[a componentsSeparatedByString:@"."] count] == 4) {
+//                hostName = [a retain];
+//                break;
+//            } else {
+//                addr = @"IPv4 address not available" ;
+//            }
+//        }
+//        
+//        [pool release];
+//    }
+//    
+//    DDLogInfo(@"Find host name: %@", hostName);
+//    return hostName;
+//}
 
 - (void)deleteCache {
     NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES) objectAtIndex:0];
@@ -111,8 +111,6 @@ static AMDataHelper *localHelper;
 	if (self != nil) {
         appMapper = [[NSMutableDictionary alloc] init];
         deviceMapper = [[NSMutableDictionary alloc] init];
-
-        [self performSelectorInBackground:@selector(hostName) withObject:nil];
 	}
 	return self;
 }

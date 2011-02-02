@@ -10,13 +10,11 @@
 @interface AMDataHelper : NSObject {
     NSMutableDictionary *appMapper;
     NSMutableDictionary *deviceMapper;
-    NSString *hostName;
 }
 
 - (void)saveApp:(AMiOSApp *)app;
 - (NSArray *)appsForDevice:(NSString *)udid;
 - (AMiOSApp *)appForBundleId:(NSString *)bundleId;
-- (NSString *)hostName;
 - (NSArray *)allApps;
 - (void)deleteCache;
 

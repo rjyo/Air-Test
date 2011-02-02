@@ -39,8 +39,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
     return NO;
 }
 
-- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
-{
+- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path {
 	HTTPLogTrace();
 	
 	// Add support for POST
@@ -61,57 +60,52 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
 
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
     HTTPLogTrace();
-
+    
+    NSString *host = [request headerField:@"Host"];
     NSDate *then = [NSDate date];
 
-	NSLog(@"httpResponseForURI: method:%@ path:%@", method, path);
+	DDLogCVerbose(@"httpResponseForURI: host:%@, method:%@, path:%@", host, method, path);
     
     NSArray *args = [[path substringFromIndex:1] pathComponents];
     
     if ([args count] < 2) return nil;
     
     NSString *cmd = [args objectAtIndex:0];
-    NSString *arg2 = [args objectAtIndex:1];
-    
-    HTTPServer *server = config.server;
-    UInt16 port = [server listeningPort];
-    
+    NSString *arg1 = [args objectAtIndex:1];
+        
     if ([cmd isEqualToString:@"list"]) {
-        NSArray *apps = [[AMDataHelper localHelper] appsForDevice:arg2];
+        NSArray *apps = [[AMDataHelper localHelper] appsForDevice:arg1];
+         
         NSMutableArray *data = [NSMutableArray arrayWithCapacity:[apps count]];
         for (AMiOSApp *app in apps) {
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:3];
             [dict setObject:[app.appInfo valueForKey:@"CFBundleVersion"] forKey:@"CFBundleVersion"];
             [dict setObject:[app.appInfo valueForKey:@"CFBundleIdentifier"] forKey:@"CFBundleIdentifier"];
             [dict setObject:[app.appInfo valueForKey:@"CFBundleDisplayName"] forKey:@"CFBundleDisplayName"];
-            NSString *serviceUrl = @"itms-services://?action=download-manifest&url=http://%@:%d/conf/%@";
-            serviceUrl = [NSString stringWithFormat:serviceUrl, 
-                          [[AMDataHelper localHelper] hostName], port,
-                          [app.appInfo valueForKey:@"CFBundleIdentifier"]];
+            NSString *serviceUrl = @"itms-services://?action=download-manifest&url=http://%@/conf/%@";
+            serviceUrl = [NSString stringWithFormat:serviceUrl, host, [app.appInfo valueForKey:@"CFBundleIdentifier"]];
             [dict setObject:serviceUrl forKey:@"itms-services"];
             [data addObject:dict];
         }
         
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
-        NSLog(@"Get app list: %@ (%.2f)", data, time);
+        DDLogCVerbose(@"Get app list: %@ (%.2f)", data, time);
         
         SBJsonWriter *writer = [[SBJsonWriter alloc] init];
         return [[[HTTPDataResponse alloc] initWithData:[writer dataWithObject:data]] autorelease];
     } else if ([cmd isEqualToString:@"conf"]) {
-        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
+        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg1];
         if (nil == app) return nil;
         
-        NSString *hostName = [[AMDataHelper localHelper] hostName];
-
         NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"plist"];
         NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 
         NSString *appBundleId = [app.appInfo valueForKey:@"CFBundleIdentifier"];
         NSString *appName = [app.appInfo valueForKey:@"CFBundleDisplayName"];
         NSString *appVersion = [app.appInfo valueForKey:@"CFBundleVersion"];
-        NSString *appURL = [NSString stringWithFormat:@"http://%@:%d/app/%@/app.ipa", hostName, port, appBundleId]; 
-        NSString *iconURL = [NSString stringWithFormat:@"http://%@:%d/icon/%@/icon.png", hostName, port, appBundleId]; 
+        NSString *appURL = [NSString stringWithFormat:@"http://%@/app/%@/app.ipa", host, appBundleId]; 
+        NSString *iconURL = [NSString stringWithFormat:@"http://%@/icon/%@/icon.png", host, appBundleId]; 
         
         NSMutableString *s = [content mutableCopy];
         [s replaceOccurrencesOfString:@"%APP_URL%" withString:appURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
@@ -122,24 +116,24 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
 
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
-        NSLog(@"Get app config: %@ (%.2f)", s, time);
+        DDLogCVerbose(@"Get app config: %@ (%.2f)", s, time);
 
         return [[[HTTPDataResponse alloc] initWithData:[s dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
     } else if ([cmd isEqualToString:@"app"]) {
-        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
+        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg1];
         if (nil == app) return nil;
         
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
-        NSLog(@"Get app binary: %@ (%.2f)", arg2, time);
+        DDLogCVerbose(@"Get app binary: %@ (%.2f)", arg1, time);
         return [[[HTTPFileResponse alloc] initWithFilePath:app.ipaPath forConnection:self] autorelease];
     } else if ([cmd isEqualToString:@"icon"]) {
-        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg2];
+        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg1];
         if (nil == app) return nil;
 
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
-        NSLog(@"Get icon binary: %@ (%.2f)", arg2, time);
+        DDLogCVerbose(@"Get icon binary: %@ (%.2f)", arg1, time);
         return [[[HTTPFileResponse alloc] initWithFilePath:app.iconPath forConnection:self] autorelease];
     }
 
