@@ -94,5 +94,6 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 - (id)initWithTitle:(NSString *)title showDisclosureIndicators:(BOOL)showDisclosureIndicators;
 - (BOOL)searchForServicesOfType:(NSString *)type inDomain:(NSString *)domain;
+- (void)redoSearchForServices;
 
 @end

@@ -114,7 +114,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 		self.showDisclosureIndicators = show;
 
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshAction)];
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(redoSearchForServices)];
         self.navigationItem.rightBarButtonItem = addButton;
         [addButton release];
 
@@ -313,6 +313,8 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	}
 }
 
+#pragma mark -
+#pragma mark UI
 
 - (void)initialWaitOver:(NSTimer*)timer {
 	self.initialWaitOver= YES;
@@ -422,7 +424,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 }
 
 
-- (void)refreshAction {
+- (void)redoSearchForServices {
     [self searchForServicesOfType:self.type inDomain:self.domain];
 }
 

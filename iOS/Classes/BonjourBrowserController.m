@@ -56,7 +56,6 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 
 @interface BonjourBrowserController ()
-@property(nonatomic, retain) BrowserViewController* bvc;
 @property(nonatomic, retain) NSString* type;
 @property(nonatomic, retain) NSString* domain;
 @end
@@ -75,6 +74,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 	self.bvc = [[[BrowserViewController alloc] initWithTitle:self.domain showDisclosureIndicators:YES] autorelease];
 	self.bvc.delegate = self;
+    self.bvc.searchingForServicesString = @"Searching for AppBall Server...";
     // Calls -[NSNetServiceBrowser searchForServicesOfType:inDomain:].
 	[self.bvc searchForServicesOfType:self.type inDomain:self.domain];
 

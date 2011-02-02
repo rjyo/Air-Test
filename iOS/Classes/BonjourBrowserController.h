@@ -71,7 +71,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 }
 
 @property(nonatomic, assign) id<BonjourBrowserDelegate> delegate;
-
+@property(nonatomic, retain) BrowserViewController* bvc;
 
 - (id)initForType:(NSString *)type inDomain:(NSString *)domain;
 
