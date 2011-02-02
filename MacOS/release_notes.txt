@@ -2,7 +2,7 @@ h1. <span>2011-02-02</span> Release 0.5.0
 
 h2. New Features
 
-- A list of features
+- Support drag & drop for IPA files
 
 h2. Bugs Fixed
 

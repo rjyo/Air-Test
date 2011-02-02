@@ -23,10 +23,6 @@
 @property (nonatomic, copy, readonly) NSDictionary *appInfo; 
 @property (nonatomic, copy, readonly) NSArray *devices; 
 
-- (AMiOSApp *)initWithApp:(NSString *)path;
-
-//
-//- (NSDictionary *)infoFromIPA:(NSString *)path;
-//- (void)createPackageFromApp:(NSString *)appPath toIPA:(NSString *)ipaPath;
+- (AMiOSApp *)initWithPath:(NSString *)path;
 
 @end

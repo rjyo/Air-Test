@@ -8,6 +8,7 @@
 
 #import "AMiOSApp.h"
 #import "DDTTYLogger.h"
+#import "NSString+FileMD5.h"
 
 @interface AMiOSApp()
 
@@ -18,6 +19,13 @@
 
 @end
 
+@interface AMiOSApp()
+
+- (NSString *)appCachePath;
+
+@end
+
+
 @implementation AMiOSApp
 @synthesize appInfo, appPath, ipaPath, devices, iconPath;
 
@@ -27,12 +35,38 @@
     self = [super init];
 	if (self != nil) {
         ipaPath = [path copy];
+        NSString *fileMD5 = [ipaPath getMD5String];
+        NSString *cache = [self appCachePath];
+        
+        NSTask *task = [[NSTask alloc] init];
+        [task setLaunchPath: @"/usr/bin/unzip"];
+        [task setArguments:[NSArray arrayWithObjects:@"-o", ipaPath, @"-d", fileMD5, nil]];
+        [task setCurrentDirectoryPath:cache];
+        [task launch];
+        
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        NSString *payloadPath = [NSString stringWithFormat:@"%@/%@/%@", cache, fileMD5, @"Payload"];
+        
+        NSArray *files = [fileMgr contentsOfDirectoryAtPath:payloadPath error:nil];
+        for (NSString *fileName in files) {
+            if ([fileName hasSuffix:@".app"]) {
+                appPath = [[payloadPath stringByAppendingPathComponent:fileName] retain];
+                appInfo = [[self infoFromApp:appPath] copy];
+                
+                if (nil != appInfo) {
+                    [self listDevicesInApp];
+                } else {
+                    
+                }
+                break;
+            }
+        }
 	}
 	return self;
 }
 
 // check app info, if iOS app, create IPA
-- (AMiOSApp *)initWithApp:(NSString *)path {
+- (AMiOSApp *)initWithPath:(NSString *)path {
     if ([path hasSuffix:@".ipa"]) {
         return [self initWithIPA:path];
     } else {
@@ -44,15 +78,28 @@
             if (nil != appInfo) {
                 [self listDevicesInApp];
                 [self createIPAFromApp];
+            } else {
+                DDLogError(@"Failed to get information from .app: %@", appPath);
             }
         }
         return self;
     }
 }
 
+- (NSString *)appCachePath {
+    NSString *myId = [[NSBundle mainBundle] bundleIdentifier];
+    
+    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    cache = [cache stringByAppendingPathComponent:myId];
+
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    [fileMgr createDirectoryAtPath:cache withIntermediateDirectories:YES attributes:nil error:nil];
+    
+    return cache;
+}
+
 - (void)createIPAFromApp {
-    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES) objectAtIndex:0];
-    cache = [cache stringByAppendingPathComponent:@"com.rakutec.airmock"];
+    NSString *cache = [self appCachePath];
     cache = [cache stringByAppendingPathComponent:[appInfo valueForKey:@"CFBundleIdentifier"]];
     NSString *payload = [cache stringByAppendingPathComponent:@"Payload"];
     NSString *ipaFileName = [NSString stringWithFormat:@"%@.ipa", [appInfo valueForKey:@"CFBundleName"]];
@@ -84,6 +131,15 @@
 - (NSDictionary *)infoFromApp:(NSString *)path {
     NSString *pathForPlist = [path stringByAppendingPathComponent:@"Info.plist"];
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:pathForPlist];
+    
+    if (nil == info || ![[info valueForKey:@"DTPlatformName"] isEqualToString:@"iphoneos"]) {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"UnSupportedPlatformException"
+                                  reason:@"The binary is not build for iPhone OS"
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
     return info;
 }
 
@@ -111,10 +167,6 @@
     NSString *pathForPlist = [path stringByAppendingPathComponent:@"Info.plist"];
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:pathForPlist];
     return info;
-}
-
-- (void)createPackageFromApp:(NSString *)appPath toIPA:(NSString *)ipaPath {
-    
 }
 
 - (NSString *)iconPath {

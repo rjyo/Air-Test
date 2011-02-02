@@ -18,6 +18,6 @@
 @property (assign) IBOutlet NSBox *box;
 
 - (IBAction)chooseApp:(id)sender;
-- (void)openFile:(NSString *)file;
+- (BOOL)openFile:(NSString *)file;
 
 @end

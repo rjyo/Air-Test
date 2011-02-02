@@ -10,6 +10,7 @@
 #import "AMiOSApp.h"
 #import "AMDataHelper.h"
 #import "PNGNormalizer.h"
+#import "DDTTYLogger.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface DropView()
@@ -95,9 +96,27 @@ static NSImage *dropNoneImage = nil;
 #define ICON_SPACING 5.0
 
 
-- (void)openFile:(NSString *)file {
+- (BOOL)openFile:(NSString *)file {
     int appCountThen = [[[AMDataHelper localHelper] allApps] count];
-    AMiOSApp *app = [[AMiOSApp alloc] initWithApp:file];
+    AMiOSApp *app = nil;
+    @try {
+        app = [[AMiOSApp alloc] initWithPath:file];
+    }
+    @catch (NSException * e) {
+        DDLogError(@"Error: %@", e);
+        
+        NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:@"Unsupported format"];
+        [alert setInformativeText:@"This app only handles .ipa/.app binary for iOS."];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+//        [alert runModal];
+        [alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+
+        
+        return NO;
+    }
     [[AMDataHelper localHelper] saveApp:app];
     int appCountNow = [[[AMDataHelper localHelper] allApps] count];
     
@@ -123,6 +142,8 @@ static NSImage *dropNoneImage = nil;
     if (appCountNow > appCountThen) {
         [self performSelector:@selector(showAppIcon:) withObject:app afterDelay:0.3];
     }
+    
+    return YES;
 }
 
 - (void)showAppIcon:(AMiOSApp *)app {

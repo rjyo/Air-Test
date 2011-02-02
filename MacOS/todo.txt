@@ -1,4 +1,4 @@
-1. How to grab info from IPA (zip)
+done 1. How to grab info from IPA (zip)
 http://code.google.com/p/ziparchive/wiki/PageName
 using command line is better
 
@@ -17,11 +17,21 @@ done 6. Read the device ids from provisioning file, show only installable apps o
 
 done 7. Create IPA by code
 
-8. Check plist to reject app build for MacOS
+done 8. Check plist to reject app build for MacOS
+by using DTPlatformName = iphoneos
 
 done 9. Send server IP back to server from iPhone
 using "Host" in http header
 
+done 10. Support IPA format
+
+11. use Fireware version and min version in Info.plist to show only available apps in list
+
+12. redesign container(view) for each app
+
+13. able to select an app and delete
+
+14. enable menu
 
 bug.
 done 1. bonjour sometimes disappears
