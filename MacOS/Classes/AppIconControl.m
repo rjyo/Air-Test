@@ -20,7 +20,7 @@
 #define SUBTITLE_HEIGHT 15.0
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
-    CGPoint iconPoint = CGPointMake(ICON_X, ICON_Y);
+    NSPoint iconPoint = NSMakePoint(ICON_X, ICON_Y);
 
 //    if ([self state] == NSOnState) {
 //        NSRect ringRect = NSMakeRect(iconPoint.x, iconPoint.y, [image size].width, [image size].width);
@@ -34,12 +34,12 @@
 //        [[NSBezierPath bezierPathWithRect: NSInsetRect(ringRect, 4.0, 4.0)] fill];
 //        [NSGraphicsContext restoreGraphicsState];
 //    }
-//    
-//    [NSGraphicsContext saveGraphicsState];
+    
+    [NSGraphicsContext saveGraphicsState];
 
     NSShadow *shadow = [[[NSShadow alloc] init] autorelease];
     [shadow setShadowBlurRadius:3.0f];
-    [shadow setShadowOffset:CGSizeMake(0.0f, -2.0f)];
+    [shadow setShadowOffset:NSMakeSize(0.0f, -2.0f)];
     [shadow setShadowColor:[NSColor darkGrayColor]];
     [shadow set];
 

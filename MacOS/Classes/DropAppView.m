@@ -11,7 +11,6 @@
 #import "AMDataHelper.h"
 #import "PNGNormalizer.h"
 #import "DDTTYLogger.h"
-#import "IconView.h"
 #import "AppIconControl.h"
 
 #import <QuartzCore/QuartzCore.h>
