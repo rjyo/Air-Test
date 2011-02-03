@@ -31,9 +31,16 @@ done 10. Support IPA format
 
 13. able to select an app and delete
 
-14. enable menu
+14. enable open from menu
+
+done 15. open browser from menu
 
 bug.
 done 1. bonjour sometimes disappears
 done 2. download apps list takes forever
 done 3. finding host name takes a long time
+
+
+memo
+1. methods to open prefpane
+https://github.com/smokyonion/Cocoa-Class-Categories

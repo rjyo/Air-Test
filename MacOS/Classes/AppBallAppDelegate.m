@@ -42,6 +42,10 @@
     
 }
 
+- (IBAction)openAppStoreURL:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://itunes.apple.com/jp/app/idaily-pro/id390691023?mt=8#"]];
+}
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
     return YES;
 }

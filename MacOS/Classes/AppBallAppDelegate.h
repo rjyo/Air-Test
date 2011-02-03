@@ -8,15 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import "HTTPServer.h"
-#import "DropView.h"
+#import "DropAppView.h"
 
 @interface AppBallAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
     HTTPServer *httpServer;
-    DropView *dropView;
+    DropAppView *dropView;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet DropView *dropView;
+@property (assign) IBOutlet DropAppView *dropView;
+
+- (IBAction)openAppStoreURL:(id)sender;
 
 @end

@@ -43,7 +43,18 @@
         [task setArguments:[NSArray arrayWithObjects:@"-o", ipaPath, @"-d", fileMD5, nil]];
         [task setCurrentDirectoryPath:cache];
         [task launch];
+        [task waitUntilExit];
+        int status = [task terminationStatus];
         
+        DDLogVerbose(@"Result of shell: %d", status);
+        if (status != 0) {
+            NSException *exception = [NSException
+                                      exceptionWithName:@"FailToExtractIPAException"
+                                      reason:@"Failed to extract information from .ipa file."
+                                      userInfo:nil];
+            @throw exception;
+        }
+
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         NSString *payloadPath = [NSString stringWithFormat:@"%@/%@/%@", cache, fileMD5, @"Payload"];
         
@@ -53,11 +64,8 @@
                 appPath = [[payloadPath stringByAppendingPathComponent:fileName] retain];
                 appInfo = [[self infoFromApp:appPath] copy];
                 
-                if (nil != appInfo) {
-                    [self listDevicesInApp];
-                } else {
-                    
-                }
+                [self listDevicesInApp];
+                
                 break;
             }
         }
@@ -75,12 +83,8 @@
             appPath = [path copy];
             appInfo = [[self infoFromApp:appPath] copy];
             
-            if (nil != appInfo) {
-                [self listDevicesInApp];
-                [self createIPAFromApp];
-            } else {
-                DDLogError(@"Failed to get information from .app: %@", appPath);
-            }
+            [self listDevicesInApp];
+            [self createIPAFromApp];
         }
         return self;
     }
@@ -125,6 +129,18 @@
     [task setArguments:[NSArray arrayWithObjects:@"-r", @"-y", ipa, @"Payload", nil]];
     [task setCurrentDirectoryPath:cache];
     [task launch];
+    [task waitUntilExit];
+    int status = [task terminationStatus];
+    
+    DDLogVerbose(@"Result of shell: %d", status);
+    if (status != 0) {
+        NSException *exception = [NSException
+                                  exceptionWithName:@"FailToCreateIPAException"
+                                  reason:@"Failed to create .ipa file."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
     ipaPath = [ipa copy];
 }
 
@@ -132,8 +148,18 @@
     NSString *pathForPlist = [path stringByAppendingPathComponent:@"Info.plist"];
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:pathForPlist];
     
-    if (nil == info || ![[info valueForKey:@"DTPlatformName"] isEqualToString:@"iphoneos"]) {
-        NSException* exception = [NSException
+    if (nil == info) {
+        DDLogError(@"Failed to get information from .app: %@", path);
+        
+        NSException *exception = [NSException
+                                  exceptionWithName:@"NoAppInfoException"
+                                  reason:@"Failed to get information from info.plist"
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    if (![[info valueForKey:@"DTPlatformName"] isEqualToString:@"iphoneos"]) {
+        NSException *exception = [NSException
                                   exceptionWithName:@"UnSupportedPlatformException"
                                   reason:@"The binary is not build for iPhone OS"
                                   userInfo:nil];
@@ -153,11 +179,7 @@
     long length = b[0] * 256 + b[1];
     [fh seekToFileOffset:0x3e];
     NSData *plistData = [fh readDataOfLength:length];
-    
-    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES) objectAtIndex:0];
-    cache = [cache stringByAppendingPathComponent:@"com.rakutec.airmock"];
-    cache = [cache stringByAppendingPathComponent:[appInfo valueForKey:@"CFBundleIdentifier"]];
-    
+        
     NSString *error = nil;
     NSDictionary *dict = [NSPropertyListSerialization propertyListFromData:plistData mutabilityOption:0 format:nil errorDescription:&error];
     devices = [[dict valueForKey:@"ProvisionedDevices"] copy];

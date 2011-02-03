@@ -9,13 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface DropView : NSView {
+@interface DropAppView : NSView {
     NSButton *dropButton;
     NSBox *box;
+    NSProgressIndicator *indicator;
 }
 
 @property (assign) IBOutlet NSButton *dropButton;
 @property (assign) IBOutlet NSBox *box;
+@property (assign) IBOutlet NSProgressIndicator *indicator;
 
 - (IBAction)chooseApp:(id)sender;
 - (BOOL)openFile:(NSString *)file;

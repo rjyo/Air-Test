@@ -3,9 +3,11 @@ h1. <span>2011-02-02</span> Release 0.5.0
 h2. New Features
 
 - Support drag & drop for IPA files
+- Messages for unsupported file formats
+- Icon are displayed better
 
 h2. Bugs Fixed
 
-- A list of bugs
+- Yet to discover
 
 

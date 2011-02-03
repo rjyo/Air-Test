@@ -32,8 +32,11 @@
 		32C6C9EA12F8652700B26843 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32C6C9E812F8652100B26843 /* Sparkle.framework */; };
 		32C6C9F812F86C6D00B26843 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32C6C9F712F86C6D00B26843 /* release_notes.txt */; };
 		32E4DD5512F65BE60054B867 /* AMiOSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E4DD5412F65BE60054B867 /* AMiOSApp.m */; };
+		32ED6AAB12FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED6AA812FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m */; };
+		32ED6B8F12FA5DE50059DB2F /* AppIconControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */; };
+		32ED6BA012FA5ED50059DB2F /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = 32ED6B9F12FA5ED50059DB2F /* Rakefile */; };
 		32FBA70112F46A5300F7680A /* AppBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */; };
-		32FBA70212F46A5300F7680A /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA70012F46A5300F7680A /* DropView.m */; };
+		32FBA70212F46A5300F7680A /* DropAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA70012F46A5300F7680A /* DropAppView.m */; };
 		32FBA75812F471E100F7680A /* drop_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FBA75612F471E100F7680A /* drop_none.png */; };
 		32FBA75912F471E100F7680A /* drop_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FBA75712F471E100F7680A /* drop_on.png */; };
 		32FBD5EF12F7FB8D00255254 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD5C412F7FB8D00255254 /* DDData.m */; };
@@ -122,10 +125,15 @@
 		32C6C9F712F86C6D00B26843 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		32E4DD5312F65BE60054B867 /* AMiOSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMiOSApp.h; sourceTree = "<group>"; };
 		32E4DD5412F65BE60054B867 /* AMiOSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMiOSApp.m; sourceTree = "<group>"; };
+		32ED6AA712FA4D2F0059DB2F /* NSBitmapImageRep-Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBitmapImageRep-Additions.h"; sourceTree = "<group>"; };
+		32ED6AA812FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBitmapImageRep-Additions.m"; sourceTree = "<group>"; };
+		32ED6B8D12FA5DE50059DB2F /* AppIconControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppIconControl.h; sourceTree = "<group>"; };
+		32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppIconControl.m; sourceTree = "<group>"; };
+		32ED6B9F12FA5ED50059DB2F /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		32FBA6FD12F46A5300F7680A /* AppBallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBallAppDelegate.h; sourceTree = "<group>"; };
 		32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBallAppDelegate.m; sourceTree = "<group>"; };
-		32FBA6FF12F46A5300F7680A /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
-		32FBA70012F46A5300F7680A /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
+		32FBA6FF12F46A5300F7680A /* DropAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropAppView.h; sourceTree = "<group>"; };
+		32FBA70012F46A5300F7680A /* DropAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropAppView.m; sourceTree = "<group>"; };
 		32FBA75612F471E100F7680A /* drop_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_none.png; sourceTree = "<group>"; };
 		32FBA75712F471E100F7680A /* drop_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_on.png; sourceTree = "<group>"; };
 		32FBD5C312F7FB8D00255254 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
@@ -194,10 +202,11 @@
 			children = (
 				32C62C9812F695CB00D4708A /* JSON */,
 				32A7958E12F613E500E7C0AB /* SimpleHTTPServer */,
-				3261081D12F7A86600239271 /* PNGNormalizer */,
 				32A79A0D12F71E6700E7C0AB /* Utils */,
-				32FBA6FF12F46A5300F7680A /* DropView.h */,
-				32FBA70012F46A5300F7680A /* DropView.m */,
+				32ED6B8D12FA5DE50059DB2F /* AppIconControl.h */,
+				32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */,
+				32FBA6FF12F46A5300F7680A /* DropAppView.h */,
+				32FBA70012F46A5300F7680A /* DropAppView.m */,
 				32FBA6FD12F46A5300F7680A /* AppBallAppDelegate.h */,
 				32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */,
 			);
@@ -267,6 +276,7 @@
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				32C6C9F712F86C6D00B26843 /* release_notes.txt */,
 				32A7966E12F618C100E7C0AB /* todo.txt */,
+				32ED6B9F12FA5ED50059DB2F /* Rakefile */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -335,6 +345,8 @@
 		32A79A0D12F71E6700E7C0AB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				32ED6AA612FA4D2F0059DB2F /* NSBitmapImageRep-Additions */,
+				3261081D12F7A86600239271 /* PNGNormalizer */,
 				32A7969512F61D1E00E7C0AB /* AMHTTPConnection.h */,
 				32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */,
 				32E4DD5312F65BE60054B867 /* AMiOSApp.h */,
@@ -366,6 +378,15 @@
 				32C62CA612F695CB00D4708A /* SBProxyForJson.h */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		32ED6AA612FA4D2F0059DB2F /* NSBitmapImageRep-Additions */ = {
+			isa = PBXGroup;
+			children = (
+				32ED6AA712FA4D2F0059DB2F /* NSBitmapImageRep-Additions.h */,
+				32ED6AA812FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m */,
+			);
+			path = "NSBitmapImageRep-Additions";
 			sourceTree = "<group>";
 		};
 		32FBA75512F471E100F7680A /* Images */ = {
@@ -475,6 +496,7 @@
 				32FBD5FB12F7FB8D00255254 /* LICENSE.txt in Resources */,
 				32C6C9B012F850AB00B26843 /* dsa_pub.pem in Resources */,
 				32C6C9F812F86C6D00B26843 /* release_notes.txt in Resources */,
+				32ED6BA012FA5ED50059DB2F /* Rakefile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +509,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				32FBA70112F46A5300F7680A /* AppBallAppDelegate.m in Sources */,
-				32FBA70212F46A5300F7680A /* DropView.m in Sources */,
+				32FBA70212F46A5300F7680A /* DropAppView.m in Sources */,
 				32A7969712F61D1E00E7C0AB /* AMHTTPConnection.m in Sources */,
 				32E4DD5512F65BE60054B867 /* AMiOSApp.m in Sources */,
 				32C62C3612F6895300D4708A /* AMDataHelper.m in Sources */,
@@ -519,6 +541,8 @@
 				32FBD60212F7FB8D00255254 /* DDTTYLogger.m in Sources */,
 				32C6C88E12F83AC500B26843 /* WebSocket.m in Sources */,
 				326A31FF12F9A3BE00B7E5C0 /* NSString+FileMD5.m in Sources */,
+				32ED6AAB12FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m in Sources */,
+				32ED6B8F12FA5DE50059DB2F /* AppIconControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
