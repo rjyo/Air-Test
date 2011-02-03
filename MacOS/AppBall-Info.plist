@@ -23,7 +23,7 @@
 	<key>SUFeedURL</key>
 	<string>http://www.rakutec.com/adhoc/app/AppBall_appcast.xml</string>
 	<key>CFBundleVersion</key>
-	<string>0.5</string>
+	<string>0.5.1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSMainNibFile</key>

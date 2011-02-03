@@ -75,7 +75,7 @@ static AMDataHelper *localHelper;
 
 - (void)deleteCache {
     NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES) objectAtIndex:0];
-    cache = [cache stringByAppendingPathComponent:@"com.rakutec.airmock"];
+    cache = [cache stringByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
 
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if ([fileMgr isDeletableFileAtPath:cache]) {
