@@ -21,8 +21,6 @@
 
 @interface DropAppView()
 
-BOOL isDropOn;
-
 - (void)highlightDropView:(BOOL)yn;
 - (void)selectIcon:(AppIconControl *)c;
 
@@ -30,6 +28,7 @@ BOOL isDropOn;
 
 static NSImage *dropOnImage = nil;
 static NSImage *dropNoneImage = nil;
+static BOOL isDropOn = NO;
 
 @implementation DropAppView
 @synthesize dropButton, box, indicator;
@@ -37,7 +36,6 @@ static NSImage *dropNoneImage = nil;
 + (void)initialize {
     dropOnImage = [NSImage imageNamed:@"drop_on.png"];
     dropNoneImage = [NSImage imageNamed:@"drop_none.png"];
-    isDropOn = NO;
 }
 
 - (void)awakeFromNib {
