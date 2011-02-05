@@ -1,1 +1,4 @@
 1. should have a waiting message when clicked on a file and waiting for install
+2. show app icons on list
+3. loading indicator should be replaced, a better way to present loading
+4. better icons
