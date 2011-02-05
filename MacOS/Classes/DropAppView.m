@@ -59,9 +59,9 @@ static BOOL isDropOn = NO;
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
+//    NSDragOperation sourceDragMask;
     
-    sourceDragMask = [sender draggingSourceOperationMask];
+//    sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
@@ -80,9 +80,9 @@ static BOOL isDropOn = NO;
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
-    
-    sourceDragMask = [sender draggingSourceOperationMask];
+//    NSDragOperation sourceDragMask;
+//    
+//    sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {

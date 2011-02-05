@@ -92,7 +92,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         DDLogCVerbose(@"Get app list: %@ (%.2f)", data, time);
         
-        SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+        SBJsonWriter *writer = [[[SBJsonWriter alloc] init] autorelease];
         return [[[HTTPDataResponse alloc] initWithData:[writer dataWithObject:data]] autorelease];
     } else if ([cmd isEqualToString:@"conf"]) {
         AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg1];
@@ -107,7 +107,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
         NSString *appURL = [NSString stringWithFormat:@"http://%@/app/%@/app.ipa", host, appBundleId]; 
         NSString *iconURL = [NSString stringWithFormat:@"http://%@/icon/%@/icon.png", host, appBundleId]; 
         
-        NSMutableString *s = [content mutableCopy];
+        NSMutableString *s = [[content mutableCopy] autorelease];
         [s replaceOccurrencesOfString:@"%APP_URL%" withString:appURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%ICON_URL%" withString:iconURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%APP_BUNDLE_ID%" withString:appBundleId options:NSLiteralSearch range:NSMakeRange(0, [s length])];

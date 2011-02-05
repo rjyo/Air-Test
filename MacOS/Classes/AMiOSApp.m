@@ -45,6 +45,7 @@
         [task launch];
         [task waitUntilExit];
         int status = [task terminationStatus];
+        [task release];
         
         DDLogVerbose(@"Result of shell: %d", status);
         if (status != 0) {
@@ -131,7 +132,8 @@
     [task launch];
     [task waitUntilExit];
     int status = [task terminationStatus];
-    
+    [task release];
+
     DDLogVerbose(@"Result of shell: %d", status);
     if (status != 0) {
         NSException *exception = [NSException
