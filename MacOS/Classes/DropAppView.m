@@ -240,7 +240,7 @@ static BOOL isDropOn = NO;
     
     void (^appOpenPanelHandler)(NSInteger) = ^( NSInteger resultCode ) {
         if(resultCode == NSFileHandlingPanelOKButton) {
-            [self openFile:[[panel URL] path]];
+            [self performSelector:@selector(openFile:) withObject:[[panel URL] path] afterDelay:0.4];
         }
     };
     
