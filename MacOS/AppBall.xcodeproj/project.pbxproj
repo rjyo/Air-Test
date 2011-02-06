@@ -16,6 +16,8 @@
 		326108A812F7A86600239271 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 3261087612F7A86600239271 /* README */; };
 		326109AE12F7B6F100239271 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326109AD12F7B6F100239271 /* QuartzCore.framework */; };
 		326A31FF12F9A3BE00B7E5C0 /* NSString+FileMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 326A31FE12F9A3BE00B7E5C0 /* NSString+FileMD5.m */; };
+		3293F82F12FE2ADE007E1969 /* noicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3293F82D12FE2ADE007E1969 /* noicon.png */; };
+		3293F83012FE2ADE007E1969 /* noicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3293F82E12FE2ADE007E1969 /* noicon@2x.png */; };
 		32A7966F12F618C100E7C0AB /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A7966E12F618C100E7C0AB /* todo.txt */; };
 		32A7969712F61D1E00E7C0AB /* AMHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */; };
 		32C62C3612F6895300D4708A /* AMDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62C3512F6895300D4708A /* AMDataHelper.m */; };
@@ -98,6 +100,8 @@
 		326109AD12F7B6F100239271 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		326A31FD12F9A3BE00B7E5C0 /* NSString+FileMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FileMD5.h"; sourceTree = "<group>"; };
 		326A31FE12F9A3BE00B7E5C0 /* NSString+FileMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FileMD5.m"; sourceTree = "<group>"; };
+		3293F82D12FE2ADE007E1969 /* noicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noicon.png; sourceTree = "<group>"; };
+		3293F82E12FE2ADE007E1969 /* noicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noicon@2x.png"; sourceTree = "<group>"; };
 		32A7966E12F618C100E7C0AB /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 		32A7969512F61D1E00E7C0AB /* AMHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMHTTPConnection.h; sourceTree = "<group>"; };
 		32A7969612F61D1E00E7C0AB /* AMHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMHTTPConnection.m; sourceTree = "<group>"; };
@@ -394,6 +398,8 @@
 			children = (
 				32FBA75612F471E100F7680A /* drop_none.png */,
 				32FBA75712F471E100F7680A /* drop_on.png */,
+				3293F82D12FE2ADE007E1969 /* noicon.png */,
+				3293F82E12FE2ADE007E1969 /* noicon@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -497,6 +503,8 @@
 				32C6C9B012F850AB00B26843 /* dsa_pub.pem in Resources */,
 				32C6C9F812F86C6D00B26843 /* release_notes.txt in Resources */,
 				32ED6BA012FA5ED50059DB2F /* Rakefile in Resources */,
+				3293F82F12FE2ADE007E1969 /* noicon.png in Resources */,
+				3293F83012FE2ADE007E1969 /* noicon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
