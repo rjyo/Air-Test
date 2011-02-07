@@ -98,7 +98,11 @@ uint32 peekUint32(uint8 *head) {
 
 + (NSData *)dataWithContentsOfPNGFile:(NSString *)path {
 	NSData *d = [[[NSData alloc] initWithContentsOfFile:path] autorelease];
-	return [self dataFromPNGData:d];
+    if (nil != d) {
+        return [self dataFromPNGData:d];
+    } else {
+        return nil;
+    }
 }
 
 + (NSImage *)imageWithContentsOfPNGFile:(NSString *)path {		

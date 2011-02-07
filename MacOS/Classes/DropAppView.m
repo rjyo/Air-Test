@@ -21,8 +21,6 @@
 
 @interface DropAppView()
 
-BOOL isDropOn;
-
 - (void)highlightDropView:(BOOL)yn;
 - (void)selectIcon:(AppIconControl *)c;
 
@@ -30,6 +28,7 @@ BOOL isDropOn;
 
 static NSImage *dropOnImage = nil;
 static NSImage *dropNoneImage = nil;
+static BOOL isDropOn = NO;
 
 @implementation DropAppView
 @synthesize dropButton, box, indicator;
@@ -37,7 +36,6 @@ static NSImage *dropNoneImage = nil;
 + (void)initialize {
     dropOnImage = [NSImage imageNamed:@"drop_on.png"];
     dropNoneImage = [NSImage imageNamed:@"drop_none.png"];
-    isDropOn = NO;
 }
 
 - (void)awakeFromNib {
@@ -61,9 +59,9 @@ static NSImage *dropNoneImage = nil;
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
+//    NSDragOperation sourceDragMask;
     
-    sourceDragMask = [sender draggingSourceOperationMask];
+//    sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
@@ -82,9 +80,9 @@ static NSImage *dropNoneImage = nil;
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
-    
-    sourceDragMask = [sender draggingSourceOperationMask];
+//    NSDragOperation sourceDragMask;
+//    
+//    sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
@@ -242,7 +240,7 @@ static NSImage *dropNoneImage = nil;
     
     void (^appOpenPanelHandler)(NSInteger) = ^( NSInteger resultCode ) {
         if(resultCode == NSFileHandlingPanelOKButton) {
-            [self openFile:[[panel URL] path]];
+            [self performSelector:@selector(openFile:) withObject:[[panel URL] path] afterDelay:0.4];
         }
     };
     

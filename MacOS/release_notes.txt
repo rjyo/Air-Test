@@ -1,3 +1,16 @@
+h1. <span>2011-02-02</span> Release 0.5.2
+
+h2. Bugs Fixed
+
+- AppBall crashes when an app without icon draged in
+- UI improvements
+
+h1. <span>2011-02-02</span> Release 0.5.1
+
+h2. Bugs Fixed
+
+- A bug that cache is not cleared on exit
+
 h1. <span>2011-02-02</span> Release 0.5.0
 
 h2. New Features
@@ -5,9 +18,4 @@ h2. New Features
 - Support drag & drop for IPA files
 - Messages for unsupported file formats
 - Icon are displayed better
-
-h2. Bugs Fixed
-
-- Yet to discover
-
 

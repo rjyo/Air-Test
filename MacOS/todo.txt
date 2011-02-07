@@ -25,15 +25,20 @@ using "Host" in http header
 
 done 10. Support IPA format
 
-11. use Fireware version and min version in Info.plist to show only available apps in list
+11. use Firmware version and min version in Info.plist to show only available apps in list
 
-12. redesign container(view) for each app
+done 12. redesign container(view) for each app
+nsbuttoncell
 
 13. able to select an app and delete
 
-14. enable open from menu
+done 14. enable open from menu
 
 done 15. open browser from menu
+
+16. enable open recent
+
+17. a better icon
 
 bug.
 done 1. bonjour sometimes disappears

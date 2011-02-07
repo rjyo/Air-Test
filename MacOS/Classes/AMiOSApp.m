@@ -45,6 +45,7 @@
         [task launch];
         [task waitUntilExit];
         int status = [task terminationStatus];
+        [task release];
         
         DDLogVerbose(@"Result of shell: %d", status);
         if (status != 0) {
@@ -93,13 +94,13 @@
 - (NSString *)appCachePath {
     NSString *myId = [[NSBundle mainBundle] bundleIdentifier];
     
-    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    cache = [cache stringByAppendingPathComponent:myId];
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    path = [path stringByAppendingPathComponent:myId];
 
     NSFileManager *fileMgr = [NSFileManager defaultManager];
-    [fileMgr createDirectoryAtPath:cache withIntermediateDirectories:YES attributes:nil error:nil];
+    [fileMgr createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     
-    return cache;
+    return path;
 }
 
 - (void)createIPAFromApp {
@@ -131,7 +132,8 @@
     [task launch];
     [task waitUntilExit];
     int status = [task terminationStatus];
-    
+    [task release];
+
     DDLogVerbose(@"Result of shell: %d", status);
     if (status != 0) {
         NSException *exception = [NSException
@@ -202,7 +204,13 @@
                 iconName = @"Icon.png";
             }
         }
-        iconPath = [[appPath stringByAppendingPathComponent:iconName] copy];
+        iconPath = [appPath stringByAppendingPathComponent:iconName];
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        if ([fileMgr isReadableFileAtPath:iconPath]) {
+            [iconPath retain];
+        } else {
+            iconPath = [[[NSBundle mainBundle] pathForImageResource:@"noicon.png"] copy];
+        }
     }
     return iconPath;
 }
