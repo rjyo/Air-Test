@@ -1,3 +1,9 @@
+h1. <span>2011-02-02</span> Release 0.5.3
+
+h2. New Features
+
+- Change Icon, Change App name
+
 h1. <span>2011-02-02</span> Release 0.5.2
 
 h2. Bugs Fixed

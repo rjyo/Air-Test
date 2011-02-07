@@ -16,7 +16,7 @@ ChocTop::Configuration.new do |s|
   s.host     = 'www.rakutec.com'
   s.remote_dir = 'server/adhoc/app'
   s.base_url = 'http://www.rakutec.com/adhoc/app'
-  s.name = 'AppBall'
+  s.name = 'AirTest'
   
 
   # Custom DMG
