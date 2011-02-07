@@ -34,7 +34,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppBallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBallAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppBallAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBallAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* AppBallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* AirTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E5210DE3E06400AC0155 /* AirMockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirMockViewController.xib; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 		32C62E5B12F6ADCB00D4708A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		32C62E5C12F6ADCB00D4708A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		32C62E5D12F6ADCB00D4708A /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
-		32FBA6C312F4681600F7680A /* AppBallApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppBallApp-Info.plist"; sourceTree = "<group>"; };
-		32FBA6C912F4682A00F7680A /* AppBallApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBallApp_Prefix.pch; sourceTree = "<group>"; };
+		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
+		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* AppBallApp.app */,
+				1D6058910D05DD3D006BFB54 /* AirTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32FBA6C912F4682A00F7680A /* AppBallApp_Prefix.pch */,
+				32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -133,7 +133,7 @@
 				32610AC512F7CF7A00239271 /* Icon.png */,
 				2899E5210DE3E06400AC0155 /* AirMockViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				32FBA6C312F4681600F7680A /* AppBallApp-Info.plist */,
+				32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */,
 				326A33C612F9BF6900B7E5C0 /* todo.txt */,
 			);
 			name = Resources;
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* AppBallApp */ = {
+		1D6058900D05DD3D006BFB54 /* AirTestApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AppBallApp" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AirTestApp" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -209,9 +209,9 @@
 			);
 			dependencies = (
 			);
-			name = AppBallApp;
+			name = AirTestApp;
 			productName = AirMock;
-			productReference = 1D6058910D05DD3D006BFB54 /* AppBallApp.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* AirTestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AppBallApp" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirTestApp" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -233,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* AppBallApp */,
+				1D6058900D05DD3D006BFB54 /* AirTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -286,10 +286,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AppBallApp_Prefix.pch;
-				INFOPLIST_FILE = "AppBallApp-Info.plist";
+				GCC_PREFIX_HEADER = AirTestApp_Prefix.pch;
+				INFOPLIST_FILE = "AirTestApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PRODUCT_NAME = AppBallApp;
+				PRODUCT_NAME = AirTestApp;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAA59F85-3508-4F81-BD3F-4AF194E22485";
 				SDKROOT = iphoneos;
 			};
@@ -301,8 +301,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AppBallApp_Prefix.pch;
-				INFOPLIST_FILE = "AppBallApp-Info.plist";
+				GCC_PREFIX_HEADER = AirTestApp_Prefix.pch;
+				INFOPLIST_FILE = "AirTestApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = AirMockApp;
 				SDKROOT = iphoneos;
@@ -340,7 +340,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AppBallApp" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AirTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -349,7 +349,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AppBallApp" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
