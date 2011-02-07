@@ -38,12 +38,13 @@ done 15. open browser from menu
 
 16. enable open recent
 
-17. a better icon
+done 17. a better icon
 
 bug.
 done 1. bonjour sometimes disappears
 done 2. download apps list takes forever
 done 3. finding host name takes a long time
+4. icon not updated
 
 
 memo
