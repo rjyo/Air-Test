@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* AppBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppBallAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* AirTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AirTestAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -32,8 +32,8 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* AppBallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBallAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* AppBallAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBallAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* AirTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTestAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AirTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirTestAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* AirTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,8 +67,8 @@
 		32C62E5B12F6ADCB00D4708A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		32C62E5C12F6ADCB00D4708A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		32C62E5D12F6ADCB00D4708A /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
-		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
-		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
+		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
+		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 				32C62E4F12F6ADCB00D4708A /* JSON */,
 				32A799B812F719DF00E7C0AB /* Utils */,
 				32A799B912F719EA00E7C0AB /* Controllers */,
-				1D3623240D0F684500981E51 /* AppBallAppDelegate.h */,
-				1D3623250D0F684500981E51 /* AppBallAppDelegate.m */,
+				1D3623240D0F684500981E51 /* AirTestAppDelegate.h */,
+				1D3623250D0F684500981E51 /* AirTestAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* AppBallAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* AirTestAppDelegate.m in Sources */,
 				32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */,
 				32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */,
 				32C62E4C12F6AD7F00D4708A /* AppListViewController.m in Sources */,

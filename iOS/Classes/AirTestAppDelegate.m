@@ -6,12 +6,12 @@
 //  Copyright 2011 RakuRaku Technologies. All rights reserved.
 //
 
-#import "AppBallAppDelegate.h"
+#import "AirTestAppDelegate.h"
 
 #define kWebServiceType @"_airmock._tcp."
 #define kInitialDomain  @"local"
 
-@implementation AppBallAppDelegate
+@implementation AirTestAppDelegate
 
 @synthesize window;
 @synthesize browser;
