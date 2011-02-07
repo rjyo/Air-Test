@@ -10,7 +10,7 @@
 #import "HTTPServer.h"
 #import "DropAppView.h"
 
-@interface AppBallAppDelegate : NSObject <NSApplicationDelegate> {
+@interface AirTestAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
     HTTPServer *httpServer;
     DropAppView *dropView;

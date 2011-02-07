@@ -37,7 +37,7 @@
 		32ED6AAB12FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED6AA812FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m */; };
 		32ED6B8F12FA5DE50059DB2F /* AppIconControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */; };
 		32ED6BA012FA5ED50059DB2F /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = 32ED6B9F12FA5ED50059DB2F /* Rakefile */; };
-		32FBA70112F46A5300F7680A /* AppBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */; };
+		32FBA70112F46A5300F7680A /* AirTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA6FE12F46A5300F7680A /* AirTestAppDelegate.m */; };
 		32FBA70212F46A5300F7680A /* DropAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBA70012F46A5300F7680A /* DropAppView.m */; };
 		32FBA75812F471E100F7680A /* drop_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FBA75612F471E100F7680A /* drop_none.png */; };
 		32FBA75912F471E100F7680A /* drop_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FBA75712F471E100F7680A /* drop_on.png */; };
@@ -84,7 +84,7 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		256AC3F00F4B6AF500CF3369 /* AppBall_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBall_Prefix.pch; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* AirTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTest_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -134,8 +134,8 @@
 		32ED6B8D12FA5DE50059DB2F /* AppIconControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppIconControl.h; sourceTree = "<group>"; };
 		32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppIconControl.m; sourceTree = "<group>"; };
 		32ED6B9F12FA5ED50059DB2F /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
-		32FBA6FD12F46A5300F7680A /* AppBallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBallAppDelegate.h; sourceTree = "<group>"; };
-		32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBallAppDelegate.m; sourceTree = "<group>"; };
+		32FBA6FD12F46A5300F7680A /* AirTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTestAppDelegate.h; sourceTree = "<group>"; };
+		32FBA6FE12F46A5300F7680A /* AirTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirTestAppDelegate.m; sourceTree = "<group>"; };
 		32FBA6FF12F46A5300F7680A /* DropAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropAppView.h; sourceTree = "<group>"; };
 		32FBA70012F46A5300F7680A /* DropAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropAppView.m; sourceTree = "<group>"; };
 		32FBA75612F471E100F7680A /* drop_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_none.png; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 		32FBD5EC12F7FB8D00255254 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		32FBD66F12F8009E00255254 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		32FBD6B412F800BD00255254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		8D1107310486CEB800E47090 /* AppBall-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppBall-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* AppBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107310486CEB800E47090 /* AirTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; path = "AirTest-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* AirTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,8 +211,8 @@
 				32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */,
 				32FBA6FF12F46A5300F7680A /* DropAppView.h */,
 				32FBA70012F46A5300F7680A /* DropAppView.m */,
-				32FBA6FD12F46A5300F7680A /* AppBallAppDelegate.h */,
-				32FBA6FE12F46A5300F7680A /* AppBallAppDelegate.m */,
+				32FBA6FD12F46A5300F7680A /* AirTestAppDelegate.h */,
+				32FBA6FE12F46A5300F7680A /* AirTestAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* AppBall.app */,
+				8D1107320486CEB800E47090 /* AirTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				256AC3F00F4B6AF500CF3369 /* AppBall_Prefix.pch */,
+				256AC3F00F4B6AF500CF3369 /* AirTest_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -275,7 +275,7 @@
 				32C6C9AF12F850AB00B26843 /* dsa_pub.pem */,
 				3261075A12F7990F00239271 /* Icon.icns */,
 				32C62C8B12F6947400D4708A /* template.plist */,
-				8D1107310486CEB800E47090 /* AppBall-Info.plist */,
+				8D1107310486CEB800E47090 /* AirTest-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				32C6C9F712F86C6D00B26843 /* release_notes.txt */,
@@ -442,9 +442,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* AppBall */ = {
+		8D1107260486CEB800E47090 /* AirTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AppBall" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AirTest" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -455,10 +455,10 @@
 			);
 			dependencies = (
 			);
-			name = AppBall;
+			name = AirTest;
 			productInstallPath = "$(HOME)/Applications";
 			productName = AirMock;
-			productReference = 8D1107320486CEB800E47090 /* AppBall.app */;
+			productReference = 8D1107320486CEB800E47090 /* AirTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -466,7 +466,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AppBall" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirTest" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -480,7 +480,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* AppBall */,
+				8D1107260486CEB800E47090 /* AirTest */,
 			);
 		};
 /* End PBXProject section */
@@ -516,7 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				32FBA70112F46A5300F7680A /* AppBallAppDelegate.m in Sources */,
+				32FBA70112F46A5300F7680A /* AirTestAppDelegate.m in Sources */,
 				32FBA70212F46A5300F7680A /* DropAppView.m in Sources */,
 				32A7969712F61D1E00E7C0AB /* AMHTTPConnection.m in Sources */,
 				32E4DD5512F65BE60054B867 /* AMiOSApp.m in Sources */,
@@ -590,11 +590,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AppBall_Prefix.pch;
+				GCC_PREFIX_HEADER = AirTest_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = CONFIGURATION_DEBUG;
-				INFOPLIST_FILE = "AppBall-Info.plist";
+				INFOPLIST_FILE = "AirTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = AppBall;
+				PRODUCT_NAME = AirTest;
 			};
 			name = Debug;
 		};
@@ -609,11 +609,11 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AppBall_Prefix.pch;
+				GCC_PREFIX_HEADER = AirTest_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = CONFIGURATION_RELEASE;
-				INFOPLIST_FILE = "AppBall-Info.plist";
+				INFOPLIST_FILE = "AirTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = AppBall;
+				PRODUCT_NAME = AirTest;
 			};
 			name = Release;
 		};
@@ -646,7 +646,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AppBall" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "AirTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -655,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AppBall" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

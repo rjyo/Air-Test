@@ -6,12 +6,12 @@
 //  Copyright 2011 RakuRaku Technologies. All rights reserved.
 //
 
-#import "AppBallAppDelegate.h"
+#import "AirTestAppDelegate.h"
 #import "AMHTTPConnection.h"
 #import "AMDataHelper.h"
 #import "DDTTYLogger.h"
 
-@implementation AppBallAppDelegate
+@implementation AirTestAppDelegate
 
 @synthesize window, dropView;
 
