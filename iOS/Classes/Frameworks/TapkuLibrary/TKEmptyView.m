@@ -50,7 +50,7 @@
 
 
 - (id) initWithFrame:(CGRect)frame mask:(UIImage*)image title:(NSString*)titleString subtitle:(NSString*)subtitleString{
-	if(self = [super initWithFrame:frame]){
+	if((self = [super initWithFrame:frame])){
 		
 		
 		self.backgroundColor = [UIColor whiteColor];

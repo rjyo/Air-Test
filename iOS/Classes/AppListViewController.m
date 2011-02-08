@@ -8,18 +8,20 @@
 
 #import "AppListViewController.h"
 #import "CJSONDeserializer.h"
+#import "TKAlertCenter.h"
 
 @interface AppListViewController()
 
 - (void)loadData;
 - (void)clearQueue;
 - (NSOperationQueue *)queue;
+- (void)hideLoading;
 
 @end
 
 
 @implementation AppListViewController
-@synthesize listURL;
+@synthesize listURL = _listURL, loading = _loading, service = _service, apps = _apps;
 
 #pragma mark -
 #pragma mark Initialization
@@ -29,10 +31,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization.
-        UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)];
-        self.navigationItem.rightBarButtonItem = refreshButton;
-        [refreshButton release];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideLoading) name:UIApplicationWillResignActiveNotification object:nil];
     }
     return self;
 }
@@ -48,20 +47,25 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 */
+- (void)refresh {
+    [self loadData];
+}
+
+- (void)hideLoading {
+    [self.loading removeFromSuperview];
+}
+
+- (TKLoadingView *)loading {
+	if(_loading==nil){
+		_loading  = [[TKLoadingView alloc] initWithTitle:@"Loading..."];
+		[_loading startAnimating];
+		_loading.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+	}
+	return _loading;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    indicator = (LoadingIndicatorView *)[self.navigationController.view viewWithTag:kLoadingIndicatorTag];
-    if (!indicator) {
-        indicator = [[LoadingIndicatorView alloc] initWithFrame:self.view.frame];
-        [self.navigationController.view addSubview:indicator];
-        indicator.tag = kLoadingIndicatorTag;
-    }
-    float y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
-    CGRect rect = self.tableView.frame;
-    rect.origin.y = y;
-    indicator.frame = rect;
 }
 
 - (NSOperationQueue *)queue {
@@ -83,16 +87,26 @@
 }
 
 - (void)loadRemoteAppList:(NSData *)data {
-    [indicator stopAnimating];
+    [self hideLoading];
 
     NSError *error = nil;
-    apps = [[[CJSONDeserializer deserializer] deserializeAsArray:data error:&error] retain];
-
-    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    self.apps = [[[CJSONDeserializer deserializer] deserializeAsArray:data error:&error] retain];
+    
+    if ([self.apps count] > 0) {
+        [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:[NSString stringWithFormat:NSLocalizedString(@"%d App(s) found", nil), [self.apps count]]];
+    } else {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:NSLocalizedString(@"No App found", nil)];
+    }
+    
+    [self stopLoading];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+    self.loading.title = NSLocalizedString(@"Loading", nil);
+    [self.view addSubview:self.loading];
     
     [self loadData];
 }
@@ -105,8 +119,6 @@
     op.delegate = self;
     [[self queue] addOperation:op];
     [op release];
-    
-    [indicator startAnimating];
 }
 
 /*
@@ -139,8 +151,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    if (nil == apps) return 1;
-    return [apps count];
+    if (nil == self.apps) return 1;
+    return [self.apps count];
 }
 
 
@@ -154,13 +166,16 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    if (nil == apps) {
-        cell.textLabel.text = @"Loading apps";
+    if (nil == self.apps) {
+        cell.textLabel.text = NSLocalizedString(@"Pull down to load your App...", nil);
+		cell.textLabel.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+        cell.detailTextLabel.text = nil;
     } else {
-        NSDictionary *appInfo = [apps objectAtIndex:indexPath.row];
+        NSDictionary *appInfo = [self.apps objectAtIndex:indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", 
                                [appInfo valueForKey:@"CFBundleDisplayName"], 
                                [appInfo valueForKey:@"CFBundleVersion"]];
+		cell.textLabel.textColor = [UIColor blackColor];
         cell.detailTextLabel.text = [appInfo valueForKey:@"CFBundleIdentifier"];
     }
     
@@ -212,14 +227,18 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (nil == apps) return;
+    if (nil == self.apps) return;
     
-    NSDictionary *appInfo = [apps objectAtIndex:indexPath.row];
+    self.loading.title = NSLocalizedString(@"Preparing app...", nil);
+    [self.view addSubview:self.loading];
+    
+    NSDictionary *appInfo = [self.apps objectAtIndex:indexPath.row];
     NSString *installUrl = [appInfo valueForKey:@"itms-services"];
 #if TARGET_IPHONE_SIMULATOR
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Install" message:installUrl delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
+    [self hideLoading];
 #else
     //@"itms-services://?action=download-manifest&url=http://www.rakutec.com/adhoc/test.plist"
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:installUrl]];
@@ -228,6 +247,14 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	// Ignore the selection if there are no services as the searchingForServicesString cell
+	// may be visible and tapping it would do nothing
+	if ([self.apps count] == 0)
+		return nil;
+	
+	return indexPath;
+}
 
 #pragma mark -
 #pragma mark Memory management
@@ -246,11 +273,12 @@
 
 
 - (void)dealloc {
-    [listURL release];
-    [apps release];
+    [_listURL release];
+    [_apps release];
+    [_loading release];
+    [_service release];
     [super dealloc];
 }
 
 
 @end
-

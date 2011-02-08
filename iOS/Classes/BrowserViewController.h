@@ -61,6 +61,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 #import <Foundation/NSNetServices.h>
+#import "TKTableViewController.h"
 
 @class BrowserViewController;
 
@@ -71,7 +72,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 - (void) browserViewController:(BrowserViewController*)bvc didResolveInstance:(NSNetService*)ref;
 @end
 
-@interface BrowserViewController : UITableViewController <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
+@interface BrowserViewController : TKTableViewController <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
 
 @private
 	id<BrowserViewControllerDelegate> _delegate;

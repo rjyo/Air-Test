@@ -110,17 +110,29 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 		_services = [[NSMutableArray alloc] init];
 		self.showDisclosureIndicators = show;
 
-        UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(redoSearchForServices)];
-        self.navigationItem.rightBarButtonItem = addButton;
-        [addButton release];
-
 		// Make sure we have a chance to discover devices before showing the user that nothing was found (yet)
 		[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(initialWaitOver:) userInfo:nil repeats:NO];
 	}
 
 	return self;
 }
+
+#pragma mark -
+#pragma mark View Controller Events
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:path animated:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
+#pragma mark -
+#pragma mark Searching
 
 - (NSString *)searchingForServicesString {
 	return _searchingForServicesString;
@@ -335,6 +347,12 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	if (self.currentResolve && [service isEqual:self.currentResolve]) {
 		[self stopCurrentResolve];
 	}
+    if (self.navigationController.navigationItem != self.navigationItem) {
+        AppListViewController *vc = [[self.navigationController viewControllers] lastObject];
+        if ([vc.service isEqualToString:[service name]]) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 	[self.services removeObject:service];
 	
 	// If moreComing is NO, it means that there are no more messages in the queue from the Bonjour daemon, so we should update the UI.
@@ -383,6 +401,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     
     // Navigation logic may go here. Create and push another view controller.
     AppListViewController *appVc = [[AppListViewController alloc] initWithStyle:UITableViewStylePlain];
+    appVc.service = [service name];
     appVc.listURL = listURL;
     appVc.title = [NSString stringWithFormat:@"Apps on %@", [service name]];
     [self.navigationController pushViewController:appVc animated:YES];

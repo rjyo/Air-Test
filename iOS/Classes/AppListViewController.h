@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoadingIndicatorView.h"
 #import "DataLoadingOperation.h"
+#import "PullRefreshTableViewController.h"
+#import "TKLoadingView.h"
 
-@interface AppListViewController : UITableViewController <DataLoadingOperationDelegate>{
-    NSString *listURL;
-    NSArray *apps;
+@interface AppListViewController : PullRefreshTableViewController <DataLoadingOperationDelegate> {
+    NSString *_listURL;
+    NSArray *_apps;
     NSOperationQueue *queue;
-    LoadingIndicatorView *indicator;
+    TKLoadingView *_loading;
+    NSString *_service;
 }
 
 @property(nonatomic, copy) NSString *listURL;
+@property(readonly) TKLoadingView *loading;
+@property(nonatomic, retain) NSString *service;
+@property(nonatomic, retain) NSArray *apps;
 
 @end
