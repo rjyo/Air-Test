@@ -206,6 +206,9 @@
 		case TKEmptyViewImageTelevision:
 			str = @"television";
 			break;
+		case TKEmptyViewImageWiFi:
+			str = @"wificonn";
+			break;
 		default:
 			str = @"star";
 			break;

@@ -15,6 +15,7 @@
 
 @synthesize window;
 @synthesize browser;
+@synthesize reachability = _reachability;
 
 
 #pragma mark -
@@ -34,6 +35,12 @@
 	// Add the controller's view as a subview of the window
 	[self.window addSubview:[self.browser view]];
     
+    self.reachability = [Reachability reachabilityForLocalWiFi];
+    [self.reachability startNotifier];
+    if (![self.reachability isReachableViaWiFi]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kReachabilityChangedNotification object:nil];
+    }
+
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -106,6 +113,7 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
+    [self.reachability stopNotifier];
 }
 
 
@@ -129,6 +137,7 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
     [[browser bvc] redoSearchForServices];
+    [self.reachability startNotifier];
 }
 
 
@@ -137,6 +146,7 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+    [self.reachability stopNotifier];
 }
 
 
@@ -153,6 +163,7 @@
 - (void)dealloc {
 	[browser release];
     [window release];
+    [_reachability release];
     [super dealloc];
 }
 

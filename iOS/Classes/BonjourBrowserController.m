@@ -77,7 +77,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     self.bvc.tkBackButton = [[[TKBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back"] style:TKBarButtonItemStyleBack target:nil action:nil] autorelease];
 
 	self.bvc.delegate = self;
-    self.bvc.searchingForServicesString = @"Searching for AirTest Server...";
+    self.bvc.searchingForServicesString = @"Searching for Air Test Server...";
     // Calls -[NSNetServiceBrowser searchForServicesOfType:inDomain:].
 	[self.bvc searchForServicesOfType:self.type inDomain:self.domain];
 

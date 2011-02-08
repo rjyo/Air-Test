@@ -48,7 +48,8 @@ typedef enum {
 	TKEmptyViewImageStopwatch,
 	TKEmptyViewImageKey,
 	TKEmptyViewImageMale,
-	TKEmptyViewImageTelevision
+	TKEmptyViewImageTelevision,
+	TKEmptyViewImageWiFi
 } TKEmptyViewImage;
 
 

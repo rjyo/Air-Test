@@ -62,6 +62,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 #import "BrowserViewController.h"
 #import "AppListViewController.h"
 #import "NSNetService+IPv4.h"
+#import "UIImageView+TKCategory.h"
 
 #define kProgressIndicatorSize 20.0
 
@@ -221,6 +222,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
         cell.textLabel.text = self.searchingForServicesString;
 		cell.textLabel.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
 		cell.accessoryType = UITableViewCellAccessoryNone;
+        
 		// Make sure to get rid of the activity indicator that may be showing if we were resolving cell zero but
 		// then got didRemoveService callbacks for all services (e.g. the network connection went down).
 		if (cell.accessoryView)
@@ -233,26 +235,27 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	cell.textLabel.text = [service name];
 	cell.textLabel.textColor = [UIColor blackColor];
 	cell.accessoryType = self.showDisclosureIndicators ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
-	
-	// Note that the underlying array could have changed, and we want to show the activity indicator on the correct cell
-	if (self.needsActivityIndicator && self.currentResolve == service) {
-		if (!cell.accessoryView) {
-			CGRect frame = CGRectMake(0.0, 0.0, kProgressIndicatorSize, kProgressIndicatorSize);
-			UIActivityIndicatorView* spinner = [[UIActivityIndicatorView alloc] initWithFrame:frame];
-			[spinner startAnimating];
-			spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-			[spinner sizeToFit];
-			spinner.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
-										UIViewAutoresizingFlexibleRightMargin |
-										UIViewAutoresizingFlexibleTopMargin |
-										UIViewAutoresizingFlexibleBottomMargin);
-			cell.accessoryView = spinner;
-			[spinner release];
-		}
-	} else if (cell.accessoryView) {
-		cell.accessoryView = nil;
-	}
-	
+//    cell.imageView.image = [UIImage imageNamed:@"Case.png"];
+
+//	// Note that the underlying array could have changed, and we want to show the activity indicator on the correct cell
+//	if (self.needsActivityIndicator && self.currentResolve == service) {
+//		if (!cell.accessoryView) {
+//			CGRect frame = CGRectMake(0.0, 0.0, kProgressIndicatorSize, kProgressIndicatorSize);
+//			UIActivityIndicatorView* spinner = [[UIActivityIndicatorView alloc] initWithFrame:frame];
+//			[spinner startAnimating];
+//			spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+//			[spinner sizeToFit];
+//			spinner.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
+//										UIViewAutoresizingFlexibleRightMargin |
+//										UIViewAutoresizingFlexibleTopMargin |
+//										UIViewAutoresizingFlexibleBottomMargin);
+//			cell.accessoryView = spinner;
+//			[spinner release];
+//		}
+//	} else if (cell.accessoryView) {
+//		cell.accessoryView = nil;
+//	}
+//	
 	return cell;
 }
 
@@ -348,8 +351,8 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 		[self stopCurrentResolve];
 	}
     if (self.navigationController.navigationItem != self.navigationItem) {
-        AppListViewController *vc = [[self.navigationController viewControllers] lastObject];
-        if ([vc.service isEqualToString:[service name]]) {
+        UIViewController *vc = [[self.navigationController viewControllers] lastObject];
+        if ([vc isKindOfClass:[AppListViewController class]] && [((AppListViewController *)vc).service isEqualToString:[service name]]) {
             [self.navigationController popViewControllerAnimated:YES];
         }
     }

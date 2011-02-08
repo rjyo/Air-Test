@@ -32,6 +32,7 @@
 #import "TKTableViewController.h"
 #import "TKEmptyView.h"
 #import "UIScrollview+TKCategory.h"
+#import "Reachability.h"
 
 
 @implementation TKTableViewController
@@ -60,6 +61,8 @@
 	self.loadingView = nil;
 	self.searchBar = nil;
 	self.searchBarController = nil;
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void) viewDidUnload {
 	[self unloadSubviews];
@@ -72,6 +75,8 @@
 // -----------------------------
 
 - (void) loadView{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
+    
 	[super loadView];
 	
 	_tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:_style];
@@ -83,6 +88,19 @@
 	[self.view addSubview:self.tableView];
 }
 
+
+- (void)handleNetworkChange:(NSNotification *)notice {
+    Reachability *r = (Reachability *)[notice object];
+    if (![r isReachableViaWiFi]) {
+        [self.view addSubview:self.emptyView];
+        self.emptyView.titleLabel.text = NSLocalizedString(@"WiFi Connection", nil);
+        self.emptyView.subtitleLabel.text = NSLocalizedString(@"A WiFi Connection is needed.", nil);
+    } else {
+        [self.emptyView removeFromSuperview];
+        self.emptyView.titleLabel.text = nil;
+        self.emptyView.subtitleLabel.text = nil;
+    }
+}
 
 
 // -----------------------------
@@ -105,7 +123,7 @@
 - (TKEmptyView*) emptyView{
 	if(_emptyView==nil){
 		_emptyView = [[TKEmptyView alloc] initWithFrame:self.view.bounds 
-										 emptyViewImage:TKEmptyViewImageSearch title:nil subtitle:nil];
+										 emptyViewImage:TKEmptyViewImageWiFi title:nil subtitle:nil];
 		_emptyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
 	}

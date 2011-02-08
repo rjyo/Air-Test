@@ -22,6 +22,8 @@
 		32610AC612F7CF7A00239271 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32610AC512F7CF7A00239271 /* Icon.png */; };
 		32610B0812F7DCF400239271 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32610B0712F7DCF400239271 /* Icon@2x.png */; };
 		326A33C712F9BF6900B7E5C0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 326A33C612F9BF6900B7E5C0 /* todo.txt */; };
+		326F86E11301706B00962AD5 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 326F86DD1301706B00962AD5 /* Back.png */; };
+		326F86E21301706B00962AD5 /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 326F86DE1301706B00962AD5 /* Back@2x.png */; };
 		32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */; };
 		32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */; };
 		32A7998A12F717E000E7C0AB /* StringLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7998912F717E000E7C0AB /* StringLoadingOperation.m */; };
@@ -113,6 +115,8 @@
 		32610AC512F7CF7A00239271 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		32610B0712F7DCF400239271 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		326A33C612F9BF6900B7E5C0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		326F86DD1301706B00962AD5 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Back.png; path = Images/Back.png; sourceTree = "<group>"; };
+		326F86DE1301706B00962AD5 /* Back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back@2x.png"; path = "Images/Back@2x.png"; sourceTree = "<group>"; };
 		32A796BC12F61E3000E7C0AB /* BonjourBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourBrowserController.h; sourceTree = "<group>"; };
 		32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourBrowserController.m; sourceTree = "<group>"; };
 		32A796BE12F61E3000E7C0AB /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
@@ -310,8 +314,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				32610B0712F7DCF400239271 /* Icon@2x.png */,
-				32610AC512F7CF7A00239271 /* Icon.png */,
+				326F86E51301707200962AD5 /* Images */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */,
 				326A33C612F9BF6900B7E5C0 /* todo.txt */,
@@ -363,6 +366,17 @@
 				321AA07E1301422700014D4B /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		326F86E51301707200962AD5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				326F86DD1301706B00962AD5 /* Back.png */,
+				326F86DE1301706B00962AD5 /* Back@2x.png */,
+				32610AC512F7CF7A00239271 /* Icon.png */,
+				32610B0712F7DCF400239271 /* Icon@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		32A799B812F719DF00E7C0AB /* Utils */ = {
@@ -603,6 +617,8 @@
 				32EB576F1301194D002EFE5E /* TapkuLibrary.bundle in Resources */,
 				321AA0691301340800014D4B /* arrow.png in Resources */,
 				321AA07B13013EB700014D4B /* arrow@2x.png in Resources */,
+				326F86E11301706B00962AD5 /* Back.png in Resources */,
+				326F86E21301706B00962AD5 /* Back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +706,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rakuraku Technologies Inc.";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -699,7 +714,6 @@
 				INFOPLIST_FILE = "AirTestApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = AirTestApp;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAA59F85-3508-4F81-BD3F-4AF194E22485";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
