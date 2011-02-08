@@ -8,7 +8,7 @@
 
 #import "AMiOSApp.h"
 #import "DDTTYLogger.h"
-#import "NSString+FileMD5.h"
+#import "NSStringAdditions.h"
 
 @interface AMiOSApp()
 
@@ -22,12 +22,13 @@
 @interface AMiOSApp()
 
 - (NSString *)appCachePath;
-
+- (void)getIconPath;
+- (void)getFileSize;
 @end
 
 
 @implementation AMiOSApp
-@synthesize appInfo, appPath, ipaPath, devices, iconPath;
+@synthesize appInfo, appPath, ipaPath, devices, iconPath, icon2xPath, fileSize, updatedAt;
 
 
 // extract the IPA
@@ -63,10 +64,15 @@
         for (NSString *fileName in files) {
             if ([fileName hasSuffix:@".app"]) {
                 appPath = [[payloadPath stringByAppendingPathComponent:fileName] retain];
-                appInfo = [[self infoFromApp:appPath] copy];
+                appInfo = [[self infoFromApp:appPath] retain];
                 
                 [self listDevicesInApp];
+                [self getIconPath];
+                [self getFileSize];
                 
+                NSDictionary *attributes = [fileMgr attributesOfItemAtPath:ipaPath error:nil];
+                updatedAt = [[[attributes valueForKey:NSFileModificationDate] relativeTime] retain]; 
+
                 break;
             }
         }
@@ -83,9 +89,15 @@
         if (self != nil) {
             appPath = [path copy];
             appInfo = [[self infoFromApp:appPath] copy];
-            
-            [self listDevicesInApp];
+
             [self createIPAFromApp];
+
+            [self listDevicesInApp];
+            [self getIconPath];
+            [self getFileSize];
+            
+            NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:appPath error:nil];
+            updatedAt = [[[attributes valueForKey:NSFileModificationDate] relativeTime] retain]; 
         }
         return self;
     }
@@ -154,18 +166,16 @@
         DDLogError(@"Failed to get information from .app: %@", path);
         
         NSException *exception = [NSException
-                                  exceptionWithName:@"NoAppInfoException"
+                                  exceptionWithName:@"App Info Error"
                                   reason:@"Failed to get information from info.plist"
                                   userInfo:nil];
         @throw exception;
     }
     
     if (![[info valueForKey:@"DTPlatformName"] isEqualToString:@"iphoneos"]) {
-        NSException *exception = [NSException
-                                  exceptionWithName:@"UnSupportedPlatformException"
-                                  reason:@"The binary is not build for iPhone OS"
-                                  userInfo:nil];
-        @throw exception;
+        @throw [NSException exceptionWithName:@"UnSupported Platform"
+                                       reason:@"This binary is not build for iOS."
+                                     userInfo:nil];
     }
     
     return info;
@@ -173,6 +183,14 @@
 
 - (void)listDevicesInApp {
     NSString *f = [appPath stringByAppendingPathComponent:@"embedded.mobileprovision"];
+    
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    if (![fileMgr isReadableFileAtPath:f]) {
+        @throw [NSException exceptionWithName:@"No Provisioning" 
+                                       reason:@"A provisioning profile is needed for install the app on iOS devices." 
+                                     userInfo:nil];
+    }
+
     // todo: check if no provision
     NSFileHandle *fh = [NSFileHandle fileHandleForReadingAtPath:f];
     [fh seekToFileOffset:0x3c];
@@ -193,17 +211,29 @@
     return info;
 }
 
-- (NSString *)iconPath {
+- (void)getFileSize {
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    if ([fileMgr isReadableFileAtPath:ipaPath]) {
+        NSError *error;
+        NSDictionary *attributes = [fileMgr attributesOfItemAtPath:ipaPath error:&error];
+        fileSize = [[[attributes valueForKey:NSFileSize] readableSize] retain];
+    }
+}
+
+- (void)getIconPath {
     if (nil == iconPath) {
         NSString *iconName = [appInfo valueForKey:@"CFBundleIconFile"];
+        NSString *icon2xName = @"Icon@2x.png";
         if (nil == iconName) {
             NSArray *icons = [appInfo valueForKey:@"CFBundleIconFiles"];
             if ([icons count] != 0) {
                 iconName = [icons objectAtIndex:0];
+                icon2xName = [icons objectAtIndex:1];
             } else {
                 iconName = @"Icon.png";
             }
         }
+
         iconPath = [appPath stringByAppendingPathComponent:iconName];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         if ([fileMgr isReadableFileAtPath:iconPath]) {
@@ -211,8 +241,14 @@
         } else {
             iconPath = [[[NSBundle mainBundle] pathForImageResource:@"noicon.png"] copy];
         }
+
+        icon2xPath = [appPath stringByAppendingPathComponent:icon2xName];
+        if ([fileMgr isReadableFileAtPath:icon2xPath]) {
+            [icon2xPath retain];
+        } else {
+            icon2xPath = [[[NSBundle mainBundle] pathForImageResource:@"noicon@2x.png"] copy];
+        }
     }
-    return iconPath;
 }
 
 - (void)dealloc {
@@ -221,6 +257,9 @@
     [appPath release];
     [appInfo release];
     [devices release];
+    [icon2xPath release];
+    [fileSize release];
+    [updatedAt release];
     [super dealloc];
 }
 

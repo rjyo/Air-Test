@@ -40,6 +40,8 @@ done 15. open browser from menu
 
 done 17. a better icon
 
+18. use 2x icon for most places
+
 bug.
 done 1. bonjour sometimes disappears
 done 2. download apps list takes forever

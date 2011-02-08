@@ -42,7 +42,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://www.rakutec.com/adhoc/app/AppBall_appcast.xml</string>
+	<string>http://www.rakutec.com/adhoc/app/AirTest_appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>

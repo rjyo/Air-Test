@@ -82,10 +82,13 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
             [dict setObject:[app.appInfo valueForKey:@"CFBundleVersion"] forKey:@"CFBundleVersion"];
             [dict setObject:[app.appInfo valueForKey:@"CFBundleIdentifier"] forKey:@"CFBundleIdentifier"];
             [dict setObject:[app.appInfo valueForKey:@"CFBundleDisplayName"] forKey:@"CFBundleDisplayName"];
+            [dict setObject:app.fileSize forKey:@"app-size"];
+            [dict setObject:app.updatedAt forKey:@"updated-at"];
             NSString *serviceUrl = @"itms-services://?action=download-manifest&url=http://%@/conf/%@";
             serviceUrl = [NSString stringWithFormat:serviceUrl, host, [app.appInfo valueForKey:@"CFBundleIdentifier"]];
             [dict setObject:serviceUrl forKey:@"itms-services"];
             [data addObject:dict];
+            DDLogCVerbose(@"Data is: %@", dict);
         }
         
         NSDate *now = [NSDate date];
@@ -106,10 +109,12 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
         NSString *appVersion = [app.appInfo valueForKey:@"CFBundleVersion"];
         NSString *appURL = [NSString stringWithFormat:@"http://%@/app/%@/app.ipa", host, appBundleId]; 
         NSString *iconURL = [NSString stringWithFormat:@"http://%@/icon/%@/icon.png", host, appBundleId]; 
+        NSString *icon2xURL = [NSString stringWithFormat:@"http://%@/icon2x/%@/icon.png", host, appBundleId]; 
         
         NSMutableString *s = [[content mutableCopy] autorelease];
         [s replaceOccurrencesOfString:@"%APP_URL%" withString:appURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%ICON_URL%" withString:iconURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
+        [s replaceOccurrencesOfString:@"%ICON2X_URL%" withString:icon2xURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%APP_BUNDLE_ID%" withString:appBundleId options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%APP_VERSION%" withString:appVersion options:NSLiteralSearch range:NSMakeRange(0, [s length])];
         [s replaceOccurrencesOfString:@"%APP_NAME%" withString:appName options:NSLiteralSearch range:NSMakeRange(0, [s length])];
@@ -135,6 +140,14 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         DDLogCVerbose(@"Get icon binary: %@ (%.2f)", arg1, time);
         return [[[HTTPFileResponse alloc] initWithFilePath:app.iconPath forConnection:self] autorelease];
+    } else if ([cmd isEqualToString:@"icon2x"]) {
+        AMiOSApp *app = [[AMDataHelper localHelper] appForBundleId:arg1];
+        if (nil == app) return nil;
+        
+        NSDate *now = [NSDate date];
+        NSTimeInterval time = [now timeIntervalSinceDate:then];
+        DDLogCVerbose(@"Get icon binary: %@ (%.2f)", arg1, time);
+        return [[[HTTPFileResponse alloc] initWithFilePath:app.icon2xPath forConnection:self] autorelease];
     }
 
 	return nil;

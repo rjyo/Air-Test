@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>%ICON_URL%</string>
+					<string>%ICON2X_URL%</string>
 				</dict>
 			</array>
 			<key>metadata</key>

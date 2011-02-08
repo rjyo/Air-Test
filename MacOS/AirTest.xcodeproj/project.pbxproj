@@ -15,7 +15,7 @@
 		326108A712F7A86600239271 /* PNGNormalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3261087512F7A86600239271 /* PNGNormalizer.m */; };
 		326108A812F7A86600239271 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 3261087612F7A86600239271 /* README */; };
 		326109AE12F7B6F100239271 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326109AD12F7B6F100239271 /* QuartzCore.framework */; };
-		326A31FF12F9A3BE00B7E5C0 /* NSString+FileMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 326A31FE12F9A3BE00B7E5C0 /* NSString+FileMD5.m */; };
+		326F86FB1301888000962AD5 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 326F86FA1301888000962AD5 /* NSStringAdditions.m */; };
 		3293F82F12FE2ADE007E1969 /* noicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3293F82D12FE2ADE007E1969 /* noicon.png */; };
 		3293F83012FE2ADE007E1969 /* noicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3293F82E12FE2ADE007E1969 /* noicon@2x.png */; };
 		32A7966F12F618C100E7C0AB /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A7966E12F618C100E7C0AB /* todo.txt */; };
@@ -84,7 +84,7 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		256AC3F00F4B6AF500CF3369 /* AirTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTest_Prefix.pch; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* AirTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTest_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -98,8 +98,8 @@
 		3261087512F7A86600239271 /* PNGNormalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGNormalizer.m; sourceTree = "<group>"; };
 		3261087612F7A86600239271 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		326109AD12F7B6F100239271 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		326A31FD12F9A3BE00B7E5C0 /* NSString+FileMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FileMD5.h"; sourceTree = "<group>"; };
-		326A31FE12F9A3BE00B7E5C0 /* NSString+FileMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FileMD5.m"; sourceTree = "<group>"; };
+		326F86F91301888000962AD5 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		326F86FA1301888000962AD5 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		3293F82D12FE2ADE007E1969 /* noicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noicon.png; sourceTree = "<group>"; };
 		3293F82E12FE2ADE007E1969 /* noicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noicon@2x.png"; sourceTree = "<group>"; };
 		32A7966E12F618C100E7C0AB /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
@@ -128,13 +128,13 @@
 		32C6C9E812F8652100B26843 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		32C6C9F712F86C6D00B26843 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		32E4DD5312F65BE60054B867 /* AMiOSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMiOSApp.h; sourceTree = "<group>"; };
-		32E4DD5412F65BE60054B867 /* AMiOSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMiOSApp.m; sourceTree = "<group>"; };
+		32E4DD5412F65BE60054B867 /* AMiOSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AMiOSApp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		32ED6AA712FA4D2F0059DB2F /* NSBitmapImageRep-Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBitmapImageRep-Additions.h"; sourceTree = "<group>"; };
 		32ED6AA812FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBitmapImageRep-Additions.m"; sourceTree = "<group>"; };
 		32ED6B8D12FA5DE50059DB2F /* AppIconControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppIconControl.h; sourceTree = "<group>"; };
 		32ED6B8E12FA5DE50059DB2F /* AppIconControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppIconControl.m; sourceTree = "<group>"; };
 		32ED6B9F12FA5ED50059DB2F /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
-		32FBA6FD12F46A5300F7680A /* AirTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AirTestAppDelegate.h; sourceTree = "<group>"; };
+		32FBA6FD12F46A5300F7680A /* AirTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTestAppDelegate.h; sourceTree = "<group>"; };
 		32FBA6FE12F46A5300F7680A /* AirTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirTestAppDelegate.m; sourceTree = "<group>"; };
 		32FBA6FF12F46A5300F7680A /* DropAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropAppView.h; sourceTree = "<group>"; };
 		32FBA70012F46A5300F7680A /* DropAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropAppView.m; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		32FBD5EC12F7FB8D00255254 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		32FBD66F12F8009E00255254 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		32FBD6B412F800BD00255254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		8D1107310486CEB800E47090 /* AirTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; path = "AirTest-Info.plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* AirTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTest-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* AirTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -357,8 +357,8 @@
 				32E4DD5412F65BE60054B867 /* AMiOSApp.m */,
 				32C62C3412F6895300D4708A /* AMDataHelper.h */,
 				32C62C3512F6895300D4708A /* AMDataHelper.m */,
-				326A31FD12F9A3BE00B7E5C0 /* NSString+FileMD5.h */,
-				326A31FE12F9A3BE00B7E5C0 /* NSString+FileMD5.m */,
+				326F86F91301888000962AD5 /* NSStringAdditions.h */,
+				326F86FA1301888000962AD5 /* NSStringAdditions.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -548,9 +548,9 @@
 				32FBD60112F7FB8D00255254 /* DDLog.m in Sources */,
 				32FBD60212F7FB8D00255254 /* DDTTYLogger.m in Sources */,
 				32C6C88E12F83AC500B26843 /* WebSocket.m in Sources */,
-				326A31FF12F9A3BE00B7E5C0 /* NSString+FileMD5.m in Sources */,
 				32ED6AAB12FA4D2F0059DB2F /* NSBitmapImageRep-Additions.m in Sources */,
 				32ED6B8F12FA5DE50059DB2F /* AppIconControl.m in Sources */,
+				326F86FB1301888000962AD5 /* NSStringAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

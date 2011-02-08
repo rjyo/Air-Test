@@ -13,15 +13,21 @@
     NSString *ipaPath;
     NSString *appPath;
     NSString *iconPath;
+    NSString *icon2xPath;
+    NSString *fileSize;
+    NSString *updateAt;
     NSDictionary *appInfo;
     NSArray *devices;
 }
 
-@property (nonatomic, copy, readonly) NSString *iconPath;
-@property (nonatomic, copy, readonly) NSString *ipaPath; 
-@property (nonatomic, copy, readonly) NSString *appPath; 
-@property (nonatomic, copy, readonly) NSDictionary *appInfo; 
-@property (nonatomic, copy, readonly) NSArray *devices; 
+@property (readonly) NSString *iconPath;
+@property (readonly) NSString *icon2xPath;
+@property (readonly) NSString *ipaPath; 
+@property (readonly) NSString *appPath; 
+@property (readonly) NSDictionary *appInfo; 
+@property (readonly) NSArray *devices;
+@property (readonly) NSString *fileSize;
+@property (readonly) NSString *updatedAt;
 
 - (AMiOSApp *)initWithPath:(NSString *)path;
 
