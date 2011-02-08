@@ -53,6 +53,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 #import "BrowserViewController.h"
+#import "UINavigationController+TKCategory.h"
 
 @class BonjourBrowserController;
 

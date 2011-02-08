@@ -2,4 +2,4 @@
 2. show app icons on list
 3. loading indicator should be replaced, a better way to present loading
 done 4. better icons
-5. network detection and display prompts
+done 5. network detection and display prompts

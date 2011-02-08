@@ -1,0 +1,3 @@
+[submodule "iOS/Classes/Frameworks/PullToRefresh"]
+	path = iOS/Classes/Frameworks/PullToRefresh
+	url = git@github.com:rjyo/PullToRefresh.git

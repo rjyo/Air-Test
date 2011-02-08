@@ -9,6 +9,7 @@
 #import "AppListViewController.h"
 #import "CJSONDeserializer.h"
 #import "TKAlertCenter.h"
+#import "TKBarButtonItem.h"
 
 @interface AppListViewController()
 

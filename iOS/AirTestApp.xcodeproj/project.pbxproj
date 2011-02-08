@@ -18,6 +18,7 @@
 		321AA06B1301340800014D4B /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA0431301340800014D4B /* PullRefreshTableViewController.m */; };
 		321AA06C1301340800014D4B /* PullToRefreshAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA0451301340800014D4B /* PullToRefreshAppDelegate.m */; };
 		321AA07B13013EB700014D4B /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321AA07A13013EB700014D4B /* arrow@2x.png */; };
+		321AA07F1301422700014D4B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA07E1301422700014D4B /* Reachability.m */; };
 		32610AC612F7CF7A00239271 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32610AC512F7CF7A00239271 /* Icon.png */; };
 		32610B0812F7DCF400239271 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32610B0712F7DCF400239271 /* Icon@2x.png */; };
 		326A33C712F9BF6900B7E5C0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 326A33C612F9BF6900B7E5C0 /* todo.txt */; };
@@ -107,6 +108,8 @@
 		321AA0441301340800014D4B /* PullToRefreshAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshAppDelegate.h; sourceTree = "<group>"; };
 		321AA0451301340800014D4B /* PullToRefreshAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshAppDelegate.m; sourceTree = "<group>"; };
 		321AA07A13013EB700014D4B /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		321AA07D1301422700014D4B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		321AA07E1301422700014D4B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		32610AC512F7CF7A00239271 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		32610B0712F7DCF400239271 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		326A33C612F9BF6900B7E5C0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				321AA07C1301422500014D4B /* Reachability */,
 				321AA0171301340700014D4B /* PullToRefresh */,
 				32EB56B9130118F5002EFE5E /* TapkuLibrary */,
 				32EB5715130118F5002EFE5E /* TouchJSON */,
@@ -350,6 +354,15 @@
 				321AA0451301340800014D4B /* PullToRefreshAppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		321AA07C1301422500014D4B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				321AA07D1301422700014D4B /* Reachability.h */,
+				321AA07E1301422700014D4B /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		32A799B812F719DF00E7C0AB /* Utils */ = {
@@ -666,6 +679,7 @@
 				321AA06A1301340800014D4B /* DemoTableViewController.m in Sources */,
 				321AA06B1301340800014D4B /* PullRefreshTableViewController.m in Sources */,
 				321AA06C1301340800014D4B /* PullToRefreshAppDelegate.m in Sources */,
+				321AA07F1301422700014D4B /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

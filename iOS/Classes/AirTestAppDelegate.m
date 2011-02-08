@@ -25,8 +25,7 @@
     // Override point for customization after application launch.
 
 	// Create the Bonjour Browser for Web services
-	BonjourBrowserController *aBrowser = [[BonjourBrowserController alloc] initForType:kWebServiceType
-														  inDomain:kInitialDomain];
+	BonjourBrowserController *aBrowser = [[BonjourBrowserController alloc] initForType:kWebServiceType inDomain:kInitialDomain];
 	self.browser = aBrowser;
 	[aBrowser release];
     

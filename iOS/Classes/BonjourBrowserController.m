@@ -53,6 +53,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 
 #import "BonjourBrowserController.h"
 #import "BrowserViewController.h"
+#import "TKBarButtonItem.h"
 
 
 @interface BonjourBrowserController ()
@@ -73,12 +74,14 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     self.domain = domain;
 
 	self.bvc = [[[BrowserViewController alloc] initWithTitle:self.domain showDisclosureIndicators:YES] autorelease];
+    self.bvc.tkBackButton = [[[TKBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back"] style:TKBarButtonItemStyleBack target:nil action:nil] autorelease];
+
 	self.bvc.delegate = self;
     self.bvc.searchingForServicesString = @"Searching for AirTest Server...";
     // Calls -[NSNetServiceBrowser searchForServicesOfType:inDomain:].
 	[self.bvc searchForServicesOfType:self.type inDomain:self.domain];
 
-	if (self = [super initWithRootViewController:self.bvc]) {
+	if ((self = [super initWithRootViewController:self.bvc])) {
         self.bvc.title = NSLocalizedString(@"Servers", nil);
 	}
 	
