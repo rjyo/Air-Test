@@ -17,8 +17,9 @@
 
 @interface AppsViewController : PullRefreshTableViewController <DataLoadingOperationDelegate> {
     NSString *_listURL;
-    NSMutableArray *_apps;
-    NSOperationQueue *queue;
+    NSArray *_apps;
+    NSMutableDictionary *_appIcons;
+    NSOperationQueue *_queue;
     TKLoadingView *_loading;
     NSString *_service;
 }

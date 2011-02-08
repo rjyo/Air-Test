@@ -104,17 +104,17 @@
 #pragma mark Data loading
 
 - (NSOperationQueue *)queue {
-    if (!queue) {
-        queue = [[NSOperationQueue alloc] init];
-        queue.maxConcurrentOperationCount = 1;
+    if (!_queue) {
+        _queue = [[NSOperationQueue alloc] init];
+        _queue.maxConcurrentOperationCount = 1;
     }
-    return queue;
+    return _queue;
 }
 
 - (void)clearQueue {
-    [queue cancelAllOperations];
-    [queue release];
-    queue = nil;    
+    [_queue cancelAllOperations];
+    [_queue release];
+    _queue = nil;    
 }
 
 - (void)dataLoaded:(NSData *)data {
@@ -128,9 +128,14 @@
         [_apps release];
         _apps = nil;
     }
+    if (_appIcons) {
+        [_appIcons release];
+        _appIcons = nil;
+    }
 
     NSError *error = nil;
     _apps = [[[CJSONDeserializer deserializer] deserializeAsArray:data error:&error] retain];
+    _appIcons = [[NSMutableDictionary alloc] initWithCapacity:[_apps count]];
     
     if ([_apps count] > 0) {
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
@@ -163,7 +168,6 @@
 
 
 - (void)newImageRetrieved {
-    
 	for (UITableViewCell *cell in [self.tableView visibleCells]) {
 		if (cell.imageView.image == nil){
             [self setImageForCell:cell queueIfNeeded:NO];
@@ -175,8 +179,15 @@
     int i = [self.tableView indexPathForCell:cell].row;
     NSDictionary *appInfo = [_apps objectAtIndex:i];
     NSString *iconUrl = [appInfo valueForKey:@"icon-url"];
+    NSString *bundleId = [appInfo valueForKey:@"CFBundleIdentifier"]; 
     
-    UIImage *image = [[TKImageCenter sharedImageCenter] imageAtURL:iconUrl queueIfNeeded:queueIfNeeded];
+    UIImage *image = [_appIcons valueForKey:bundleId];
+    if (image) {
+        cell.imageView.image = image;
+        return;
+    }
+    
+    if (!image) image = [[TKImageCenter sharedImageCenter] imageAtURL:iconUrl queueIfNeeded:queueIfNeeded];
     
     if(image != nil){
         float s = 1.0;
@@ -184,14 +195,17 @@
             s = [[UIScreen mainScreen] scale];
         }
         CGSize targetSize = CGSizeMake(57 * s, 57 * s);
-        image = [image imageScaledToSize:targetSize];
-        cell.imageView.image = [UIImage imageWithRoundedCorners:image cornerHeight:10.0 cornerWidth:10.0];
+        if (targetSize.width != image.size.width) {
+            image = [image imageScaledToSize:targetSize];
+        }
+        image = [image imageWithRoundedCornerHeight:10.0 cornerWidth:10.0];
+        cell.imageView.image = image;
+        [_appIcons setValue:image forKey:bundleId];
         [cell setNeedsLayout];
     } else {
         cell.imageView.image = nil;
     }
 }
-
 
 
 #pragma mark -
@@ -218,8 +232,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[IconTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-//        cell.imageView.contentMode = ;
-//        cell.imageView.frame = CGRectMake(10.0, 4.0, 57.0, 57.0);
     }
     
     if (nil == _apps) {
@@ -338,8 +350,10 @@
 - (void)dealloc {
     [_listURL release];
     [_apps release];
+    [_appIcons release];
     [_loading release];
     [_service release];
+    [_queue release];
     [super dealloc];
 }
 

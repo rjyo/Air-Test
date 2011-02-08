@@ -56,7 +56,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 }
 
 
-+ (UIImage *)imageWithRoundedCorners:(UIImage *)inputImage cornerHeight:(float)ch cornerWidth:(float)cw {
+- (UIImage *)imageWithRoundedCornerHeight:(float)ch cornerWidth:(float)cw {
     float s = 1.0;
     if([[UIScreen mainScreen] respondsToSelector:@selector(scale)]){
         s = [[UIScreen mainScreen] scale];
@@ -65,8 +65,8 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     ch *= s;
     cw *= s;
 	
-	int h = inputImage.size.height;
-	int w = inputImage.size.width;
+	int h = self.size.height;
+	int w = self.size.width;
 	
 	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 	CGContextRef context = CGBitmapContextCreate(NULL, w, h, 8, 4 * w, colorSpace, kCGImageAlphaPremultipliedFirst);
@@ -76,7 +76,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 	addRoundedRectToPath(context, imgRect, cw, ch);
 	CGContextClosePath(context);
 	CGContextClip(context);
-	CGContextDrawImage(context, imgRect, inputImage.CGImage);
+	CGContextDrawImage(context, imgRect, self.CGImage);
 	CGImageRef imageMasked = CGBitmapContextCreateImage(context);
 	CGContextRelease(context);
 	

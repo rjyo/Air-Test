@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (INRoundedCornerShadow)
-+ (UIImage *)imageWithRoundedCorners:(UIImage *)inputImage cornerHeight:(float)ch cornerWidth:(float)cw;
 + (UIImage *)roundedCornerImageRect:(CGRect)rect width:(float)cw;
+- (UIImage *)imageWithRoundedCornerHeight:(float)ch cornerWidth:(float)cw;
 - (UIImage *)imageScaledToSize:(CGSize)newSize ratio:(double)r offset:(CGPoint)offset;
 - (UIImage *)imageScaledToSize:(CGSize)newSize;
 @end
