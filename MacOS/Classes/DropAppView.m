@@ -173,14 +173,6 @@ static BOOL isDropOn = NO;
     int appCount = [[[AMDataHelper localHelper] allApps] count];
     int col = (appCount - 1) % 4;
     
-//    AppIconControl *last = nil;
-//    AppIconControl *first = nil;
-    
-//    if (appCount > 0) {
-//        last = [[[self.box contentView] subviews] lastObject];
-//        first = [[[self.box contentView] subviews] lastObject];
-//    }
-    
     AppIconControl *iconControl = [[[AppIconControl alloc] initWithFrame:NSMakeRect(10.0 + col * ICON_WIDTH, ICON_SPACING, 
                                                                      ICON_WIDTH, ICON_HEIGHT)] autorelease];
 
@@ -191,9 +183,6 @@ static BOOL isDropOn = NO;
     
     [iconControl setTarget:self];
     [iconControl setAction:@selector(onIconClick:)];
-    
-//    [iconControl setNextKeyView:first];
-//    [last setNextKeyView:iconControl];
     
     [[self.box contentView] addSubview:iconControl];
     

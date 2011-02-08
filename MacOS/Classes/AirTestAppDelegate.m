@@ -51,11 +51,9 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-    DDLogCVerbose(@"exiting AppBall");
+    DDLogCVerbose(@"exiting AirTest");
     
     [[AMDataHelper localHelper] deleteCache];
-    
-    exit(3);
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
