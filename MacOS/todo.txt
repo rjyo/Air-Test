@@ -40,7 +40,13 @@ done 15. open browser from menu
 
 done 17. a better icon
 
-18. use 2x icon for most places
+done 18. use 2x icon for most places
+
+19. show binary can't be installed as greyed
+
+20. cmd+c an app and cmd+v in app
+
+21. cmd line to load app
 
 bug.
 done 1. bonjour sometimes disappears

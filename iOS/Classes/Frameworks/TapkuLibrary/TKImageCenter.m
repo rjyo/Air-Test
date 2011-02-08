@@ -87,7 +87,7 @@
 }
 - (void) sendNewImageNotification:(NSArray*)ar{
 	[images setObject:[ar firstObject] forKey:[ar lastObject]];
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"newImage" object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kNewImageRetrieved object:self];
 }
 
 - (void) getImages{

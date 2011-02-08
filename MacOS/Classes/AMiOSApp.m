@@ -71,7 +71,7 @@
                 [self getFileSize];
                 
                 NSDictionary *attributes = [fileMgr attributesOfItemAtPath:ipaPath error:nil];
-                updatedAt = [[[attributes valueForKey:NSFileModificationDate] relativeTime] retain]; 
+                updatedAt = [[attributes valueForKey:NSFileModificationDate] retain]; 
 
                 break;
             }
@@ -97,7 +97,7 @@
             [self getFileSize];
             
             NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:appPath error:nil];
-            updatedAt = [[[attributes valueForKey:NSFileModificationDate] relativeTime] retain]; 
+            updatedAt = [[attributes valueForKey:NSFileModificationDate] retain]; 
         }
         return self;
     }

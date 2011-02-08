@@ -33,6 +33,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define kNewImageRetrieved @"kNewImageRetrieved"
+
 @interface TKImageCenter : NSObject {
 
 	NSMutableArray *queue;

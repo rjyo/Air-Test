@@ -27,7 +27,8 @@
 		32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */; };
 		32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A796BF12F61E3000E7C0AB /* BrowserViewController.m */; };
 		32A7998A12F717E000E7C0AB /* StringLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A7998912F717E000E7C0AB /* StringLoadingOperation.m */; };
-		32C62E4C12F6AD7F00D4708A /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62E4B12F6AD7F00D4708A /* AppListViewController.m */; };
+		32C62E4C12F6AD7F00D4708A /* AppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C62E4B12F6AD7F00D4708A /* AppsViewController.m */; };
+		32E119781301A44F00B213C9 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E119771301A44F00B213C9 /* NSStringAdditions.m */; };
 		32EB572F130118F7002EFE5E /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB56BB130118F5002EFE5E /* ABTableViewCell.m */; };
 		32EB5730130118F7002EFE5E /* NSArray+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB56BD130118F5002EFE5E /* NSArray+TKCategory.m */; };
 		32EB5731130118F7002EFE5E /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB56BF130118F5002EFE5E /* NSDate+TKCategory.m */; };
@@ -91,6 +92,7 @@
 		32EB576F1301194D002EFE5E /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32EB576E1301194D002EFE5E /* TapkuLibrary.bundle */; };
 		32EB577213011C31002EFE5E /* DataLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577113011C30002EFE5E /* DataLoadingOperation.m */; };
 		32EB577513011D66002EFE5E /* NSNetService+IPv4.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577413011D62002EFE5E /* NSNetService+IPv4.m */; };
+		32F132511301B39A0073E394 /* UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F132501301B39A0073E394 /* UIImageAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,8 +125,10 @@
 		32A796BF12F61E3000E7C0AB /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		32A7998812F717E000E7C0AB /* StringLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringLoadingOperation.h; sourceTree = "<group>"; };
 		32A7998912F717E000E7C0AB /* StringLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringLoadingOperation.m; sourceTree = "<group>"; };
-		32C62E4A12F6AD7F00D4708A /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
-		32C62E4B12F6AD7F00D4708A /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
+		32C62E4A12F6AD7F00D4708A /* AppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsViewController.h; sourceTree = "<group>"; };
+		32C62E4B12F6AD7F00D4708A /* AppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsViewController.m; sourceTree = "<group>"; };
+		32E119761301A44F00B213C9 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringAdditions.h; path = ../../MacOS/Classes/NSStringAdditions.h; sourceTree = "<group>"; };
+		32E119771301A44F00B213C9 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringAdditions.m; path = ../../MacOS/Classes/NSStringAdditions.m; sourceTree = "<group>"; };
 		32EB56BA130118F5002EFE5E /* ABTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABTableViewCell.h; sourceTree = "<group>"; };
 		32EB56BB130118F5002EFE5E /* ABTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewCell.m; sourceTree = "<group>"; };
 		32EB56BC130118F5002EFE5E /* NSArray+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TKCategory.h"; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 		32EB577113011C30002EFE5E /* DataLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoadingOperation.m; sourceTree = "<group>"; };
 		32EB577313011D61002EFE5E /* NSNetService+IPv4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNetService+IPv4.h"; sourceTree = "<group>"; };
 		32EB577413011D62002EFE5E /* NSNetService+IPv4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNetService+IPv4.m"; sourceTree = "<group>"; };
+		32F1324F1301B39A0073E394 /* UIImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAdditions.h; sourceTree = "<group>"; };
+		32F132501301B39A0073E394 /* UIImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAdditions.m; sourceTree = "<group>"; };
 		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
 		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,6 +388,10 @@
 		32A799B812F719DF00E7C0AB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				32F1324F1301B39A0073E394 /* UIImageAdditions.h */,
+				32F132501301B39A0073E394 /* UIImageAdditions.m */,
+				32E119761301A44F00B213C9 /* NSStringAdditions.h */,
+				32E119771301A44F00B213C9 /* NSStringAdditions.m */,
 				32EB577013011C30002EFE5E /* DataLoadingOperation.h */,
 				32EB577113011C30002EFE5E /* DataLoadingOperation.m */,
 				32A7998812F717E000E7C0AB /* StringLoadingOperation.h */,
@@ -399,8 +409,8 @@
 				32A796BD12F61E3000E7C0AB /* BonjourBrowserController.m */,
 				32A796BE12F61E3000E7C0AB /* BrowserViewController.h */,
 				32A796BF12F61E3000E7C0AB /* BrowserViewController.m */,
-				32C62E4A12F6AD7F00D4708A /* AppListViewController.h */,
-				32C62E4B12F6AD7F00D4708A /* AppListViewController.m */,
+				32C62E4A12F6AD7F00D4708A /* AppsViewController.h */,
+				32C62E4B12F6AD7F00D4708A /* AppsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -633,7 +643,7 @@
 				1D3623260D0F684500981E51 /* AirTestAppDelegate.m in Sources */,
 				32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */,
 				32A796C512F61E3000E7C0AB /* BrowserViewController.m in Sources */,
-				32C62E4C12F6AD7F00D4708A /* AppListViewController.m in Sources */,
+				32C62E4C12F6AD7F00D4708A /* AppsViewController.m in Sources */,
 				32A7998A12F717E000E7C0AB /* StringLoadingOperation.m in Sources */,
 				32EB572F130118F7002EFE5E /* ABTableViewCell.m in Sources */,
 				32EB5730130118F7002EFE5E /* NSArray+TKCategory.m in Sources */,
@@ -696,6 +706,8 @@
 				321AA06B1301340800014D4B /* PullRefreshTableViewController.m in Sources */,
 				321AA06C1301340800014D4B /* PullToRefreshAppDelegate.m in Sources */,
 				321AA07F1301422700014D4B /* Reachability.m in Sources */,
+				32E119781301A44F00B213C9 /* NSStringAdditions.m in Sources */,
+				32F132511301B39A0073E394 /* UIImageAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

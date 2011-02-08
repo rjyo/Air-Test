@@ -1,5 +1,5 @@
 done 1. should have a waiting message when clicked on a file and waiting for install, hide when app will become inactive?
-2. show app icons on list, show build time, show file size
+done 2. show app icons on list, show build time, show file size
 done 3. loading indicator should be replaced, a better way to present loading
 done 4. better icons
 done 5. network detection and display prompts

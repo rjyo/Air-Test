@@ -15,7 +15,7 @@
     NSString *iconPath;
     NSString *icon2xPath;
     NSString *fileSize;
-    NSString *updateAt;
+    NSDate *updatedAt;
     NSDictionary *appInfo;
     NSArray *devices;
 }
@@ -27,7 +27,7 @@
 @property (readonly) NSDictionary *appInfo; 
 @property (readonly) NSArray *devices;
 @property (readonly) NSString *fileSize;
-@property (readonly) NSString *updatedAt;
+@property (readonly) NSDate *updatedAt;
 
 - (AMiOSApp *)initWithPath:(NSString *)path;
 

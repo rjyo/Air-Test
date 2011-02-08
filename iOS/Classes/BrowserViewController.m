@@ -60,7 +60,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 */
 
 #import "BrowserViewController.h"
-#import "AppListViewController.h"
+#import "AppsViewController.h"
 #import "NSNetService+IPv4.h"
 #import "UIImageView+TKCategory.h"
 
@@ -352,7 +352,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	}
     if (self.navigationController.navigationItem != self.navigationItem) {
         UIViewController *vc = [[self.navigationController viewControllers] lastObject];
-        if ([vc isKindOfClass:[AppListViewController class]] && [((AppListViewController *)vc).service isEqualToString:[service name]]) {
+        if ([vc isKindOfClass:[AppsViewController class]] && [((AppsViewController *)vc).service isEqualToString:[service name]]) {
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
@@ -403,7 +403,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 	[self stopCurrentResolve];
     
     // Navigation logic may go here. Create and push another view controller.
-    AppListViewController *appVc = [[AppListViewController alloc] initWithStyle:UITableViewStylePlain];
+    AppsViewController *appVc = [[AppsViewController alloc] initWithStyle:UITableViewStylePlain];
     appVc.service = [service name];
     appVc.listURL = listURL;
     appVc.title = [NSString stringWithFormat:@"Apps on %@", [service name]];
