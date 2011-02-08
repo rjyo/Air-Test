@@ -78,16 +78,15 @@
     queue = nil;    
 }
 
-- (void)stringLoaded:(NSString *)s {
-    [self performSelectorOnMainThread:@selector(loadRemoteAppList:) withObject:s waitUntilDone:YES];
+- (void)dataLoaded:(NSData *)data {
+    [self performSelectorOnMainThread:@selector(loadRemoteAppList:) withObject:data waitUntilDone:YES];
 }
 
-- (void)loadRemoteAppList:(NSString *)s {
+- (void)loadRemoteAppList:(NSData *)data {
     [indicator stopAnimating];
 
     NSError *error = nil;
-    NSData *jsonData = [s dataUsingEncoding:NSUTF32BigEndianStringEncoding];
-    apps = [[[CJSONDeserializer deserializer] deserializeAsArray:jsonData error:&error] retain];
+    apps = [[[CJSONDeserializer deserializer] deserializeAsArray:data error:&error] retain];
 
     [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
 }
@@ -101,7 +100,7 @@
 - (void)loadData {
     [self clearQueue];
 
-    StringLoadingOperation *op = [[StringLoadingOperation alloc] init];
+    DataLoadingOperation *op = [[DataLoadingOperation alloc] init];
     op.urlString = self.listURL;
     op.delegate = self;
     [[self queue] addOperation:op];

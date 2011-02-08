@@ -83,6 +83,8 @@
 		32EB576B1301192E002EFE5E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EB576A1301192E002EFE5E /* SystemConfiguration.framework */; };
 		32EB576D1301193A002EFE5E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EB576C1301193A002EFE5E /* MapKit.framework */; };
 		32EB576F1301194D002EFE5E /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32EB576E1301194D002EFE5E /* TapkuLibrary.bundle */; };
+		32EB577213011C31002EFE5E /* DataLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577113011C30002EFE5E /* DataLoadingOperation.m */; };
+		32EB577513011D66002EFE5E /* NSNetService+IPv4.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577413011D62002EFE5E /* NSNetService+IPv4.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +227,10 @@
 		32EB576A1301192E002EFE5E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		32EB576C1301193A002EFE5E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32EB576E1301194D002EFE5E /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
+		32EB577013011C30002EFE5E /* DataLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoadingOperation.h; sourceTree = "<group>"; };
+		32EB577113011C30002EFE5E /* DataLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoadingOperation.m; sourceTree = "<group>"; };
+		32EB577313011D61002EFE5E /* NSNetService+IPv4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNetService+IPv4.h"; sourceTree = "<group>"; };
+		32EB577413011D62002EFE5E /* NSNetService+IPv4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNetService+IPv4.m"; sourceTree = "<group>"; };
 		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
 		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,10 +323,14 @@
 		32A799B812F719DF00E7C0AB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				32EB577013011C30002EFE5E /* DataLoadingOperation.h */,
+				32EB577113011C30002EFE5E /* DataLoadingOperation.m */,
 				32A7998812F717E000E7C0AB /* StringLoadingOperation.h */,
 				32A7998912F717E000E7C0AB /* StringLoadingOperation.m */,
 				32A7998B12F717F700E7C0AB /* LoadingIndicatorView.h */,
 				32A7998C12F717F700E7C0AB /* LoadingIndicatorView.m */,
+				32EB577313011D61002EFE5E /* NSNetService+IPv4.h */,
+				32EB577413011D62002EFE5E /* NSNetService+IPv4.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -621,6 +631,8 @@
 				32EB5765130118F7002EFE5E /* CJSONScanner.m in Sources */,
 				32EB5766130118F7002EFE5E /* CJSONSerializer.m in Sources */,
 				32EB5767130118F7002EFE5E /* CSerializedJSONData.m in Sources */,
+				32EB577213011C31002EFE5E /* DataLoadingOperation.m in Sources */,
+				32EB577513011D66002EFE5E /* NSNetService+IPv4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

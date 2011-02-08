@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StringLoadingOperation.h"
 #import "LoadingIndicatorView.h"
+#import "DataLoadingOperation.h"
 
-@interface AppListViewController : UITableViewController <StringLoadingOperationDelegate>{
+@interface AppListViewController : UITableViewController <DataLoadingOperationDelegate>{
     NSString *listURL;
     NSArray *apps;
     NSOperationQueue *queue;

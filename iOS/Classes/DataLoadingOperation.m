@@ -6,9 +6,9 @@
 //  Copyright 2010 RakuRaku Technologies. All rights reserved.
 //
 
-#import "StringLoadingOperation.h"
+#import "DataLoadingOperation.h"
 
-@implementation StringLoadingOperation
+@implementation DataLoadingOperation
 @synthesize loadedString, urlString, delegate;
 
 - (void)main {
@@ -16,13 +16,11 @@
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
     
-    NSLog(@"%@", data);
-    loadedString = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
     if (delegate) {
         NSDate *now = [NSDate date];
         NSTimeInterval time = [now timeIntervalSinceDate:then];
         NSLog(@"time for loading %@: %.2f", urlString, time);
-        [delegate stringLoaded:loadedString];
+        [delegate dataLoaded:data];
     }
 }
 
