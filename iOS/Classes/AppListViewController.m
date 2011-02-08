@@ -7,7 +7,7 @@
 //
 
 #import "AppListViewController.h"
-#import "JSON.h"
+#import "CJSONDeserializer.h"
 
 @interface AppListViewController()
 
@@ -85,7 +85,10 @@
 - (void)loadRemoteAppList:(NSString *)s {
     [indicator stopAnimating];
 
-    apps = [[s JSONValue] retain];
+    NSError *error = nil;
+    NSData *jsonData = [s dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+    apps = [[[CJSONDeserializer deserializer] deserializeAsArray:jsonData error:&error] retain];
+
     [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
 }
 
