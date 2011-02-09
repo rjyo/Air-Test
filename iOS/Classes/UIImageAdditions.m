@@ -82,7 +82,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 	
 	float shadowOffsetY = 2 * s;
 	CGContextRef context2 = CGBitmapContextCreate(NULL, w + 2 * s, h + shadowOffsetY + 2 * s, 8, 4 * (w + 2 * s), colorSpace, kCGImageAlphaPremultipliedFirst);
-	CGColorRef shadowColor = [[UIColor blackColor] CGColor];
+	CGColorRef shadowColor = [[UIColor colorWithWhite:0.0 alpha:0.7] CGColor];
 	CGContextSetShadowWithColor(context2, CGSizeMake(0, -shadowOffsetY), 2, shadowColor);
 	imgRect = CGRectMake(1 * 2, shadowOffsetY + 1 * 2, w, h);
 	CGContextDrawImage(context2, imgRect, imageMasked);
