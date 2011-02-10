@@ -1,0 +1,17 @@
+require 'rubygems'
+require 'betabuilder'
+
+BetaBuilder::Tasks.new do |config|
+  # your Xcode target name
+  config.target = "AirTestApp"
+
+  # the Xcode configuration profile
+  config.configuration = "AdHoc" 
+
+  config.deploy_using(:testflight) do |tf|
+    tf.api_token  = "LIRfnCuCIUaz8vR9BhIweB48KizOnhX7pXbqprrBiUA"
+    tf.team_token = "27e3f8a0ddf617afc92a27a5710f6de9_NDQ4MA"
+    tf.distribution_lists = %w{Testers}
+  end
+end
+
