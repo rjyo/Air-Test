@@ -15,8 +15,9 @@ AirTest solves all these problems in an elegant and extremely simple way. Only 3
 3. Open AirTest client on your device and choose the app to install! 
 
 ## AirTest in Action
-![screenshot1](http://github.com/rjyo/AirTest/screenshots/desc1.png)
-![screenshot2](http://github.com/rjyo/AirTest/screenshots/desc2.png)
+![screenshot1](https://github.com/rjyo/Air-Test/raw/master/screenshots/desc1.png)
+
+![screenshot2](https://github.com/rjyo/Air-Test/raw/master/screenshots/desc2.png)
 
 ## How to Build
 
