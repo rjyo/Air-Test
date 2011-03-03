@@ -1,8 +1,8 @@
 # AirTest
 
-A tool that will make a lot of iPhone/iPad developers' life easier. It shares your app over-the-air in a WiFi network. Bonjour is used for and no configuration is needed. The magic behind is [Apple's Wireless Enterprise](http://developer.apple.com/library/ios/#featuredarticles/FA_Wireless_Enterprise_App_Distribution/Introduction/Introduction.html) Distribution protocol.
+A tool that will make a lot of iPhone/iPad developers' life easier. It shares your app over-the-air in a WiFi network. Bonjour is used and no configuration is needed. The magic behind is [Apple's Wireless Enterprise](http://developer.apple.com/library/ios/#featuredarticles/FA_Wireless_Enterprise_App_Distribution/Introduction/Introduction.html) Distribution protocol.
 
-If you have any of the following things bug you
+If you have any of the following things bugging you
 
 * wanted to test your app but found the USB cable is not with you
 * have to plugged in your teammates' devices one by one just to show them some new feature
@@ -33,11 +33,14 @@ It also uses [Tapku Library](https://github.com/devinross/tapkulibrary), and sho
 
 You can just compile the iPhone app while using our precompiled [Mac Client](http://www.rakutec.com/adhoc/app/AirTest.dmg).
 
+## Todos
+* [Tapku Library](https://github.com/devinross/tapkulibrary) is now copied and modified. Should use it as a git sub-module.
+* Some other third-party libraries should also be included in some more smarter way.
+* Change license information in source code
+
 ## Future plans
 * Support command line interface to make life easier when using a command line based build system like rake
 * A web interface for iOS devices so that AirTest will works without the iPhone client
-* [Tapku Library](https://github.com/devinross/tapkulibrary) is now copied and modified. Should use it as a git sub-module.
-* Some other third-party libraries should also be included in some more smarter way.
 
 ## Copyright
 By Xu Lele (Rakuraku Jyo if you know me in Japan). Feel free to contact me on Twitter [@xu_lele](http://twitter.com/xu_lele). AirTest is released under MIT license.
