@@ -14,6 +14,10 @@ AirTest solves all these problems in an elegant and extremely simple way. Only 3
 2. Drag .app or .ipa file(s) in AirTest on Mac. 
 3. Open AirTest client on your device and choose the app to install! 
 
+### NOTE
+AirTest is only a tool for test-driving your app wirelessly. It is NOT a replacement for Apple’s ad hoc provisioning profile and device number limitations. A valid iOS Developer Program (iDP) account is needed and only devices registered in your iDP can be used.
+
+
 ## AirTest in Action
 ![screenshot1](https://github.com/rjyo/Air-Test/raw/master/screenshots/desc1.png)
 
@@ -29,22 +33,20 @@ AirTest is using [Pull-to-refresh](git@github.com:rjyo/PullToRefresh.git) as a s
     
 It also uses [Tapku Library](https://github.com/devinross/tapkulibrary), and should also use it as a sub-module in the near future.
     
-## Precompiled binary
+## Precompiled Binary
 
-You can just compile the iPhone app while using our precompiled [Mac Client](http://www.rakutec.com/adhoc/app/AirTest.dmg).
+You can just compile the iPhone app while using our precompiled Mac Client - [AirTest.dmg](http://www.rakutec.com/adhoc/app/AirTest.dmg).
 
 ## Todos
 * [Tapku Library](https://github.com/devinross/tapkulibrary) is now copied and modified. Should use it as a git sub-module.
 * Some other third-party libraries should also be included in some more smarter way.
-* Change license information in source code
+* Change license information in source code.
 
-## Future plans
+## Future Plans
 * Support command line interface to make life easier when using a command line based build system like rake
 * A web interface for iOS devices so that AirTest will works without the iPhone client
 
 ## Copyright
-By Xu Lele (Rakuraku Jyo if you know me in Japan). Feel free to contact me on Twitter [@xu_lele](http://twitter.com/xu_lele). AirTest is released under MIT license.
+(C)Copyright 2011 Xu Lele (Rakuraku Jyo if you know me in Japan). Feel free to drop me by on Twitter [@xu_lele](http://twitter.com/xu_lele). AirTest is released under [MIT license](http://www.opensource.org/licenses/mit-license.php).
 
-## NOTE
-AirTest is only a tool for test-driving your app wirelessly. It is NOT a replacement for Apple’s ad hoc provisioning profile and device number limitations. A valid iOS Developer Program (iDP) account is needed and only devices registered in your iDP can be used.
 
