@@ -27,7 +27,7 @@ AirTest is only a tool for test-driving your app wirelessly. It is NOT a replace
 
 AirTest is using [Pull-to-refresh](git@github.com:rjyo/PullToRefresh.git) as a sub-module
 
-    git clone git@github.com:rjyo/Air-Test.git
+    git clone git://github.com/rjyo/Air-Test.git
     git submodule init
     git submodule update
     
