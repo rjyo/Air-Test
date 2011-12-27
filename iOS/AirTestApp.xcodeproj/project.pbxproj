@@ -17,7 +17,6 @@
 		321AA06A1301340800014D4B /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA0411301340800014D4B /* DemoTableViewController.m */; };
 		321AA06B1301340800014D4B /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA0431301340800014D4B /* PullRefreshTableViewController.m */; };
 		321AA06C1301340800014D4B /* PullToRefreshAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA0451301340800014D4B /* PullToRefreshAppDelegate.m */; };
-		321AA07B13013EB700014D4B /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321AA07A13013EB700014D4B /* arrow@2x.png */; };
 		321AA07F1301422700014D4B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AA07E1301422700014D4B /* Reachability.m */; };
 		32610AC612F7CF7A00239271 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32610AC512F7CF7A00239271 /* Icon.png */; };
 		32610B0812F7DCF400239271 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32610B0712F7DCF400239271 /* Icon@2x.png */; };
@@ -111,7 +110,6 @@
 		321AA0431301340800014D4B /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		321AA0441301340800014D4B /* PullToRefreshAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshAppDelegate.h; sourceTree = "<group>"; };
 		321AA0451301340800014D4B /* PullToRefreshAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshAppDelegate.m; sourceTree = "<group>"; };
-		321AA07A13013EB700014D4B /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		321AA07D1301422700014D4B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		321AA07E1301422700014D4B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		32610AC512F7CF7A00239271 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 		321AA0171301340700014D4B /* PullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				321AA07A13013EB700014D4B /* arrow@2x.png */,
 				321AA03E1301340800014D4B /* arrow.png */,
 				321AA03F1301340800014D4B /* Classes */,
 			);
@@ -626,7 +623,6 @@
 				32EB575D130118F7002EFE5E /* README.txt in Resources */,
 				32EB576F1301194D002EFE5E /* TapkuLibrary.bundle in Resources */,
 				321AA0691301340800014D4B /* arrow.png in Resources */,
-				321AA07B13013EB700014D4B /* arrow@2x.png in Resources */,
 				326F86E11301706B00962AD5 /* Back.png in Resources */,
 				326F86E21301706B00962AD5 /* Back@2x.png in Resources */,
 			);
