@@ -1,3 +1,9 @@
+h1. <span>2012-02-05</span> Release 1.0.1
+
+h2. New Features
+
+- Support iPad only Apps. The client is also updated, please update the client at TestFlight
+
 h1. <span>2011-02-02</span> Release 0.5.3
 
 h2. New Features
