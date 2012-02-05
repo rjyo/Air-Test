@@ -6,4 +6,5 @@ pkg/
 **/*.xcodeproj/*.pbxuser
 **/*.xcodeproj/xcuserdata/
 **/*.xcodeproj/project.xcworkspace/
+workspace.xml
 dsa_priv.pem
