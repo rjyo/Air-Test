@@ -9,10 +9,10 @@
 #import "AppsViewController.h"
 #import "CJSONDeserializer.h"
 #import "TKAlertCenter.h"
-#import "TKBarButtonItem.h"
 #import "NSStringAdditions.h"
 #import "TKImageCenter.h"
 #import "UIImageAdditions.h"
+#import "TapkuLibrary.h"
 
 @interface AppsViewController()
 
@@ -20,7 +20,8 @@
 - (void)clearQueue;
 - (NSOperationQueue *)queue;
 - (void)hideLoading;
-- (void)setImageForCell:(UITableViewCell *)cell queueIfNeeded:(BOOL)queue;
+
+- (void)setImageForCell:(UITableViewCell *)cell withApp:(NSDictionary *)appInfo;
 
 @end
 
@@ -168,27 +169,25 @@
 
 
 - (void)newImageRetrieved {
-	for (UITableViewCell *cell in [self.tableView visibleCells]) {
-		if (cell.imageView.image == nil){
-            [self setImageForCell:cell queueIfNeeded:NO];
-		} 
-	}
+    for (int i = 0; i < [_apps count]; i++) {
+        NSDictionary *appInfo = [_apps objectAtIndex:i];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        [self setImageForCell:cell withApp:appInfo];
+    }
 }
 
-- (void)setImageForCell:(UITableViewCell *)cell queueIfNeeded:(BOOL)queueIfNeeded{
-    int i = [self.tableView indexPathForCell:cell].row;
-    NSDictionary *appInfo = [_apps objectAtIndex:i];
+- (void)setImageForCell:(UITableViewCell *)cell withApp:(NSDictionary *)appInfo {
     NSString *iconUrl = [appInfo valueForKey:@"icon-url"];
-    NSString *bundleId = [appInfo valueForKey:@"CFBundleIdentifier"]; 
+    NSString *bundleId = [appInfo valueForKey:@"CFBundleIdentifier"];
     
     UIImage *image = [_appIcons valueForKey:bundleId];
     if (image) {
         cell.imageView.image = image;
         return;
     }
-    
-    if (!image) image = [[TKImageCenter sharedImageCenter] imageAtURL:iconUrl queueIfNeeded:queueIfNeeded];
-    
+
+    if (!image) image = [[TKImageCenter sharedImageCenter] imageAtURL:iconUrl queueIfNeeded:YES];
+
     if(image != nil){
         float s = 1.0;
         if([[UIScreen mainScreen] respondsToSelector:@selector(scale)]){
@@ -251,7 +250,7 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"updated %@, %@", 
                                      [date relativeTime], [appInfo valueForKey:@"app-size"]];
         
-        [self setImageForCell:cell queueIfNeeded:YES];
+        [self setImageForCell:cell withApp:appInfo];
     }
     
     return cell;

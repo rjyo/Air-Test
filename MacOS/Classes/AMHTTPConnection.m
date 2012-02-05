@@ -91,9 +91,13 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
             [dict setObject:serviceUrl forKey:@"itms-services"];
             NSString *icon2xURL = [NSString stringWithFormat:@"http://%@/icon2x/%@/icon.png", host, appBundleId]; 
             [dict setObject:icon2xURL forKey:@"icon-url"];
-            NSString *iconURL = [NSString stringWithFormat:@"http://%@/icon/%@/icon.png", host, appBundleId]; 
-            [dict setObject:iconURL forKey:@"icon-1-url"];
-            
+            NSString *iconURL = [NSString stringWithFormat:@"http://%@/icon/%@/icon.png", host, appBundleId];
+            if ([app.icon2xPath rangeOfString:@"noicon"].location != NSNotFound) {
+                [dict setObject:iconURL forKey:@"icon-url"];
+            } else {
+                [dict setObject:iconURL forKey:@"icon-1-url"];
+            }
+
             [data addObject:dict];
             DDLogCVerbose(@"Data is: %@", dict);
         }
