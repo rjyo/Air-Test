@@ -31,9 +31,8 @@
 	[aBrowser release];
     
 	self.browser.delegate = self;
-    
-	// Add the controller's view as a subview of the window
-	[self.window addSubview:[self.browser view]];
+
+    self.window.rootViewController = self.browser;
     
     self.reachability = [Reachability reachabilityForLocalWiFi];
     [self.reachability startNotifier];
