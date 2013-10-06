@@ -391,10 +391,12 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     int port = [service port];
     
 #if TARGET_IPHONE_SIMULATOR
-    NSString *udid = @"3cac05dd2f8bed64c4d11c6077742bce974c128a";
+    //FFFF will make sure we see all apps in the simulator
+    NSString *udid = @"FFFF3cac05dd2f8bed64c4d11c6077742bce974c128a";
 #else
     UIDevice *device = [UIDevice currentDevice];
-    NSString *udid = [device.uniqueIdentifier stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSString *udid = [device performSelector:@selector(uniqueIdentifier)];
+
 #endif
     
     NSString *listURL = [[NSString alloc] initWithFormat:@"http://%@:%d/list/%@", addr, port, udid];
