@@ -33,6 +33,17 @@ static AMDataHelper *localHelper;
             [deviceMapper setObject:a forKey:udid];
         }
     }
+    
+    if(!app.devices) {
+        DDLogWarn(@"no devices found for this app - must be an enterprise app");
+        NSMutableDictionary *a = [NSMutableDictionary dictionaryWithObjectsAndKeys:app, appBundleId, nil];
+        [deviceMapper setObject:a forKey:@"enterprise"];
+        //D DLogInfo(@"deviceMapper %@", deviceMapper);
+    } else {
+        //we also need to add one entry for iOS7 and above, because we can't get the UDID anymore
+        NSMutableDictionary *a = [NSMutableDictionary dictionaryWithObjectsAndKeys:app, appBundleId, nil];
+        [deviceMapper setObject:a forKey:@"FFFF"];
+    }
 }
 
 - (NSArray *)allApps {
@@ -44,7 +55,25 @@ static AMDataHelper *localHelper;
 }
 
 - (NSArray *)appsForDevice:(NSString *)udid {
-    NSDictionary *dict = [deviceMapper valueForKey:udid];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    if([udid hasPrefix:@"FFFF"]) {
+        DDLogWarn(@"device is using iOS7 or newer, we cannot get the UDID anymore, so we show all apps");
+        dict = [deviceMapper valueForKey:@"FFFF"];
+        
+    } else {
+        dict = [deviceMapper valueForKey:udid];
+    }
+    
+    //we also add the enterprise apps
+    if(!dict) {
+        dict = [deviceMapper valueForKey:@"enterprise"];
+    } else {
+        NSDictionary *dict2 = [deviceMapper valueForKey:@"enterprise"];
+        [dict addEntriesFromDictionary:dict2];
+    }
+
+    //D DLogInfo(@"dict %@", dict);
     return  [dict allValues];
 }
 

@@ -72,7 +72,8 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
     
     NSString *cmd = [args objectAtIndex:0];
     NSString *arg1 = [args objectAtIndex:1];
-        
+    
+    DDLogInfo(@"cmd %@", cmd);
     if ([cmd isEqualToString:@"list"]) {
         NSArray *apps = [[AMDataHelper localHelper] appsForDevice:arg1];
          
@@ -81,6 +82,8 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:3];
 
             NSString *appBundleId = [app.appInfo valueForKey:@"CFBundleIdentifier"];
+            DDLogInfo(@"app id %@", appBundleId);
+            
             [dict setObject:[app.appInfo valueForKey:@"CFBundleVersion"] forKey:@"CFBundleVersion"];
             [dict setObject:appBundleId forKey:@"CFBundleIdentifier"];
             [dict setObject:[app.appInfo valueForKey:@"CFBundleDisplayName"] forKey:@"CFBundleDisplayName"];
