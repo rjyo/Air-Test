@@ -93,6 +93,7 @@
 		32EB577213011C31002EFE5E /* DataLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577113011C30002EFE5E /* DataLoadingOperation.m */; };
 		32EB577513011D66002EFE5E /* NSNetService+IPv4.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577413011D62002EFE5E /* NSNetService+IPv4.m */; };
 		32F132511301B39A0073E394 /* UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F132501301B39A0073E394 /* UIImageAdditions.m */; };
+		418B8CF61801640A00808A45 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418B8CF51801640A00808A45 /* MainWindow-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -254,6 +255,7 @@
 		32F132501301B39A0073E394 /* UIImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAdditions.m; sourceTree = "<group>"; };
 		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
 		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
+		418B8CF51801640A00808A45 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				418B8CF41801640900808A45 /* iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -569,6 +572,14 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		418B8CF41801640900808A45 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				418B8CF51801640A00808A45 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -595,7 +606,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AirTestApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -632,6 +643,7 @@
 				326F86E11301706B00962AD5 /* Back.png in Resources */,
 				326F86E21301706B00962AD5 /* Back@2x.png in Resources */,
 				1A229FFC1612AE00002101BB /* Default-568h@2x.png in Resources */,
+				418B8CF61801640A00808A45 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,8 +740,10 @@
 				GCC_PREFIX_HEADER = AirTestApp_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AirTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = AirTestApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -743,16 +757,17 @@
 				GCC_PREFIX_HEADER = AirTestApp_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AirTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = AirTestApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		3214365D1303DE3B000EF6D7 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -760,6 +775,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = AdHoc;
 		};
@@ -773,28 +789,30 @@
 				GCC_PREFIX_HEADER = AirTestApp_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "AirTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = AirTestApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = AdHoc;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rakuraku Technologies Inc.";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -802,6 +820,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "43C7952A-AA95-447A-8371-1386C51BEB1C";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};

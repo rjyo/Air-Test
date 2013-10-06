@@ -77,6 +77,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 70.0;
+
 }
 /*
 
@@ -204,6 +205,15 @@
     } else {
         cell.imageView.image = nil;
     }
+
+    //somehow the tableview is to far on the top on iOS7
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        // Load resources for iOS 6.1 or earlier
+    } else {
+        UIEdgeInsets inset = UIEdgeInsetsMake(65, 0, 0, 0);
+        self.tableView.contentInset = inset;
+    }
+
 }
 
 
