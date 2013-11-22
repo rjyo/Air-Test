@@ -93,6 +93,7 @@
 		32EB577213011C31002EFE5E /* DataLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577113011C30002EFE5E /* DataLoadingOperation.m */; };
 		32EB577513011D66002EFE5E /* NSNetService+IPv4.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EB577413011D62002EFE5E /* NSNetService+IPv4.m */; };
 		32F132511301B39A0073E394 /* UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F132501301B39A0073E394 /* UIImageAdditions.m */; };
+		36109058183E1E2400828E35 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 36109057183E1E2400828E35 /* OpenUDID.m */; };
 		418B8CF61801640A00808A45 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418B8CF51801640A00808A45 /* MainWindow-iPad.xib */; };
 /* End PBXBuildFile section */
 
@@ -255,6 +256,8 @@
 		32F132501301B39A0073E394 /* UIImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAdditions.m; sourceTree = "<group>"; };
 		32FBA6C312F4681600F7680A /* AirTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTestApp-Info.plist"; sourceTree = "<group>"; };
 		32FBA6C912F4682A00F7680A /* AirTestApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirTestApp_Prefix.pch; sourceTree = "<group>"; };
+		36109056183E1E2400828E35 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		36109057183E1E2400828E35 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		418B8CF51801640A00808A45 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +281,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				36109055183E1E2400828E35 /* OpenUdid */,
 				321AA07C1301422500014D4B /* Reachability */,
 				321AA0171301340700014D4B /* PullToRefresh */,
 				32EB56B9130118F5002EFE5E /* TapkuLibrary */,
@@ -572,6 +576,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		36109055183E1E2400828E35 /* OpenUdid */ = {
+			isa = PBXGroup;
+			children = (
+				36109056183E1E2400828E35 /* OpenUDID.h */,
+				36109057183E1E2400828E35 /* OpenUDID.m */,
+			);
+			path = OpenUdid;
+			sourceTree = "<group>";
+		};
 		418B8CF41801640900808A45 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +726,7 @@
 				32EB5763130118F7002EFE5E /* CJSONDataSerializer.m in Sources */,
 				32EB5764130118F7002EFE5E /* CJSONDeserializer.m in Sources */,
 				32EB5765130118F7002EFE5E /* CJSONScanner.m in Sources */,
+				36109058183E1E2400828E35 /* OpenUDID.m in Sources */,
 				32EB5766130118F7002EFE5E /* CJSONSerializer.m in Sources */,
 				32EB5767130118F7002EFE5E /* CSerializedJSONData.m in Sources */,
 				32EB577213011C31002EFE5E /* DataLoadingOperation.m in Sources */,

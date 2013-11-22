@@ -63,6 +63,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 #import "AppsViewController.h"
 #import "NSNetService+IPv4.h"
 #import "UIImageView+TKCategory.h"
+#import "OpenUDID.h"
 
 #define kProgressIndicatorSize 20.0
 
@@ -395,7 +396,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     NSString *udid = @"FFFF3cac05dd2f8bed64c4d11c6077742bce974c128a";
 #else
     UIDevice *device = [UIDevice currentDevice];
-    NSString *udid = [device performSelector:@selector(uniqueIdentifier)];
+    NSString *udid = [OpenUDID value];
 
 #endif
     
