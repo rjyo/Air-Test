@@ -95,6 +95,7 @@
 		32F132511301B39A0073E394 /* UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F132501301B39A0073E394 /* UIImageAdditions.m */; };
 		36109058183E1E2400828E35 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 36109057183E1E2400828E35 /* OpenUDID.m */; };
 		418B8CF61801640A00808A45 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418B8CF51801640A00808A45 /* MainWindow-iPad.xib */; };
+		41ED7CE51967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED7CE41967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -259,6 +260,8 @@
 		36109056183E1E2400828E35 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		36109057183E1E2400828E35 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		418B8CF51801640A00808A45 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		41ED7CE31967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+NSURLRequest_IgnoreSSL.h"; path = "Categories/NSURLRequest+NSURLRequest_IgnoreSSL.h"; sourceTree = "<group>"; };
+		41ED7CE41967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+NSURLRequest_IgnoreSSL.m"; path = "Categories/NSURLRequest+NSURLRequest_IgnoreSSL.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,15 +284,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1D3623240D0F684500981E51 /* AirTestAppDelegate.h */,
+				1D3623250D0F684500981E51 /* AirTestAppDelegate.m */,
+				41ED7CE61967F2DB00397AB3 /* Categories */,
+				32A799B912F719EA00E7C0AB /* Controllers */,
 				36109055183E1E2400828E35 /* OpenUdid */,
-				321AA07C1301422500014D4B /* Reachability */,
 				321AA0171301340700014D4B /* PullToRefresh */,
+				321AA07C1301422500014D4B /* Reachability */,
 				32EB56B9130118F5002EFE5E /* TapkuLibrary */,
 				32EB5715130118F5002EFE5E /* TouchJSON */,
 				32A799B812F719DF00E7C0AB /* Utils */,
-				32A799B912F719EA00E7C0AB /* Controllers */,
-				1D3623240D0F684500981E51 /* AirTestAppDelegate.h */,
-				1D3623250D0F684500981E51 /* AirTestAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -593,6 +597,15 @@
 			name = iPad;
 			sourceTree = "<group>";
 		};
+		41ED7CE61967F2DB00397AB3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				41ED7CE31967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.h */,
+				41ED7CE41967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -667,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41ED7CE51967F2C900397AB3 /* NSURLRequest+NSURLRequest_IgnoreSSL.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AirTestAppDelegate.m in Sources */,
 				32A796C412F61E3000E7C0AB /* BonjourBrowserController.m in Sources */,

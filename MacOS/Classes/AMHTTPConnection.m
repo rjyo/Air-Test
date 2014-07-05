@@ -14,6 +14,7 @@
 #import "HTTPMessage.h"
 #import "DDNumber.h"
 #import "DDTTYLogger.h"
+#import "DDKeychain.h"
 
 
 #ifdef CONFIGURATION_DEBUG
@@ -25,7 +26,37 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
 
 @implementation AMHTTPConnection
 
- 
+/**
+ * Overrides HTTPConnection's method
+ **/
+- (BOOL)isSecureServer
+{
+    HTTPLogTrace();
+    
+    // Create an HTTPS server (all connections will be secured via SSL/TLS)
+    return YES;
+}
+
+/**
+ * Overrides HTTPConnection's method
+ *
+ * This method is expected to returns an array appropriate for use in kCFStreamSSLCertificates SSL Settings.
+ * It should be an array of SecCertificateRefs except for the first element in the array, which is a SecIdentityRef.
+ **/
+- (NSArray *)sslIdentityAndCertificates
+{
+    HTTPLogTrace();
+    
+    NSArray *result = [DDKeychain SSLIdentityAndCertificates];
+    if([result count] == 0)
+    {
+        [DDKeychain createNewIdentity];
+        return [DDKeychain SSLIdentityAndCertificates];
+    }
+    return result;
+}
+
+
 /**
  * This method is called to get a response for a request.
  * You may return any object that adopts the HTTPResponse protocol.
@@ -95,7 +126,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
             [dict setObject:[app.appInfo valueForKey:@"CFBundleDisplayName"] forKey:@"CFBundleDisplayName"];
             [dict setObject:app.fileSize forKey:@"app-size"];
             [dict setObject:[NSNumber numberWithLong:[app.updatedAt timeIntervalSince1970]] forKey:@"updated-at"];
-            NSString *serviceUrl = @"itms-services://?action=download-manifest&url=http://%@/conf/%@";
+            NSString *serviceUrl = @"itms-services://?action=download-manifest&url=https://%@/conf/%@";
             serviceUrl = [NSString stringWithFormat:serviceUrl, host, [app.appInfo valueForKey:@"CFBundleIdentifier"]];
             [dict setObject:serviceUrl forKey:@"itms-services"];
             NSString *icon2xURL = [NSString stringWithFormat:@"http://%@/icon2x/%@/icon.png", host, appBundleId]; 
@@ -128,8 +159,8 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
         NSString *appBundleId = [app.appInfo valueForKey:@"CFBundleIdentifier"];
         NSString *appName = [app.appInfo valueForKey:@"CFBundleDisplayName"];
         NSString *appVersion = [app.appInfo valueForKey:@"CFBundleVersion"];
-        NSString *appURL = [NSString stringWithFormat:@"http://%@/app/%@/app.ipa", host, appBundleId]; 
-        NSString *icon2xURL = [NSString stringWithFormat:@"http://%@/icon2x/%@/icon.png", host, appBundleId]; 
+        NSString *appURL = [NSString stringWithFormat:@"https://%@/app/%@/app.ipa", host, appBundleId]; 
+        NSString *icon2xURL = [NSString stringWithFormat:@"https://%@/icon2x/%@/icon.png", host, appBundleId]; 
         
         NSMutableString *s = [[content mutableCopy] autorelease];
         [s replaceOccurrencesOfString:@"%APP_URL%" withString:appURL options:NSLiteralSearch range:NSMakeRange(0, [s length])];

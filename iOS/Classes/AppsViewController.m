@@ -325,6 +325,7 @@
     [self hideLoading];
 #else
     //@"itms-services://?action=download-manifest&url=http://www.rakutec.com/adhoc/test.plist"
+    //NSLog(@"opening install url %@", installUrl);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:installUrl]];
 #endif
 

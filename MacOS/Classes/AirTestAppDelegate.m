@@ -26,7 +26,8 @@
 	// You can automatically discover the service in Safari's bonjour bookmarks section.
 	[httpServer setType:@"_airmock._tcp."];
     [httpServer setConnectionClass:[AMHTTPConnection class]];
-	
+	//[httpServer setPort:51808];
+    
 	NSError *error;
 	BOOL success = [httpServer start:&error];
 	

@@ -8,11 +8,15 @@
 
 #import "DataLoadingOperation.h"
 
+// we need this because otherwise you can't connect to a server with a self signed certificate
+//#import "NSURLRequest+NSURLRequest_IgnoreSSL.h"
+
 @implementation DataLoadingOperation
 @synthesize loadedString, urlString, delegate;
 
 - (void)main {
     NSDate *then = [NSDate date];
+    
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
     

@@ -401,7 +401,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     // we need the iOS Version because the UDID approach doesn't work anymore in iOS7
     NSString *iOSVersion = [[UIDevice currentDevice] systemVersion];
     
-    NSString *listURL = [[NSString alloc] initWithFormat:@"http://%@:%d/list/%@/%@", addr, port, udid, iOSVersion];
+    NSString *listURL = [[NSString alloc] initWithFormat:@"https://%@:%d/list/%@/%@", addr, port, udid, iOSVersion];
     
 	[self stopCurrentResolve];
     
