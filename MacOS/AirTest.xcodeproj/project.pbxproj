@@ -61,6 +61,7 @@
 		32FBD60212F7FB8D00255254 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD5EC12F7FB8D00255254 /* DDTTYLogger.m */; };
 		32FBD67012F8009E00255254 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FBD66F12F8009E00255254 /* Security.framework */; };
 		32FBD6B512F800BD00255254 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FBD6B412F800BD00255254 /* libz.dylib */; };
+		41ED7CE21967F0AC00397AB3 /* DDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED7CE11967F0AC00397AB3 /* DDKeychain.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -181,6 +182,8 @@
 		32FBD5EC12F7FB8D00255254 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		32FBD66F12F8009E00255254 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		32FBD6B412F800BD00255254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		41ED7CE01967F0AC00397AB3 /* DDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDKeychain.h; sourceTree = "<group>"; };
+		41ED7CE11967F0AC00397AB3 /* DDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDKeychain.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AirTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirTest-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* AirTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -342,6 +345,8 @@
 				32C6C88C12F83AC500B26843 /* WebSocket.h */,
 				32C6C88D12F83AC500B26843 /* WebSocket.m */,
 				32FBD5DD12F7FB8D00255254 /* LICENSE.txt */,
+				41ED7CE01967F0AC00397AB3 /* DDKeychain.h */,
+				41ED7CE11967F0AC00397AB3 /* DDKeychain.m */,
 			);
 			path = SimpleHTTPServer;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				326108A412F7A86600239271 /* crc32.c in Sources */,
 				326108A512F7A86600239271 /* deflate.c in Sources */,
 				326108A712F7A86600239271 /* PNGNormalizer.m in Sources */,
+				41ED7CE21967F0AC00397AB3 /* DDKeychain.m in Sources */,
 				32FBD5EF12F7FB8D00255254 /* DDData.m in Sources */,
 				32FBD5F012F7FB8D00255254 /* DDNumber.m in Sources */,
 				32FBD5F112F7FB8D00255254 /* DDRange.m in Sources */,

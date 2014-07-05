@@ -54,10 +54,34 @@ static AMDataHelper *localHelper;
     return [appMapper valueForKey:bundleId];
 }
 
+
 - (NSArray *)appsForDevice:(NSString *)udid {
+    return [self appsForDevice:udid withIOSVersion:NULL];
+}
+
+
+/**
+ *  Get a list of apps that are compatible with the current connected device
+ *  also add the enterprise apps to the list (because those work with all devices)
+ *
+ *  @param udid       UDID of the Device. Warning: Starting with iOS7 this is not the real UDID
+ *  @param iOSVersion iOS Version like 7.1.2
+ *
+ *  @return array of all apps
+ */
+- (NSArray *)appsForDevice:(NSString *)udid withIOSVersion:(NSString *) iOSVersion {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
-    if([udid hasPrefix:@"FFFF"]) {
+    // we need to check if this device has >= iOS7
+    // because if it does, the UDID is not correct
+    BOOL isIOS7OrAbove = FALSE;
+    if(iOSVersion) {
+        if([iOSVersion intValue] >= 7) {
+            isIOS7OrAbove = TRUE;
+        }
+    }
+    
+    if(isIOS7OrAbove || [udid hasPrefix:@"FFFF"]) {
         DDLogWarn(@"device is using iOS7 or newer, we cannot get the UDID anymore, so we show all apps");
         dict = [deviceMapper valueForKey:@"FFFF"];
         
