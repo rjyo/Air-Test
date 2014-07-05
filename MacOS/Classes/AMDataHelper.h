@@ -14,6 +14,7 @@
 
 - (void)saveApp:(AMiOSApp *)app;
 - (NSArray *)appsForDevice:(NSString *)udid;
+- (NSArray *)appsForDevice:(NSString *)udid withIOSVersion:(NSString *) iOSVersion;
 - (AMiOSApp *)appForBundleId:(NSString *)bundleId;
 - (NSArray *)allApps;
 - (void)deleteCache;

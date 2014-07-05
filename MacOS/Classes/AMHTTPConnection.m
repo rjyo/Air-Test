@@ -73,9 +73,15 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
     NSString *cmd = [args objectAtIndex:0];
     NSString *arg1 = [args objectAtIndex:1];
     
+    // the newest version of the iOS app also sends his iOS Version
+    NSString *iOSVersion;
+    if ([args count] > 2) {
+        iOSVersion = [args objectAtIndex:2];
+    }
+    
     DDLogInfo(@"cmd %@", cmd);
     if ([cmd isEqualToString:@"list"]) {
-        NSArray *apps = [[AMDataHelper localHelper] appsForDevice:arg1];
+        NSArray *apps = [[AMDataHelper localHelper] appsForDevice:arg1 withIOSVersion:iOSVersion];
          
         NSMutableArray *data = [NSMutableArray arrayWithCapacity:[apps count]];
         for (AMiOSApp *app in apps) {

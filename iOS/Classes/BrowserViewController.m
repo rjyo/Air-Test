@@ -395,13 +395,13 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     //FFFF will make sure we see all apps in the simulator
     NSString *udid = @"FFFF3cac05dd2f8bed64c4d11c6077742bce974c128a";
 #else
-    UIDevice *device = [UIDevice currentDevice];
     NSString *udid = [OpenUDID value];
-
 #endif
     
-    NSString *listURL = [[NSString alloc] initWithFormat:@"http://%@:%d/list/%@", addr, port, udid];
-    NSLog(@"app list url: %@", listURL);
+    // we need the iOS Version because the UDID approach doesn't work anymore in iOS7
+    NSString *iOSVersion = [[UIDevice currentDevice] systemVersion];
+    
+    NSString *listURL = [[NSString alloc] initWithFormat:@"http://%@:%d/list/%@/%@", addr, port, udid, iOSVersion];
     
 	[self stopCurrentResolve];
     
